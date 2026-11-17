@@ -352,11 +352,16 @@ def build_exercises() -> dict:
 
 
 def build_foods() -> dict:
+    from foods_more import FOODS_MORE  # scripts/foods_more.py
+
     ids = set()
+    names = set()
     foods = []
-    for fid, en, ur, aliases, unit, grams, kcal, p, c, f, cat in FOODS:
+    for fid, en, ur, aliases, unit, grams, kcal, p, c, f, cat in FOODS + FOODS_MORE:
         assert fid not in ids, f"duplicate food id {fid}"
         ids.add(fid)
+        assert en.lower() not in names, f"duplicate food name {en}"
+        names.add(en.lower())
         # sanity: energy from macros within 25% (or 40 kcal) of the stated kcal
         macro_kcal = 4 * p + 4 * c + 9 * f
         assert abs(macro_kcal - kcal) <= max(40, 0.25 * kcal), f"{fid}: macros {macro_kcal:.0f} vs {kcal}"

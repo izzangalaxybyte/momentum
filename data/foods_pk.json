@@ -2686,6 +2686,8045 @@
    "carbs": 1,
    "fat": 4.5,
    "category": "condiment"
+  },
+  {
+   "id": "paratha-frozen",
+   "nameEn": "Frozen paratha (cooked)",
+   "nameUrdu": "Frozen paratha",
+   "aliases": [
+    "kitchen star paratha",
+    "ready paratha"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 260,
+   "protein": 5,
+   "carbs": 32,
+   "fat": 12,
+   "category": "bread"
+  },
+  {
+   "id": "lachha-paratha",
+   "nameEn": "Lachha paratha",
+   "nameUrdu": "Lachha paratha",
+   "aliases": [
+    "laccha paratha"
+   ],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 330,
+   "protein": 6,
+   "carbs": 40,
+   "fat": 16,
+   "category": "bread"
+  },
+  {
+   "id": "qeema-paratha",
+   "nameEn": "Qeema paratha",
+   "nameUrdu": "Qeema paratha",
+   "aliases": [
+    "keema paratha"
+   ],
+   "unit": "piece",
+   "grams": 140,
+   "kcal": 420,
+   "protein": 16,
+   "carbs": 42,
+   "fat": 21,
+   "category": "bread"
+  },
+  {
+   "id": "gobi-paratha",
+   "nameEn": "Gobhi paratha",
+   "nameUrdu": "Gobhi paratha",
+   "aliases": [
+    "cauliflower paratha"
+   ],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 320,
+   "protein": 7,
+   "carbs": 44,
+   "fat": 13,
+   "category": "bread"
+  },
+  {
+   "id": "mooli-paratha",
+   "nameEn": "Mooli paratha",
+   "nameUrdu": "Mooli paratha",
+   "aliases": [
+    "radish paratha"
+   ],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 310,
+   "protein": 6,
+   "carbs": 43,
+   "fat": 13,
+   "category": "bread"
+  },
+  {
+   "id": "cheese-paratha",
+   "nameEn": "Cheese paratha",
+   "nameUrdu": "Cheese paratha",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 400,
+   "protein": 13,
+   "carbs": 40,
+   "fat": 21,
+   "category": "bread"
+  },
+  {
+   "id": "chicken-paratha",
+   "nameEn": "Chicken paratha",
+   "nameUrdu": "Chicken paratha",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 430,
+   "protein": 20,
+   "carbs": 42,
+   "fat": 20,
+   "category": "bread"
+  },
+  {
+   "id": "chapati-whole-wheat-small",
+   "nameEn": "Small chapati / phulka",
+   "nameUrdu": "Chhoti roti",
+   "aliases": [
+    "small roti",
+    "patli roti"
+   ],
+   "unit": "piece",
+   "grams": 30,
+   "kcal": 90,
+   "protein": 3,
+   "carbs": 18,
+   "fat": 0.5,
+   "category": "bread"
+  },
+  {
+   "id": "roti-chokar",
+   "nameEn": "Chokar wali roti (bran)",
+   "nameUrdu": "Chokar roti",
+   "aliases": [
+    "bran roti",
+    "multigrain roti"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 110,
+   "protein": 4,
+   "carbs": 21,
+   "fat": 1,
+   "category": "bread"
+  },
+  {
+   "id": "jau-roti",
+   "nameEn": "Jau ki roti (barley)",
+   "nameUrdu": "Jau roti",
+   "aliases": [
+    "barley roti"
+   ],
+   "unit": "piece",
+   "grams": 45,
+   "kcal": 125,
+   "protein": 4,
+   "carbs": 25,
+   "fat": 1,
+   "category": "bread"
+  },
+  {
+   "id": "bajra-roti",
+   "nameEn": "Bajray ki roti",
+   "nameUrdu": "Bajra roti",
+   "aliases": [
+    "millet roti"
+   ],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 150,
+   "protein": 4,
+   "carbs": 28,
+   "fat": 2.5,
+   "category": "bread"
+  },
+  {
+   "id": "naan-kandahari",
+   "nameEn": "Kandahari naan (large)",
+   "nameUrdu": "Kandahari naan",
+   "aliases": [
+    "afghani naan"
+   ],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 540,
+   "protein": 18,
+   "carbs": 105,
+   "fat": 5,
+   "category": "bread"
+  },
+  {
+   "id": "taftan",
+   "nameEn": "Taftan",
+   "nameUrdu": "Taftan",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 100,
+   "kcal": 320,
+   "protein": 8,
+   "carbs": 50,
+   "fat": 9,
+   "category": "bread"
+  },
+  {
+   "id": "khamiri-roti",
+   "nameEn": "Khameeri roti",
+   "nameUrdu": "Khamiri roti",
+   "aliases": [
+    "khameeri roti"
+   ],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 250,
+   "protein": 8,
+   "carbs": 48,
+   "fat": 2,
+   "category": "bread"
+  },
+  {
+   "id": "pita",
+   "nameEn": "Pita bread",
+   "nameUrdu": "Pita",
+   "aliases": [
+    "shawarma bread"
+   ],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 165,
+   "protein": 5.5,
+   "carbs": 33,
+   "fat": 1,
+   "category": "bread"
+  },
+  {
+   "id": "tortilla",
+   "nameEn": "Tortilla wrap",
+   "nameUrdu": "Tortilla",
+   "aliases": [
+    "wrap"
+   ],
+   "unit": "piece",
+   "grams": 45,
+   "kcal": 140,
+   "protein": 4,
+   "carbs": 23,
+   "fat": 3.5,
+   "category": "bread"
+  },
+  {
+   "id": "bread-milky",
+   "nameEn": "Milky / sweet bread slice",
+   "nameUrdu": "Meethi double roti",
+   "aliases": [
+    "milky bread"
+   ],
+   "unit": "slice",
+   "grams": 30,
+   "kcal": 85,
+   "protein": 2.5,
+   "carbs": 15,
+   "fat": 1.5,
+   "category": "bread"
+  },
+  {
+   "id": "bread-multigrain",
+   "nameEn": "Multigrain bread slice",
+   "nameUrdu": "Multigrain bread",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 30,
+   "kcal": 75,
+   "protein": 3.5,
+   "carbs": 12,
+   "fat": 1.2,
+   "category": "bread"
+  },
+  {
+   "id": "toast-butter",
+   "nameEn": "Toast with butter",
+   "nameUrdu": "Butter toast",
+   "aliases": [
+    "makhan toast"
+   ],
+   "unit": "slice",
+   "grams": 35,
+   "kcal": 120,
+   "protein": 2.5,
+   "carbs": 13,
+   "fat": 6,
+   "category": "breakfast"
+  },
+  {
+   "id": "toast-jam",
+   "nameEn": "Toast with jam",
+   "nameUrdu": "Jam toast",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 40,
+   "kcal": 115,
+   "protein": 2.5,
+   "carbs": 22,
+   "fat": 1.5,
+   "category": "breakfast"
+  },
+  {
+   "id": "bun-maska",
+   "nameEn": "Bun maska",
+   "nameUrdu": "Bun maska",
+   "aliases": [
+    "bun makhan"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 260,
+   "protein": 5,
+   "carbs": 30,
+   "fat": 13,
+   "category": "breakfast"
+  },
+  {
+   "id": "rusk-cake",
+   "nameEn": "Cake rusk",
+   "nameUrdu": "Cake rusk",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 25,
+   "kcal": 110,
+   "protein": 2,
+   "carbs": 15,
+   "fat": 4.5,
+   "category": "snack"
+  },
+  {
+   "id": "croissant",
+   "nameEn": "Croissant",
+   "nameUrdu": "Croissant",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 250,
+   "protein": 5,
+   "carbs": 26,
+   "fat": 14,
+   "category": "breakfast"
+  },
+  {
+   "id": "anda-shami-burger",
+   "nameEn": "Anda shami burger",
+   "nameUrdu": "Anda shami burger",
+   "aliases": [
+    "shami burger",
+    "bun kebab anda"
+   ],
+   "unit": "piece",
+   "grams": 180,
+   "kcal": 450,
+   "protein": 18,
+   "carbs": 45,
+   "fat": 22,
+   "category": "fastfood"
+  },
+  {
+   "id": "egg-scrambled",
+   "nameEn": "Scrambled eggs (2 eggs)",
+   "nameUrdu": "Bhurji",
+   "aliases": [
+    "anda bhurji",
+    "khagina"
+   ],
+   "unit": "plate",
+   "grams": 120,
+   "kcal": 220,
+   "protein": 13,
+   "carbs": 3,
+   "fat": 17,
+   "category": "breakfast"
+  },
+  {
+   "id": "egg-half-fry",
+   "nameEn": "Half fry egg",
+   "nameUrdu": "Half fry",
+   "aliases": [
+    "sunny side up"
+   ],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 100,
+   "protein": 6,
+   "carbs": 0.5,
+   "fat": 8,
+   "category": "protein"
+  },
+  {
+   "id": "egg-poached",
+   "nameEn": "Poached egg",
+   "nameUrdu": "Poached anda",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 72,
+   "protein": 6.3,
+   "carbs": 0.4,
+   "fat": 5,
+   "category": "protein"
+  },
+  {
+   "id": "omelette-cheese",
+   "nameEn": "Cheese omelette (2 eggs)",
+   "nameUrdu": "Cheese omelette",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 140,
+   "kcal": 300,
+   "protein": 18,
+   "carbs": 3,
+   "fat": 24,
+   "category": "breakfast"
+  },
+  {
+   "id": "omelette-1-egg",
+   "nameEn": "Omelette (1 egg)",
+   "nameUrdu": "Ek anday ka omelette",
+   "aliases": [
+    "single omelette"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 130,
+   "protein": 7,
+   "carbs": 2,
+   "fat": 10.5,
+   "category": "breakfast"
+  },
+  {
+   "id": "egg-paratha-roll",
+   "nameEn": "Egg paratha roll",
+   "nameUrdu": "Anda paratha roll",
+   "aliases": [
+    "anda roll"
+   ],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 520,
+   "protein": 15,
+   "carbs": 48,
+   "fat": 29,
+   "category": "fastfood"
+  },
+  {
+   "id": "chana-puri",
+   "nameEn": "Chanay with 2 puri (no halwa)",
+   "nameUrdu": "Chanay puri",
+   "aliases": [
+    "chana puri"
+   ],
+   "unit": "plate",
+   "grams": 250,
+   "kcal": 560,
+   "protein": 14,
+   "carbs": 60,
+   "fat": 29,
+   "category": "breakfast"
+  },
+  {
+   "id": "halwa-only",
+   "nameEn": "Halwa (halwa puri halwa)",
+   "nameUrdu": "Halwa",
+   "aliases": [
+    "suji halwa bowl"
+   ],
+   "unit": "bowl",
+   "grams": 100,
+   "kcal": 340,
+   "protein": 4,
+   "carbs": 45,
+   "fat": 16,
+   "category": "sweet"
+  },
+  {
+   "id": "siri-paye-naan",
+   "nameEn": "Siri paye with naan",
+   "nameUrdu": "Siri paye",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 900,
+   "protein": 45,
+   "carbs": 60,
+   "fat": 52,
+   "category": "breakfast"
+  },
+  {
+   "id": "lassi-paratha-breakfast",
+   "nameEn": "Paratha with dahi",
+   "nameUrdu": "Paratha dahi",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 230,
+   "kcal": 420,
+   "protein": 11,
+   "carbs": 46,
+   "fat": 21,
+   "category": "breakfast"
+  },
+  {
+   "id": "oats-water",
+   "nameEn": "Oats with water",
+   "nameUrdu": "Oats",
+   "aliases": [
+    "daliya",
+    "oatmeal"
+   ],
+   "unit": "bowl",
+   "grams": 40,
+   "kcal": 150,
+   "protein": 5,
+   "carbs": 27,
+   "fat": 2.5,
+   "category": "breakfast"
+  },
+  {
+   "id": "daliya-milk",
+   "nameEn": "Daliya with milk and sugar",
+   "nameUrdu": "Meetha daliya",
+   "aliases": [
+    "wheat porridge"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 260,
+   "protein": 9,
+   "carbs": 42,
+   "fat": 6,
+   "category": "breakfast"
+  },
+  {
+   "id": "muesli-milk",
+   "nameEn": "Muesli / granola with milk",
+   "nameUrdu": "Muesli",
+   "aliases": [
+    "granola"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 330,
+   "protein": 11,
+   "carbs": 50,
+   "fat": 10,
+   "category": "breakfast"
+  },
+  {
+   "id": "pancake",
+   "nameEn": "Pancake",
+   "nameUrdu": "Pancake",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 75,
+   "kcal": 175,
+   "protein": 5,
+   "carbs": 22,
+   "fat": 7,
+   "category": "breakfast"
+  },
+  {
+   "id": "nutella-toast",
+   "nameEn": "Toast with chocolate spread",
+   "nameUrdu": "Nutella toast",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 45,
+   "kcal": 180,
+   "protein": 3.5,
+   "carbs": 22,
+   "fat": 8.5,
+   "category": "breakfast"
+  },
+  {
+   "id": "peanut-butter-toast",
+   "nameEn": "Toast with peanut butter",
+   "nameUrdu": "Peanut butter toast",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 46,
+   "kcal": 165,
+   "protein": 6.5,
+   "carbs": 15,
+   "fat": 9,
+   "category": "breakfast"
+  },
+  {
+   "id": "honey",
+   "nameEn": "Honey",
+   "nameUrdu": "Shehad",
+   "aliases": [
+    "shahad"
+   ],
+   "unit": "tbsp",
+   "grams": 21,
+   "kcal": 64,
+   "protein": 0,
+   "carbs": 17,
+   "fat": 0,
+   "category": "condiment"
+  },
+  {
+   "id": "jam",
+   "nameEn": "Jam",
+   "nameUrdu": "Jam",
+   "aliases": [
+    "murabba"
+   ],
+   "unit": "tbsp",
+   "grams": 20,
+   "kcal": 55,
+   "protein": 0,
+   "carbs": 14,
+   "fat": 0,
+   "category": "condiment"
+  },
+  {
+   "id": "peanut-butter",
+   "nameEn": "Peanut butter",
+   "nameUrdu": "Peanut butter",
+   "aliases": [],
+   "unit": "tbsp",
+   "grams": 16,
+   "kcal": 95,
+   "protein": 4,
+   "carbs": 3,
+   "fat": 8,
+   "category": "fat"
+  },
+  {
+   "id": "chocolate-spread",
+   "nameEn": "Chocolate spread",
+   "nameUrdu": "Nutella",
+   "aliases": [
+    "nutella"
+   ],
+   "unit": "tbsp",
+   "grams": 19,
+   "kcal": 100,
+   "protein": 1,
+   "carbs": 11,
+   "fat": 6,
+   "category": "sweet"
+  },
+  {
+   "id": "rice-brown",
+   "nameEn": "Brown rice (boiled)",
+   "nameUrdu": "Brown chawal",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 160,
+   "kcal": 180,
+   "protein": 4,
+   "carbs": 37,
+   "fat": 1.5,
+   "category": "rice"
+  },
+  {
+   "id": "rice-fried-egg",
+   "nameEn": "Egg fried rice",
+   "nameUrdu": "Egg fried rice",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 520,
+   "protein": 14,
+   "carbs": 70,
+   "fat": 20,
+   "category": "rice"
+  },
+  {
+   "id": "veg-pulao",
+   "nameEn": "Vegetable pulao",
+   "nameUrdu": "Sabzi pulao",
+   "aliases": [
+    "veg pulao"
+   ],
+   "unit": "plate",
+   "grams": 250,
+   "kcal": 380,
+   "protein": 7,
+   "carbs": 58,
+   "fat": 13,
+   "category": "rice"
+  },
+  {
+   "id": "yakhni-pulao",
+   "nameEn": "Yakhni pulao (chicken)",
+   "nameUrdu": "Yakhni pulao",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 520,
+   "protein": 25,
+   "carbs": 62,
+   "fat": 18,
+   "category": "rice"
+  },
+  {
+   "id": "mutton-pulao",
+   "nameEn": "Mutton pulao",
+   "nameUrdu": "Mutton pulao",
+   "aliases": [
+    "gosht pulao"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 580,
+   "protein": 26,
+   "carbs": 62,
+   "fat": 25,
+   "category": "rice"
+  },
+  {
+   "id": "pulao-kebab",
+   "nameEn": "Pulao kebab plate (shop style)",
+   "nameUrdu": "Pulao kebab",
+   "aliases": [
+    "pulao kabab"
+   ],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 850,
+   "protein": 38,
+   "carbs": 95,
+   "fat": 34,
+   "category": "rice"
+  },
+  {
+   "id": "chana-pulao",
+   "nameEn": "Chana pulao",
+   "nameUrdu": "Chanay wala pulao",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 280,
+   "kcal": 470,
+   "protein": 13,
+   "carbs": 70,
+   "fat": 15,
+   "category": "rice"
+  },
+  {
+   "id": "aloo-biryani",
+   "nameEn": "Aloo biryani",
+   "nameUrdu": "Aloo biryani",
+   "aliases": [
+    "veg biryani"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 470,
+   "protein": 8,
+   "carbs": 70,
+   "fat": 17,
+   "category": "rice"
+  },
+  {
+   "id": "prawn-biryani",
+   "nameEn": "Prawn / fish biryani",
+   "nameUrdu": "Jhinga biryani",
+   "aliases": [
+    "fish biryani"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 500,
+   "protein": 24,
+   "carbs": 62,
+   "fat": 17,
+   "category": "rice"
+  },
+  {
+   "id": "bombay-biryani",
+   "nameEn": "Bombay biryani",
+   "nameUrdu": "Bombay biryani",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 320,
+   "kcal": 560,
+   "protein": 25,
+   "carbs": 66,
+   "fat": 21,
+   "category": "rice"
+  },
+  {
+   "id": "student-biryani",
+   "nameEn": "Shop biryani (large plate)",
+   "nameUrdu": "Dukaan wali biryani",
+   "aliases": [
+    "biryani plate large"
+   ],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 800,
+   "protein": 34,
+   "carbs": 95,
+   "fat": 30,
+   "category": "rice"
+  },
+  {
+   "id": "khichdi-masoor",
+   "nameEn": "Masoor khichdi with ghee",
+   "nameUrdu": "Khichri",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 450,
+   "protein": 15,
+   "carbs": 65,
+   "fat": 14,
+   "category": "rice"
+  },
+  {
+   "id": "tahiri",
+   "nameEn": "Tahiri",
+   "nameUrdu": "Tahari",
+   "aliases": [
+    "tehari"
+   ],
+   "unit": "plate",
+   "grams": 280,
+   "kcal": 420,
+   "protein": 8,
+   "carbs": 66,
+   "fat": 13,
+   "category": "rice"
+  },
+  {
+   "id": "rice-jeera",
+   "nameEn": "Jeera rice",
+   "nameUrdu": "Zeera chawal",
+   "aliases": [
+    "zeera rice"
+   ],
+   "unit": "cup",
+   "grams": 170,
+   "kcal": 260,
+   "protein": 4.5,
+   "carbs": 46,
+   "fat": 6,
+   "category": "rice"
+  },
+  {
+   "id": "chicken-manchurian-rice",
+   "nameEn": "Chicken manchurian with rice",
+   "nameUrdu": "Manchurian chawal",
+   "aliases": [
+    "manchurian"
+   ],
+   "unit": "plate",
+   "grams": 400,
+   "kcal": 650,
+   "protein": 30,
+   "carbs": 85,
+   "fat": 20,
+   "category": "rice"
+  },
+  {
+   "id": "chicken-chowmein",
+   "nameEn": "Chicken chow mein",
+   "nameUrdu": "Chowmein",
+   "aliases": [
+    "noodles",
+    "chow mein"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 520,
+   "protein": 24,
+   "carbs": 60,
+   "fat": 20,
+   "category": "rice"
+  },
+  {
+   "id": "chicken-macaroni",
+   "nameEn": "Chicken macaroni (desi)",
+   "nameUrdu": "Macaroni",
+   "aliases": [
+    "macaroni"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 480,
+   "protein": 22,
+   "carbs": 62,
+   "fat": 16,
+   "category": "rice"
+  },
+  {
+   "id": "spaghetti",
+   "nameEn": "Spaghetti (desi, chicken)",
+   "nameUrdu": "Spaghetti",
+   "aliases": [
+    "pasta"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 500,
+   "protein": 24,
+   "carbs": 64,
+   "fat": 16,
+   "category": "rice"
+  },
+  {
+   "id": "white-sauce-pasta",
+   "nameEn": "White sauce / alfredo pasta",
+   "nameUrdu": "Alfredo pasta",
+   "aliases": [
+    "fettuccine alfredo"
+   ],
+   "unit": "plate",
+   "grams": 350,
+   "kcal": 750,
+   "protein": 30,
+   "carbs": 70,
+   "fat": 38,
+   "category": "rice"
+  },
+  {
+   "id": "instant-noodles",
+   "nameEn": "Instant noodles (1 pack)",
+   "nameUrdu": "Noodles packet",
+   "aliases": [
+    "maggi",
+    "indomie"
+   ],
+   "unit": "pack",
+   "grams": 70,
+   "kcal": 330,
+   "protein": 7,
+   "carbs": 44,
+   "fat": 14,
+   "category": "packaged"
+  },
+  {
+   "id": "chinese-rice-chicken",
+   "nameEn": "Chicken chilli dry with rice",
+   "nameUrdu": "Chicken chilli",
+   "aliases": [
+    "chilli chicken"
+   ],
+   "unit": "plate",
+   "grams": 400,
+   "kcal": 700,
+   "protein": 32,
+   "carbs": 85,
+   "fat": 24,
+   "category": "rice"
+  },
+  {
+   "id": "chicken-karahi-half-kg",
+   "nameEn": "Chicken karahi (half kg, shared by 2)",
+   "nameUrdu": "Aadha kilo karahi",
+   "aliases": [
+    "half kg karahi"
+   ],
+   "unit": "share",
+   "grams": 350,
+   "kcal": 600,
+   "protein": 45,
+   "carbs": 10,
+   "fat": 42,
+   "category": "curry"
+  },
+  {
+   "id": "white-karahi",
+   "nameEn": "White / makhni karahi",
+   "nameUrdu": "Safaid karahi",
+   "aliases": [
+    "white karahi",
+    "makhni karahi"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 520,
+   "protein": 32,
+   "carbs": 8,
+   "fat": 40,
+   "category": "curry"
+  },
+  {
+   "id": "peshawari-karahi",
+   "nameEn": "Peshawari / namkeen karahi",
+   "nameUrdu": "Namkeen karahi",
+   "aliases": [
+    "namak mandi karahi"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 480,
+   "protein": 38,
+   "carbs": 4,
+   "fat": 35,
+   "category": "curry"
+  },
+  {
+   "id": "beef-karahi",
+   "nameEn": "Beef karahi",
+   "nameUrdu": "Beef karahi",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 500,
+   "protein": 36,
+   "carbs": 9,
+   "fat": 36,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-shinwari",
+   "nameEn": "Shinwari karahi (lamb)",
+   "nameUrdu": "Shinwari",
+   "aliases": [
+    "lamb karahi"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 560,
+   "protein": 38,
+   "carbs": 5,
+   "fat": 43,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-achari",
+   "nameEn": "Achari chicken",
+   "nameUrdu": "Achari murgh",
+   "aliases": [
+    "achar gosht"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 430,
+   "protein": 30,
+   "carbs": 10,
+   "fat": 30,
+   "category": "curry"
+  },
+  {
+   "id": "achar-gosht",
+   "nameEn": "Achar gosht (beef)",
+   "nameUrdu": "Achar gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 470,
+   "protein": 32,
+   "carbs": 10,
+   "fat": 34,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-white-qorma",
+   "nameEn": "Chicken white qorma",
+   "nameUrdu": "Safaid qorma",
+   "aliases": [
+    "shahi qorma"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 480,
+   "protein": 28,
+   "carbs": 12,
+   "fat": 36,
+   "category": "curry"
+  },
+  {
+   "id": "mutton-qorma",
+   "nameEn": "Mutton qorma",
+   "nameUrdu": "Mutton qorma",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 550,
+   "protein": 30,
+   "carbs": 10,
+   "fat": 43,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-roast",
+   "nameEn": "Chicken roast (desi, quarter)",
+   "nameUrdu": "Murgh roast",
+   "aliases": [
+    "shadi roast",
+    "chicken steam roast"
+   ],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 450,
+   "protein": 40,
+   "carbs": 6,
+   "fat": 29,
+   "category": "bbq"
+  },
+  {
+   "id": "steam-roast",
+   "nameEn": "Steam roast chicken (quarter)",
+   "nameUrdu": "Steam roast",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 400,
+   "protein": 40,
+   "carbs": 4,
+   "fat": 25,
+   "category": "bbq"
+  },
+  {
+   "id": "beef-nihari-bowl",
+   "nameEn": "Beef nihari (bowl, no naan)",
+   "nameUrdu": "Nihari bowl",
+   "aliases": [
+    "nalli nihari"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 520,
+   "protein": 30,
+   "carbs": 10,
+   "fat": 40,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-haleem",
+   "nameEn": "Chicken haleem",
+   "nameUrdu": "Chicken haleem",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 380,
+   "protein": 24,
+   "carbs": 34,
+   "fat": 16,
+   "category": "curry"
+  },
+  {
+   "id": "mutton-paye",
+   "nameEn": "Mutton paye",
+   "nameUrdu": "Bakray ke paye",
+   "aliases": [
+    "trotters"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 450,
+   "protein": 28,
+   "carbs": 6,
+   "fat": 35,
+   "category": "curry"
+  },
+  {
+   "id": "kata-kat",
+   "nameEn": "Takatak / kata kat",
+   "nameUrdu": "Kata kat",
+   "aliases": [
+    "tak a tak"
+   ],
+   "unit": "plate",
+   "grams": 250,
+   "kcal": 520,
+   "protein": 35,
+   "carbs": 6,
+   "fat": 40,
+   "category": "curry"
+  },
+  {
+   "id": "magaz",
+   "nameEn": "Magaz masala",
+   "nameUrdu": "Magaz",
+   "aliases": [
+    "brain masala"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 380,
+   "protein": 18,
+   "carbs": 6,
+   "fat": 32,
+   "category": "curry"
+  },
+  {
+   "id": "kaleji",
+   "nameEn": "Kaleji (liver) masala",
+   "nameUrdu": "Kaleji",
+   "aliases": [
+    "liver fry"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 330,
+   "protein": 32,
+   "carbs": 8,
+   "fat": 19,
+   "category": "curry"
+  },
+  {
+   "id": "gurday-kapooray",
+   "nameEn": "Gurda kapura",
+   "nameUrdu": "Gurday kapooray",
+   "aliases": [
+    "kidney masala"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 360,
+   "protein": 30,
+   "carbs": 6,
+   "fat": 24,
+   "category": "curry"
+  },
+  {
+   "id": "dum-pukht",
+   "nameEn": "Dum pukht (mutton)",
+   "nameUrdu": "Dum pukht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 520,
+   "protein": 35,
+   "carbs": 4,
+   "fat": 41,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-korma-shadi",
+   "nameEn": "Shadi wala qorma (with oil)",
+   "nameUrdu": "Shadi qorma",
+   "aliases": [
+    "wedding qorma"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 620,
+   "protein": 30,
+   "carbs": 12,
+   "fat": 50,
+   "category": "curry"
+  },
+  {
+   "id": "aloo-anday",
+   "nameEn": "Aloo anday (egg potato curry)",
+   "nameUrdu": "Aloo anday",
+   "aliases": [
+    "egg aloo"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 330,
+   "protein": 13,
+   "carbs": 22,
+   "fat": 21,
+   "category": "curry"
+  },
+  {
+   "id": "anda-tamatar",
+   "nameEn": "Anda tamatar",
+   "nameUrdu": "Anda tamatar",
+   "aliases": [
+    "egg tomato"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 260,
+   "protein": 13,
+   "carbs": 9,
+   "fat": 19,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-shorba",
+   "nameEn": "Chicken shorba (thin curry)",
+   "nameUrdu": "Shorba",
+   "aliases": [
+    "chicken shorba"
+   ],
+   "unit": "bowl",
+   "grams": 300,
+   "kcal": 300,
+   "protein": 26,
+   "carbs": 10,
+   "fat": 17,
+   "category": "curry"
+  },
+  {
+   "id": "aloo-palak-gosht",
+   "nameEn": "Aloo palak gosht",
+   "nameUrdu": "Aloo palak gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 380,
+   "protein": 24,
+   "carbs": 16,
+   "fat": 24,
+   "category": "curry"
+  },
+  {
+   "id": "shaljam-gosht",
+   "nameEn": "Shaljam gosht",
+   "nameUrdu": "Shaljam gosht",
+   "aliases": [
+    "turnip meat"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 360,
+   "protein": 24,
+   "carbs": 12,
+   "fat": 24,
+   "category": "curry"
+  },
+  {
+   "id": "arvi-gosht",
+   "nameEn": "Arvi gosht",
+   "nameUrdu": "Arvi gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 400,
+   "protein": 24,
+   "carbs": 22,
+   "fat": 24,
+   "category": "curry"
+  },
+  {
+   "id": "gobhi-gosht",
+   "nameEn": "Gobhi gosht",
+   "nameUrdu": "Gobhi gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 360,
+   "protein": 24,
+   "carbs": 12,
+   "fat": 24,
+   "category": "curry"
+  },
+  {
+   "id": "matar-gosht",
+   "nameEn": "Matar gosht",
+   "nameUrdu": "Matar gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 390,
+   "protein": 26,
+   "carbs": 16,
+   "fat": 25,
+   "category": "curry"
+  },
+  {
+   "id": "lauki-gosht",
+   "nameEn": "Lauki / kaddu gosht",
+   "nameUrdu": "Kaddu gosht",
+   "aliases": [
+    "ghiya gosht"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 330,
+   "protein": 23,
+   "carbs": 10,
+   "fat": 22,
+   "category": "curry"
+  },
+  {
+   "id": "chanay-gosht",
+   "nameEn": "Chanay gosht",
+   "nameUrdu": "Chanay gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 450,
+   "protein": 28,
+   "carbs": 26,
+   "fat": 26,
+   "category": "curry"
+  },
+  {
+   "id": "dal-chicken",
+   "nameEn": "Daal chicken",
+   "nameUrdu": "Daal murgh",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 380,
+   "protein": 28,
+   "carbs": 24,
+   "fat": 19,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-bhuna",
+   "nameEn": "Bhuna chicken",
+   "nameUrdu": "Bhuna murgh",
+   "aliases": [
+    "bhuna gosht chicken"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 450,
+   "protein": 32,
+   "carbs": 8,
+   "fat": 32,
+   "category": "curry"
+  },
+  {
+   "id": "bhuna-gosht",
+   "nameEn": "Bhuna gosht (beef/mutton)",
+   "nameUrdu": "Bhuna gosht",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 520,
+   "protein": 34,
+   "carbs": 8,
+   "fat": 39,
+   "category": "curry"
+  },
+  {
+   "id": "kunna",
+   "nameEn": "Kunna gosht",
+   "nameUrdu": "Kunna",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 500,
+   "protein": 32,
+   "carbs": 8,
+   "fat": 38,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-makhni",
+   "nameEn": "Chicken makhni handi",
+   "nameUrdu": "Makhni handi",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 520,
+   "protein": 30,
+   "carbs": 12,
+   "fat": 39,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-reshmi-handi",
+   "nameEn": "Reshmi handi",
+   "nameUrdu": "Reshmi handi",
+   "aliases": [
+    "chicken reshmi"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 500,
+   "protein": 30,
+   "carbs": 10,
+   "fat": 38,
+   "category": "curry"
+  },
+  {
+   "id": "prawn-karahi",
+   "nameEn": "Prawn karahi",
+   "nameUrdu": "Jhinga karahi",
+   "aliases": [
+    "prawn masala"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 350,
+   "protein": 30,
+   "carbs": 10,
+   "fat": 21,
+   "category": "curry"
+  },
+  {
+   "id": "fish-karahi",
+   "nameEn": "Fish karahi",
+   "nameUrdu": "Machli karahi",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 400,
+   "protein": 32,
+   "carbs": 8,
+   "fat": 27,
+   "category": "curry"
+  },
+  {
+   "id": "kofta-chicken",
+   "nameEn": "Chicken kofta curry",
+   "nameUrdu": "Chicken koftay",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 400,
+   "protein": 26,
+   "carbs": 14,
+   "fat": 27,
+   "category": "curry"
+  },
+  {
+   "id": "nargisi-kofta",
+   "nameEn": "Nargisi kofta (1)",
+   "nameUrdu": "Nargisi kofta",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 130,
+   "kcal": 300,
+   "protein": 18,
+   "carbs": 6,
+   "fat": 23,
+   "category": "curry"
+  },
+  {
+   "id": "dopiaza",
+   "nameEn": "Gosht dopiaza",
+   "nameUrdu": "Dopiaza",
+   "aliases": [
+    "do pyaza"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 470,
+   "protein": 30,
+   "carbs": 14,
+   "fat": 33,
+   "category": "curry"
+  },
+  {
+   "id": "paneer-karahi",
+   "nameEn": "Paneer karahi",
+   "nameUrdu": "Paneer karahi",
+   "aliases": [
+    "karahi paneer"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 480,
+   "protein": 20,
+   "carbs": 14,
+   "fat": 38,
+   "category": "curry"
+  },
+  {
+   "id": "matar-paneer",
+   "nameEn": "Matar paneer",
+   "nameUrdu": "Matar paneer",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 400,
+   "protein": 17,
+   "carbs": 18,
+   "fat": 29,
+   "category": "curry"
+  },
+  {
+   "id": "shahi-paneer",
+   "nameEn": "Shahi paneer",
+   "nameUrdu": "Shahi paneer",
+   "aliases": [
+    "paneer butter masala"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 500,
+   "protein": 18,
+   "carbs": 16,
+   "fat": 41,
+   "category": "curry"
+  },
+  {
+   "id": "chicken-curry-light",
+   "nameEn": "Chicken curry (home, less oil)",
+   "nameUrdu": "Halka salan",
+   "aliases": [
+    "light chicken curry",
+    "kam tail salan"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 280,
+   "protein": 28,
+   "carbs": 8,
+   "fat": 15,
+   "category": "curry"
+  },
+  {
+   "id": "salan-shorba-only",
+   "nameEn": "Salan shorba (gravy only)",
+   "nameUrdu": "Shorba",
+   "aliases": [
+    "gravy"
+   ],
+   "unit": "bowl",
+   "grams": 150,
+   "kcal": 160,
+   "protein": 2,
+   "carbs": 7,
+   "fat": 14,
+   "category": "curry"
+  },
+  {
+   "id": "reshmi-kebab",
+   "nameEn": "Reshmi kebab (2 sticks)",
+   "nameUrdu": "Reshmi kabab",
+   "aliases": [
+    "chicken reshmi kebab"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 340,
+   "protein": 30,
+   "carbs": 4,
+   "fat": 22,
+   "category": "bbq"
+  },
+  {
+   "id": "chicken-seekh",
+   "nameEn": "Chicken seekh kebab",
+   "nameUrdu": "Chicken seekh",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 120,
+   "protein": 11,
+   "carbs": 2,
+   "fat": 7.5,
+   "category": "bbq"
+  },
+  {
+   "id": "gola-kebab",
+   "nameEn": "Gola kebab (4)",
+   "nameUrdu": "Gola kabab",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 420,
+   "protein": 27,
+   "carbs": 4,
+   "fat": 33,
+   "category": "bbq"
+  },
+  {
+   "id": "bihari-boti",
+   "nameEn": "Bihari boti",
+   "nameUrdu": "Bihari boti",
+   "aliases": [
+    "bihari kabab"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 380,
+   "protein": 30,
+   "carbs": 4,
+   "fat": 27,
+   "category": "bbq"
+  },
+  {
+   "id": "tikka-boti-beef",
+   "nameEn": "Beef tikka boti",
+   "nameUrdu": "Beef boti",
+   "aliases": [
+    "beef tikka"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 330,
+   "protein": 34,
+   "carbs": 3,
+   "fat": 20,
+   "category": "bbq"
+  },
+  {
+   "id": "mutton-chops",
+   "nameEn": "Mutton chops (2)",
+   "nameUrdu": "Champ",
+   "aliases": [
+    "lamb chops",
+    "chaanp"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 420,
+   "protein": 30,
+   "carbs": 2,
+   "fat": 33,
+   "category": "bbq"
+  },
+  {
+   "id": "chicken-wings-bbq",
+   "nameEn": "BBQ chicken wings (6)",
+   "nameUrdu": "Wings",
+   "aliases": [
+    "hot wings"
+   ],
+   "unit": "serving",
+   "grams": 180,
+   "kcal": 440,
+   "protein": 36,
+   "carbs": 8,
+   "fat": 29,
+   "category": "bbq"
+  },
+  {
+   "id": "charsi-tikka",
+   "nameEn": "Charsi tikka (mutton)",
+   "nameUrdu": "Charsi tikka",
+   "aliases": [
+    "namak mandi tikka"
+   ],
+   "unit": "serving",
+   "grams": 200,
+   "kcal": 520,
+   "protein": 38,
+   "carbs": 0,
+   "fat": 41,
+   "category": "bbq"
+  },
+  {
+   "id": "lamb-sajji",
+   "nameEn": "Chicken sajji (half)",
+   "nameUrdu": "Sajji",
+   "aliases": [
+    "sajji"
+   ],
+   "unit": "serving",
+   "grams": 400,
+   "kcal": 760,
+   "protein": 70,
+   "carbs": 30,
+   "fat": 40,
+   "category": "bbq"
+  },
+  {
+   "id": "fish-tikka",
+   "nameEn": "Fish tikka",
+   "nameUrdu": "Fish tikka",
+   "aliases": [
+    "grilled fish tikka"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 250,
+   "protein": 30,
+   "carbs": 4,
+   "fat": 12,
+   "category": "bbq"
+  },
+  {
+   "id": "chapli-kebab-peshawari",
+   "nameEn": "Peshawari chapli kebab (large)",
+   "nameUrdu": "Peshawari chapli",
+   "aliases": [
+    "big chapli"
+   ],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 480,
+   "protein": 24,
+   "carbs": 10,
+   "fat": 38,
+   "category": "bbq"
+  },
+  {
+   "id": "shami-kebab-fried",
+   "nameEn": "Shami kebab (fried in oil)",
+   "nameUrdu": "Talay shami",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 160,
+   "protein": 9,
+   "carbs": 6,
+   "fat": 11,
+   "category": "bbq"
+  },
+  {
+   "id": "lahori-fish",
+   "nameEn": "Lahori fish fry",
+   "nameUrdu": "Lahori machli",
+   "aliases": [
+    "fish fry"
+   ],
+   "unit": "serving",
+   "grams": 200,
+   "kcal": 480,
+   "protein": 34,
+   "carbs": 18,
+   "fat": 30,
+   "category": "bbq"
+  },
+  {
+   "id": "prawns-tempura",
+   "nameEn": "Prawn tempura (6)",
+   "nameUrdu": "Prawn tempura",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 370,
+   "protein": 18,
+   "carbs": 28,
+   "fat": 21,
+   "category": "fastfood"
+  },
+  {
+   "id": "chicken-tikka-boneless",
+   "nameEn": "Chicken tikka boneless (8 pieces)",
+   "nameUrdu": "Boneless tikka",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 200,
+   "kcal": 340,
+   "protein": 44,
+   "carbs": 4,
+   "fat": 16,
+   "category": "bbq"
+  },
+  {
+   "id": "grilled-chicken-steak",
+   "nameEn": "Grilled chicken steak with sauce",
+   "nameUrdu": "Chicken steak",
+   "aliases": [
+    "steak"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 520,
+   "protein": 45,
+   "carbs": 18,
+   "fat": 30,
+   "category": "fastfood"
+  },
+  {
+   "id": "daal-arhar",
+   "nameEn": "Arhar daal",
+   "nameUrdu": "Arhar daal",
+   "aliases": [
+    "toor daal"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 280,
+   "protein": 13,
+   "carbs": 34,
+   "fat": 10,
+   "category": "daal"
+  },
+  {
+   "id": "daal-palak",
+   "nameEn": "Daal palak",
+   "nameUrdu": "Daal palak",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 260,
+   "protein": 13,
+   "carbs": 30,
+   "fat": 10,
+   "category": "daal"
+  },
+  {
+   "id": "daal-tadka-heavy",
+   "nameEn": "Daal with tarka (shop style)",
+   "nameUrdu": "Tarkay wali daal",
+   "aliases": [
+    "daal fry"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 360,
+   "protein": 13,
+   "carbs": 32,
+   "fat": 20,
+   "category": "daal"
+  },
+  {
+   "id": "daal-light",
+   "nameEn": "Daal (home, little oil)",
+   "nameUrdu": "Halki daal",
+   "aliases": [
+    "light daal"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 200,
+   "protein": 12,
+   "carbs": 30,
+   "fat": 4,
+   "category": "daal"
+  },
+  {
+   "id": "white-cholay",
+   "nameEn": "Safaid chanay (dry)",
+   "nameUrdu": "Safaid chanay",
+   "aliases": [
+    "kabuli chana"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 300,
+   "protein": 13,
+   "carbs": 40,
+   "fat": 10,
+   "category": "daal"
+  },
+  {
+   "id": "kala-chana",
+   "nameEn": "Kalay chanay",
+   "nameUrdu": "Kalay chanay",
+   "aliases": [
+    "black chickpeas"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 280,
+   "protein": 14,
+   "carbs": 40,
+   "fat": 7,
+   "category": "daal"
+  },
+  {
+   "id": "moong-sprouts",
+   "nameEn": "Moong sprouts (boiled)",
+   "nameUrdu": "Moong sprouts",
+   "aliases": [
+    "sprouts"
+   ],
+   "unit": "bowl",
+   "grams": 100,
+   "kcal": 30,
+   "protein": 3,
+   "carbs": 6,
+   "fat": 0.2,
+   "category": "sabzi"
+  },
+  {
+   "id": "lobia-dry",
+   "nameEn": "Lobia (dry masala)",
+   "nameUrdu": "Lobia masala",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 290,
+   "protein": 14,
+   "carbs": 38,
+   "fat": 9,
+   "category": "daal"
+  },
+  {
+   "id": "aloo-bhujia-dry",
+   "nameEn": "Aloo ki bhujia (dry)",
+   "nameUrdu": "Aloo bhujia",
+   "aliases": [
+    "fries aloo"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 300,
+   "protein": 4,
+   "carbs": 34,
+   "fat": 17,
+   "category": "sabzi"
+  },
+  {
+   "id": "aloo-baingan",
+   "nameEn": "Aloo baingan",
+   "nameUrdu": "Aloo baingan",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 220,
+   "protein": 3,
+   "carbs": 22,
+   "fat": 14,
+   "category": "sabzi"
+  },
+  {
+   "id": "baingan-fry",
+   "nameEn": "Fried baingan slices",
+   "nameUrdu": "Baingan fry",
+   "aliases": [
+    "talay baingan"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 260,
+   "protein": 2,
+   "carbs": 12,
+   "fat": 23,
+   "category": "sabzi"
+  },
+  {
+   "id": "aloo-methi",
+   "nameEn": "Aloo methi",
+   "nameUrdu": "Aloo methi",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 230,
+   "protein": 4,
+   "carbs": 26,
+   "fat": 13,
+   "category": "sabzi"
+  },
+  {
+   "id": "aloo-shimla",
+   "nameEn": "Aloo shimla mirch",
+   "nameUrdu": "Aloo capsicum",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 210,
+   "protein": 3,
+   "carbs": 22,
+   "fat": 12,
+   "category": "sabzi"
+  },
+  {
+   "id": "matar-sabzi",
+   "nameEn": "Matar (peas) sabzi",
+   "nameUrdu": "Matar",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 200,
+   "protein": 8,
+   "carbs": 22,
+   "fat": 9,
+   "category": "sabzi"
+  },
+  {
+   "id": "gobhi",
+   "nameEn": "Gobhi (cauliflower) sabzi",
+   "nameUrdu": "Phool gobhi",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 170,
+   "protein": 4,
+   "carbs": 12,
+   "fat": 12,
+   "category": "sabzi"
+  },
+  {
+   "id": "band-gobhi",
+   "nameEn": "Band gobhi (cabbage)",
+   "nameUrdu": "Band gobhi",
+   "aliases": [
+    "cabbage"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 150,
+   "protein": 3,
+   "carbs": 12,
+   "fat": 10,
+   "category": "sabzi"
+  },
+  {
+   "id": "arvi",
+   "nameEn": "Arvi (dry)",
+   "nameUrdu": "Arvi",
+   "aliases": [
+    "taro"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 250,
+   "protein": 3,
+   "carbs": 30,
+   "fat": 13,
+   "category": "sabzi"
+  },
+  {
+   "id": "shaljam",
+   "nameEn": "Shaljam",
+   "nameUrdu": "Shaljam",
+   "aliases": [
+    "turnip"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 140,
+   "protein": 2,
+   "carbs": 12,
+   "fat": 9,
+   "category": "sabzi"
+  },
+  {
+   "id": "kaddu",
+   "nameEn": "Kaddu (pumpkin) sabzi",
+   "nameUrdu": "Kaddu",
+   "aliases": [
+    "meetha kaddu"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 170,
+   "protein": 2,
+   "carbs": 18,
+   "fat": 10,
+   "category": "sabzi"
+  },
+  {
+   "id": "mushroom-sabzi",
+   "nameEn": "Mushroom sabzi",
+   "nameUrdu": "Mushroom",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 160,
+   "protein": 6,
+   "carbs": 9,
+   "fat": 11,
+   "category": "sabzi"
+  },
+  {
+   "id": "mix-veg-light",
+   "nameEn": "Mixed vegetables (steamed / little oil)",
+   "nameUrdu": "Ublay sabziyan",
+   "aliases": [
+    "steamed vegetables"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 100,
+   "protein": 4,
+   "carbs": 15,
+   "fat": 3,
+   "category": "sabzi"
+  },
+  {
+   "id": "salad-russian",
+   "nameEn": "Russian salad",
+   "nameUrdu": "Russian salad",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 150,
+   "kcal": 280,
+   "protein": 4,
+   "carbs": 16,
+   "fat": 22,
+   "category": "sabzi"
+  },
+  {
+   "id": "salad-kachumber",
+   "nameEn": "Kachumber salad",
+   "nameUrdu": "Kachumber",
+   "aliases": [
+    "salad"
+   ],
+   "unit": "bowl",
+   "grams": 150,
+   "kcal": 40,
+   "protein": 1.5,
+   "carbs": 8,
+   "fat": 0.3,
+   "category": "sabzi"
+  },
+  {
+   "id": "salad-chicken",
+   "nameEn": "Chicken salad (no dressing)",
+   "nameUrdu": "Chicken salad",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 220,
+   "protein": 30,
+   "carbs": 10,
+   "fat": 7,
+   "category": "protein"
+  },
+  {
+   "id": "salad-caesar",
+   "nameEn": "Caesar salad with chicken",
+   "nameUrdu": "Caesar salad",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 300,
+   "kcal": 450,
+   "protein": 32,
+   "carbs": 16,
+   "fat": 29,
+   "category": "fastfood"
+  },
+  {
+   "id": "corn-boiled",
+   "nameEn": "Boiled corn (bhutta)",
+   "nameUrdu": "Bhutta",
+   "aliases": [
+    "challi",
+    "corn on the cob"
+   ],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 140,
+   "protein": 5,
+   "carbs": 30,
+   "fat": 2,
+   "category": "snack"
+  },
+  {
+   "id": "corn-cup",
+   "nameEn": "Corn cup (butter, masala)",
+   "nameUrdu": "Corn cup",
+   "aliases": [
+    "sweet corn cup"
+   ],
+   "unit": "cup",
+   "grams": 150,
+   "kcal": 220,
+   "protein": 5,
+   "carbs": 30,
+   "fat": 9,
+   "category": "snack"
+  },
+  {
+   "id": "cucumber",
+   "nameEn": "Cucumber",
+   "nameUrdu": "Kheera",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 30,
+   "protein": 1.3,
+   "carbs": 7,
+   "fat": 0.2,
+   "category": "sabzi"
+  },
+  {
+   "id": "tomato",
+   "nameEn": "Tomato",
+   "nameUrdu": "Tamatar",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 22,
+   "protein": 1,
+   "carbs": 5,
+   "fat": 0.2,
+   "category": "sabzi"
+  },
+  {
+   "id": "carrot",
+   "nameEn": "Carrot",
+   "nameUrdu": "Gajar",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 30,
+   "protein": 0.7,
+   "carbs": 7,
+   "fat": 0.2,
+   "category": "sabzi"
+  },
+  {
+   "id": "onion-raw",
+   "nameEn": "Onion (raw)",
+   "nameUrdu": "Piyaz",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 100,
+   "kcal": 40,
+   "protein": 1,
+   "carbs": 9,
+   "fat": 0.1,
+   "category": "sabzi"
+  },
+  {
+   "id": "mooli",
+   "nameEn": "Radish",
+   "nameUrdu": "Mooli",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 25,
+   "protein": 1,
+   "carbs": 5,
+   "fat": 0.2,
+   "category": "sabzi"
+  },
+  {
+   "id": "potato-boiled",
+   "nameEn": "Boiled potato",
+   "nameUrdu": "Ubla aloo",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 130,
+   "protein": 3,
+   "carbs": 30,
+   "fat": 0.2,
+   "category": "sabzi"
+  },
+  {
+   "id": "sweet-potato",
+   "nameEn": "Sweet potato (shakarkandi)",
+   "nameUrdu": "Shakarkandi",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 130,
+   "protein": 2.4,
+   "carbs": 30,
+   "fat": 0.2,
+   "category": "snack"
+  },
+  {
+   "id": "chicken-breast-raw-100",
+   "nameEn": "Chicken breast (100 g cooked)",
+   "nameUrdu": "Chicken breast",
+   "aliases": [
+    "boneless chicken"
+   ],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 165,
+   "protein": 31,
+   "carbs": 0,
+   "fat": 3.6,
+   "category": "protein"
+  },
+  {
+   "id": "chicken-boiled",
+   "nameEn": "Boiled chicken (100 g)",
+   "nameUrdu": "Ubla chicken",
+   "aliases": [
+    "shredded chicken"
+   ],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 165,
+   "protein": 31,
+   "carbs": 0,
+   "fat": 3.6,
+   "category": "protein"
+  },
+  {
+   "id": "beef-mince-cooked",
+   "nameEn": "Beef mince, cooked (100 g)",
+   "nameUrdu": "Qeema (plain)",
+   "aliases": [],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 250,
+   "protein": 26,
+   "carbs": 0,
+   "fat": 16,
+   "category": "protein"
+  },
+  {
+   "id": "mutton-boiled",
+   "nameEn": "Mutton (100 g cooked)",
+   "nameUrdu": "Gosht",
+   "aliases": [],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 260,
+   "protein": 25,
+   "carbs": 0,
+   "fat": 17,
+   "category": "protein"
+  },
+  {
+   "id": "fish-fried-plain",
+   "nameEn": "Fish (100 g pan fried)",
+   "nameUrdu": "Machli",
+   "aliases": [],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 200,
+   "protein": 22,
+   "carbs": 2,
+   "fat": 11,
+   "category": "protein"
+  },
+  {
+   "id": "prawns-cooked",
+   "nameEn": "Prawns (100 g cooked)",
+   "nameUrdu": "Jhinga",
+   "aliases": [
+    "shrimp"
+   ],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 120,
+   "protein": 24,
+   "carbs": 1,
+   "fat": 2,
+   "category": "protein"
+  },
+  {
+   "id": "egg-whole-raw",
+   "nameEn": "Egg (whole)",
+   "nameUrdu": "Anda",
+   "aliases": [
+    "egg"
+   ],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 72,
+   "protein": 6.3,
+   "carbs": 0.4,
+   "fat": 5,
+   "category": "protein"
+  },
+  {
+   "id": "desi-egg",
+   "nameEn": "Desi egg",
+   "nameUrdu": "Desi anda",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 58,
+   "protein": 5,
+   "carbs": 0.3,
+   "fat": 4,
+   "category": "protein"
+  },
+  {
+   "id": "tofu",
+   "nameEn": "Tofu",
+   "nameUrdu": "Tofu",
+   "aliases": [],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 80,
+   "protein": 8,
+   "carbs": 2,
+   "fat": 4.5,
+   "category": "protein"
+  },
+  {
+   "id": "soya-chunks",
+   "nameEn": "Soya chunks (cooked)",
+   "nameUrdu": "Soya",
+   "aliases": [
+    "nutrela"
+   ],
+   "unit": "cup",
+   "grams": 100,
+   "kcal": 130,
+   "protein": 15,
+   "carbs": 9,
+   "fat": 0.5,
+   "category": "protein"
+  },
+  {
+   "id": "chicken-nuggets-home",
+   "nameEn": "Chicken nuggets (6, frozen, fried)",
+   "nameUrdu": "Nuggets",
+   "aliases": [
+    "nuggets"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 270,
+   "protein": 14,
+   "carbs": 15,
+   "fat": 17,
+   "category": "packaged"
+  },
+  {
+   "id": "crispy-fillet-frozen",
+   "nameEn": "Frozen crispy chicken fillet (1, fried)",
+   "nameUrdu": "Crispy fillet",
+   "aliases": [
+    "chicken fillet"
+   ],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 230,
+   "protein": 15,
+   "carbs": 15,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "chicken-sausage",
+   "nameEn": "Chicken sausage / hot dog",
+   "nameUrdu": "Sausage",
+   "aliases": [
+    "hot dog sausage"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 90,
+   "protein": 5,
+   "carbs": 3,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "chicken-salami",
+   "nameEn": "Chicken salami (2 slices)",
+   "nameUrdu": "Salami",
+   "aliases": [
+    "luncheon"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 60,
+   "protein": 5,
+   "carbs": 1.5,
+   "fat": 4,
+   "category": "packaged"
+  },
+  {
+   "id": "tuna-oil",
+   "nameEn": "Tuna (canned in oil)",
+   "nameUrdu": "Tuna",
+   "aliases": [],
+   "unit": "can",
+   "grams": 140,
+   "kcal": 280,
+   "protein": 34,
+   "carbs": 0,
+   "fat": 16,
+   "category": "protein"
+  },
+  {
+   "id": "sardines",
+   "nameEn": "Sardines (canned)",
+   "nameUrdu": "Sardine",
+   "aliases": [],
+   "unit": "can",
+   "grams": 100,
+   "kcal": 210,
+   "protein": 24,
+   "carbs": 0,
+   "fat": 12,
+   "category": "protein"
+  },
+  {
+   "id": "milk-packet",
+   "nameEn": "Packet milk (UHT)",
+   "nameUrdu": "Doodh dabba",
+   "aliases": [
+    "uht milk",
+    "tetra pack milk"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 155,
+   "protein": 8,
+   "carbs": 12,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "milk-skimmed",
+   "nameEn": "Skimmed milk",
+   "nameUrdu": "Skimmed doodh",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 85,
+   "protein": 8.5,
+   "carbs": 12,
+   "fat": 0.3,
+   "category": "dairy"
+  },
+  {
+   "id": "milk-buffalo",
+   "nameEn": "Buffalo milk (khula doodh)",
+   "nameUrdu": "Bhains ka doodh",
+   "aliases": [
+    "khula doodh",
+    "fresh milk"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 240,
+   "protein": 9.5,
+   "carbs": 13,
+   "fat": 17,
+   "category": "dairy"
+  },
+  {
+   "id": "tea-whitener",
+   "nameEn": "Tea whitener (2 tsp)",
+   "nameUrdu": "Tea whitener",
+   "aliases": [
+    "whitener"
+   ],
+   "unit": "serving",
+   "grams": 8,
+   "kcal": 45,
+   "protein": 0.5,
+   "carbs": 4.5,
+   "fat": 2.5,
+   "category": "dairy"
+  },
+  {
+   "id": "dahi-low-fat",
+   "nameEn": "Low-fat yogurt",
+   "nameUrdu": "Low fat dahi",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 110,
+   "protein": 9,
+   "carbs": 13,
+   "fat": 3,
+   "category": "dairy"
+  },
+  {
+   "id": "greek-yogurt",
+   "nameEn": "Greek yogurt",
+   "nameUrdu": "Greek yogurt",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 170,
+   "kcal": 170,
+   "protein": 17,
+   "carbs": 7,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "fruit-yogurt",
+   "nameEn": "Fruit yogurt cup",
+   "nameUrdu": "Fruit dahi",
+   "aliases": [
+    "flavoured yogurt"
+   ],
+   "unit": "cup",
+   "grams": 100,
+   "kcal": 100,
+   "protein": 3.5,
+   "carbs": 15,
+   "fat": 3,
+   "category": "dairy"
+  },
+  {
+   "id": "cheese-cheddar",
+   "nameEn": "Cheddar cheese",
+   "nameUrdu": "Cheese",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 20,
+   "kcal": 80,
+   "protein": 5,
+   "carbs": 0.3,
+   "fat": 6.6,
+   "category": "dairy"
+  },
+  {
+   "id": "cheese-mozzarella",
+   "nameEn": "Mozzarella cheese",
+   "nameUrdu": "Mozzarella",
+   "aliases": [
+    "pizza cheese"
+   ],
+   "unit": "30 g",
+   "grams": 30,
+   "kcal": 85,
+   "protein": 6.5,
+   "carbs": 0.7,
+   "fat": 6.3,
+   "category": "dairy"
+  },
+  {
+   "id": "cream-cheese",
+   "nameEn": "Cream cheese",
+   "nameUrdu": "Cream cheese",
+   "aliases": [],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 50,
+   "protein": 1,
+   "carbs": 0.6,
+   "fat": 5,
+   "category": "dairy"
+  },
+  {
+   "id": "khoya",
+   "nameEn": "Khoya",
+   "nameUrdu": "Khoya",
+   "aliases": [
+    "mawa"
+   ],
+   "unit": "tbsp",
+   "grams": 20,
+   "kcal": 85,
+   "protein": 3.5,
+   "carbs": 5,
+   "fat": 5.5,
+   "category": "dairy"
+  },
+  {
+   "id": "makhan-desi",
+   "nameEn": "Desi makhan (white butter)",
+   "nameUrdu": "Desi makhan",
+   "aliases": [
+    "white butter"
+   ],
+   "unit": "tbsp",
+   "grams": 14,
+   "kcal": 100,
+   "protein": 0.1,
+   "carbs": 0,
+   "fat": 11,
+   "category": "fat"
+  },
+  {
+   "id": "malai",
+   "nameEn": "Malai (milk cream)",
+   "nameUrdu": "Malai",
+   "aliases": [
+    "balai"
+   ],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 75,
+   "protein": 0.4,
+   "carbs": 0.5,
+   "fat": 8,
+   "category": "fat"
+  },
+  {
+   "id": "chaach",
+   "nameEn": "Chaach / buttermilk",
+   "nameUrdu": "Chaach",
+   "aliases": [
+    "lassi patli",
+    "buttermilk"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 90,
+   "protein": 5,
+   "carbs": 9,
+   "fat": 3.5,
+   "category": "drink"
+  },
+  {
+   "id": "olive-oil",
+   "nameEn": "Olive oil",
+   "nameUrdu": "Zaitoon ka tail",
+   "aliases": [],
+   "unit": "tbsp",
+   "grams": 14,
+   "kcal": 120,
+   "protein": 0,
+   "carbs": 0,
+   "fat": 14,
+   "category": "fat"
+  },
+  {
+   "id": "margarine",
+   "nameEn": "Margarine",
+   "nameUrdu": "Margarine",
+   "aliases": [
+    "blue band"
+   ],
+   "unit": "tbsp",
+   "grams": 14,
+   "kcal": 100,
+   "protein": 0,
+   "carbs": 0,
+   "fat": 11,
+   "category": "fat"
+  },
+  {
+   "id": "chutney-green",
+   "nameEn": "Green chutney",
+   "nameUrdu": "Hari chutney",
+   "aliases": [
+    "podina chutney"
+   ],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 10,
+   "protein": 0.4,
+   "carbs": 2,
+   "fat": 0.1,
+   "category": "condiment"
+  },
+  {
+   "id": "chutney-dahi",
+   "nameEn": "Dahi chutney / raita dip",
+   "nameUrdu": "Dahi chutney",
+   "aliases": [],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 15,
+   "protein": 0.7,
+   "carbs": 1,
+   "fat": 0.8,
+   "category": "condiment"
+  },
+  {
+   "id": "garlic-mayo",
+   "nameEn": "Garlic mayo sauce",
+   "nameUrdu": "Garlic sauce",
+   "aliases": [
+    "shawarma sauce"
+   ],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 90,
+   "protein": 0.2,
+   "carbs": 1,
+   "fat": 9.5,
+   "category": "condiment"
+  },
+  {
+   "id": "chilli-sauce",
+   "nameEn": "Chilli sauce",
+   "nameUrdu": "Chilli sauce",
+   "aliases": [
+    "hot sauce"
+   ],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 15,
+   "protein": 0.2,
+   "carbs": 3.5,
+   "fat": 0,
+   "category": "condiment"
+  },
+  {
+   "id": "bbq-sauce",
+   "nameEn": "BBQ sauce",
+   "nameUrdu": "BBQ sauce",
+   "aliases": [],
+   "unit": "tbsp",
+   "grams": 17,
+   "kcal": 30,
+   "protein": 0.1,
+   "carbs": 7,
+   "fat": 0.1,
+   "category": "condiment"
+  },
+  {
+   "id": "salad-dressing",
+   "nameEn": "Salad dressing (creamy)",
+   "nameUrdu": "Dressing",
+   "aliases": [
+    "ranch"
+   ],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 70,
+   "protein": 0.2,
+   "carbs": 1,
+   "fat": 7.5,
+   "category": "condiment"
+  },
+  {
+   "id": "chaat-masala-papri",
+   "nameEn": "Papri (5 pieces)",
+   "nameUrdu": "Papri",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.5,
+   "carbs": 11,
+   "fat": 5.5,
+   "category": "snack"
+  },
+  {
+   "id": "sev",
+   "nameEn": "Sev / bhujia (2 tbsp)",
+   "nameUrdu": "Sev",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 15,
+   "kcal": 80,
+   "protein": 2,
+   "carbs": 7,
+   "fat": 5,
+   "category": "snack"
+  },
+  {
+   "id": "gur",
+   "nameEn": "Gur (jaggery)",
+   "nameUrdu": "Gur",
+   "aliases": [
+    "jaggery"
+   ],
+   "unit": "piece",
+   "grams": 15,
+   "kcal": 57,
+   "protein": 0,
+   "carbs": 14.5,
+   "fat": 0,
+   "category": "sweet"
+  },
+  {
+   "id": "shakkar",
+   "nameEn": "Shakkar (brown sugar)",
+   "nameUrdu": "Shakkar",
+   "aliases": [],
+   "unit": "tsp",
+   "grams": 5,
+   "kcal": 19,
+   "protein": 0,
+   "carbs": 5,
+   "fat": 0,
+   "category": "sweet"
+  },
+  {
+   "id": "sugar-tsp",
+   "nameEn": "Sugar (1 tsp)",
+   "nameUrdu": "Cheeni",
+   "aliases": [
+    "cheeni"
+   ],
+   "unit": "tsp",
+   "grams": 4,
+   "kcal": 16,
+   "protein": 0,
+   "carbs": 4,
+   "fat": 0,
+   "category": "sweet"
+  },
+  {
+   "id": "chai-karak",
+   "nameEn": "Karak chai (cup, sugar)",
+   "nameUrdu": "Karak chai",
+   "aliases": [
+    "dhaba chai",
+    "kadak chai"
+   ],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 140,
+   "protein": 4,
+   "carbs": 18,
+   "fat": 6,
+   "category": "drink"
+  },
+  {
+   "id": "chai-2-sugar",
+   "nameEn": "Chai (2 tsp sugar)",
+   "nameUrdu": "Do cheeni wali chai",
+   "aliases": [
+    "chai 2 sugar"
+   ],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 110,
+   "protein": 3.5,
+   "carbs": 13,
+   "fat": 5,
+   "category": "drink"
+  },
+  {
+   "id": "chai-mug",
+   "nameEn": "Chai (large mug, sugar)",
+   "nameUrdu": "Mug chai",
+   "aliases": [],
+   "unit": "mug",
+   "grams": 300,
+   "kcal": 160,
+   "protein": 5.5,
+   "carbs": 19,
+   "fat": 7.5,
+   "category": "drink"
+  },
+  {
+   "id": "kashmiri-chai",
+   "nameEn": "Kashmiri chai (pink tea)",
+   "nameUrdu": "Kashmiri chai",
+   "aliases": [
+    "pink tea",
+    "noon chai"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 230,
+   "protein": 7,
+   "carbs": 22,
+   "fat": 13,
+   "category": "drink"
+  },
+  {
+   "id": "doodh-pati-sweetener",
+   "nameEn": "Doodh patti (sweetener)",
+   "nameUrdu": "Sweetener chai",
+   "aliases": [
+    "chai canderel"
+   ],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 80,
+   "protein": 4,
+   "carbs": 6,
+   "fat": 4.5,
+   "category": "drink"
+  },
+  {
+   "id": "green-tea-honey",
+   "nameEn": "Green tea with honey",
+   "nameUrdu": "Qehwa shehad",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 35,
+   "protein": 0,
+   "carbs": 9,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "coffee-milk",
+   "nameEn": "Coffee with milk and sugar",
+   "nameUrdu": "Doodh wali coffee",
+   "aliases": [
+    "nescafe"
+   ],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 120,
+   "protein": 4,
+   "carbs": 16,
+   "fat": 4.5,
+   "category": "drink"
+  },
+  {
+   "id": "cold-coffee",
+   "nameEn": "Cold coffee",
+   "nameUrdu": "Cold coffee",
+   "aliases": [
+    "iced coffee"
+   ],
+   "unit": "glass",
+   "grams": 300,
+   "kcal": 280,
+   "protein": 8,
+   "carbs": 38,
+   "fat": 10,
+   "category": "drink"
+  },
+  {
+   "id": "frappe",
+   "nameEn": "Frappe / caramel latte (large)",
+   "nameUrdu": "Frappe",
+   "aliases": [
+    "frappuccino"
+   ],
+   "unit": "cup",
+   "grams": 400,
+   "kcal": 420,
+   "protein": 7,
+   "carbs": 62,
+   "fat": 16,
+   "category": "drink"
+  },
+  {
+   "id": "soft-drink-500",
+   "nameEn": "Soft drink (500 ml bottle)",
+   "nameUrdu": "Bari botal",
+   "aliases": [
+    "half litre coke",
+    "pepsi 500"
+   ],
+   "unit": "bottle",
+   "grams": 500,
+   "kcal": 210,
+   "protein": 0,
+   "carbs": 53,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "soft-drink-1-5",
+   "nameEn": "Soft drink (1 glass from 1.5 L)",
+   "nameUrdu": "Ek glass coke",
+   "aliases": [
+    "glass of pepsi"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 105,
+   "protein": 0,
+   "carbs": 27,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "energy-drink",
+   "nameEn": "Energy drink (can)",
+   "nameUrdu": "Energy drink",
+   "aliases": [
+    "monster"
+   ],
+   "unit": "can",
+   "grams": 250,
+   "kcal": 115,
+   "protein": 0,
+   "carbs": 28,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "juice-fresh-apple",
+   "nameEn": "Fresh apple juice",
+   "nameUrdu": "Saib ka juice",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 120,
+   "protein": 0.3,
+   "carbs": 29,
+   "fat": 0.3,
+   "category": "drink"
+  },
+  {
+   "id": "juice-anaar",
+   "nameEn": "Fresh pomegranate juice",
+   "nameUrdu": "Anaar ka juice",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 135,
+   "protein": 0.4,
+   "carbs": 33,
+   "fat": 0.7,
+   "category": "drink"
+  },
+  {
+   "id": "juice-mosambi",
+   "nameEn": "Mosambi juice",
+   "nameUrdu": "Mosambi juice",
+   "aliases": [
+    "sweet lime juice"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 110,
+   "protein": 1.5,
+   "carbs": 26,
+   "fat": 0.3,
+   "category": "drink"
+  },
+  {
+   "id": "lemonade",
+   "nameEn": "Lemonade / shikanjabeen",
+   "nameUrdu": "Shikanjabeen",
+   "aliases": [
+    "nimbu pani",
+    "lemon water"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 100,
+   "protein": 0.2,
+   "carbs": 25,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "lemonade-mint",
+   "nameEn": "Mint margarita (mocktail)",
+   "nameUrdu": "Mint margarita",
+   "aliases": [
+    "mint lemonade"
+   ],
+   "unit": "glass",
+   "grams": 350,
+   "kcal": 180,
+   "protein": 0.3,
+   "carbs": 45,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "sattu",
+   "nameEn": "Sattu drink",
+   "nameUrdu": "Sattu",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 160,
+   "protein": 7,
+   "carbs": 28,
+   "fat": 2,
+   "category": "drink"
+  },
+  {
+   "id": "falooda",
+   "nameEn": "Falooda",
+   "nameUrdu": "Falooda",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 350,
+   "kcal": 450,
+   "protein": 10,
+   "carbs": 70,
+   "fat": 14,
+   "category": "drink"
+  },
+  {
+   "id": "doodh-soda",
+   "nameEn": "Doodh soda",
+   "nameUrdu": "Doodh soda",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 300,
+   "kcal": 170,
+   "protein": 5,
+   "carbs": 25,
+   "fat": 5,
+   "category": "drink"
+  },
+  {
+   "id": "strawberry-shake",
+   "nameEn": "Strawberry shake",
+   "nameUrdu": "Strawberry shake",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 300,
+   "kcal": 320,
+   "protein": 9,
+   "carbs": 48,
+   "fat": 10,
+   "category": "drink"
+  },
+  {
+   "id": "chocolate-shake",
+   "nameEn": "Chocolate / Oreo shake",
+   "nameUrdu": "Chocolate shake",
+   "aliases": [
+    "oreo shake"
+   ],
+   "unit": "glass",
+   "grams": 350,
+   "kcal": 480,
+   "protein": 11,
+   "carbs": 65,
+   "fat": 19,
+   "category": "drink"
+  },
+  {
+   "id": "dates-shake",
+   "nameEn": "Dates (khajoor) shake",
+   "nameUrdu": "Khajoor shake",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 300,
+   "kcal": 380,
+   "protein": 10,
+   "carbs": 62,
+   "fat": 10,
+   "category": "drink"
+  },
+  {
+   "id": "chikoo-shake",
+   "nameEn": "Chikoo shake",
+   "nameUrdu": "Chikoo shake",
+   "aliases": [
+    "sapodilla shake"
+   ],
+   "unit": "glass",
+   "grams": 300,
+   "kcal": 300,
+   "protein": 8,
+   "carbs": 48,
+   "fat": 8.5,
+   "category": "drink"
+  },
+  {
+   "id": "milk-milo",
+   "nameEn": "Milo / Ovaltine with milk",
+   "nameUrdu": "Milo",
+   "aliases": [
+    "ovaltine",
+    "bournvita"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 230,
+   "protein": 9,
+   "carbs": 30,
+   "fat": 8,
+   "category": "drink"
+  },
+  {
+   "id": "milk-badam",
+   "nameEn": "Badam milk",
+   "nameUrdu": "Badam doodh",
+   "aliases": [
+    "almond milk sweet"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 260,
+   "protein": 9,
+   "carbs": 30,
+   "fat": 12,
+   "category": "drink"
+  },
+  {
+   "id": "milk-haldi",
+   "nameEn": "Haldi doodh",
+   "nameUrdu": "Haldi wala doodh",
+   "aliases": [
+    "turmeric milk"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 170,
+   "protein": 8,
+   "carbs": 15,
+   "fat": 8.5,
+   "category": "drink"
+  },
+  {
+   "id": "nestle-milk-flavoured",
+   "nameEn": "Flavoured milk (pack)",
+   "nameUrdu": "Flavoured doodh",
+   "aliases": [
+    "milkpak chocolate"
+   ],
+   "unit": "pack",
+   "grams": 225,
+   "kcal": 180,
+   "protein": 6.5,
+   "carbs": 26,
+   "fat": 5.5,
+   "category": "drink"
+  },
+  {
+   "id": "tang",
+   "nameEn": "Tang / squash drink",
+   "nameUrdu": "Squash",
+   "aliases": [
+    "squash",
+    "jam-e-shirin"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 90,
+   "protein": 0,
+   "carbs": 22,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "sherbet-bazoori",
+   "nameEn": "Bazoori sherbet",
+   "nameUrdu": "Bazoori",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 110,
+   "protein": 0,
+   "carbs": 27,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "water-coconut",
+   "nameEn": "Coconut water",
+   "nameUrdu": "Nariyal pani",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 45,
+   "protein": 1.7,
+   "carbs": 9,
+   "fat": 0.5,
+   "category": "drink"
+  },
+  {
+   "id": "aloo-tikki",
+   "nameEn": "Aloo tikki",
+   "nameUrdu": "Aloo tikki",
+   "aliases": [
+    "potato cutlet"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 150,
+   "protein": 2.5,
+   "carbs": 18,
+   "fat": 7.5,
+   "category": "snack"
+  },
+  {
+   "id": "chicken-cutlet",
+   "nameEn": "Chicken cutlet",
+   "nameUrdu": "Chicken cutlet",
+   "aliases": [
+    "chicken kabab cutlet"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 180,
+   "protein": 11,
+   "carbs": 10,
+   "fat": 10.5,
+   "category": "snack"
+  },
+  {
+   "id": "chicken-roll-samosa",
+   "nameEn": "Chicken roll / patti samosa",
+   "nameUrdu": "Patti samosa",
+   "aliases": [
+    "chicken roll"
+   ],
+   "unit": "piece",
+   "grams": 45,
+   "kcal": 140,
+   "protein": 5,
+   "carbs": 13,
+   "fat": 7.5,
+   "category": "snack"
+  },
+  {
+   "id": "vegetable-roll",
+   "nameEn": "Vegetable roll",
+   "nameUrdu": "Veg roll",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 130,
+   "protein": 2,
+   "carbs": 14,
+   "fat": 7,
+   "category": "snack"
+  },
+  {
+   "id": "kachori",
+   "nameEn": "Kachori",
+   "nameUrdu": "Kachori",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 230,
+   "protein": 4.5,
+   "carbs": 23,
+   "fat": 13.5,
+   "category": "snack"
+  },
+  {
+   "id": "chicken-patties",
+   "nameEn": "Chicken patties (bakery)",
+   "nameUrdu": "Patties",
+   "aliases": [
+    "chicken patty bakery"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 280,
+   "protein": 7,
+   "carbs": 24,
+   "fat": 17,
+   "category": "snack"
+  },
+  {
+   "id": "pizza-puff",
+   "nameEn": "Pizza puff / chicken puff",
+   "nameUrdu": "Chicken puff",
+   "aliases": [
+    "puff"
+   ],
+   "unit": "piece",
+   "grams": 100,
+   "kcal": 330,
+   "protein": 9,
+   "carbs": 28,
+   "fat": 20,
+   "category": "snack"
+  },
+  {
+   "id": "sandwich-chicken",
+   "nameEn": "Chicken sandwich (mayo)",
+   "nameUrdu": "Chicken sandwich",
+   "aliases": [
+    "club sandwich half"
+   ],
+   "unit": "piece",
+   "grams": 160,
+   "kcal": 380,
+   "protein": 18,
+   "carbs": 34,
+   "fat": 19,
+   "category": "fastfood"
+  },
+  {
+   "id": "club-sandwich",
+   "nameEn": "Club sandwich with fries",
+   "nameUrdu": "Club sandwich",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 400,
+   "kcal": 850,
+   "protein": 35,
+   "carbs": 80,
+   "fat": 43,
+   "category": "fastfood"
+  },
+  {
+   "id": "sandwich-egg",
+   "nameEn": "Egg sandwich",
+   "nameUrdu": "Anda sandwich",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 300,
+   "protein": 12,
+   "carbs": 30,
+   "fat": 14,
+   "category": "snack"
+  },
+  {
+   "id": "dahi-baray",
+   "nameEn": "Dahi baray (bowl)",
+   "nameUrdu": "Dahi baray",
+   "aliases": [
+    "dahi bhaley bowl"
+   ],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 330,
+   "protein": 12,
+   "carbs": 44,
+   "fat": 12,
+   "category": "snack"
+  },
+  {
+   "id": "papri-chaat",
+   "nameEn": "Papri chaat",
+   "nameUrdu": "Papri chaat",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 200,
+   "kcal": 330,
+   "protein": 9,
+   "carbs": 42,
+   "fat": 14,
+   "category": "snack"
+  },
+  {
+   "id": "aloo-chaat",
+   "nameEn": "Aloo chaat",
+   "nameUrdu": "Aloo chaat",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 200,
+   "kcal": 220,
+   "protein": 4,
+   "carbs": 38,
+   "fat": 6,
+   "category": "snack"
+  },
+  {
+   "id": "samosa-chaat",
+   "nameEn": "Samosa chaat",
+   "nameUrdu": "Samosa chaat",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 250,
+   "kcal": 480,
+   "protein": 12,
+   "carbs": 56,
+   "fat": 23,
+   "category": "snack"
+  },
+  {
+   "id": "dahi-phulki",
+   "nameEn": "Dahi phulkiyan",
+   "nameUrdu": "Dahi phulki",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 280,
+   "protein": 9,
+   "carbs": 30,
+   "fat": 14,
+   "category": "snack"
+  },
+  {
+   "id": "pakora-chicken",
+   "nameEn": "Chicken pakora (6)",
+   "nameUrdu": "Chicken pakoray",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 380,
+   "protein": 22,
+   "carbs": 16,
+   "fat": 25,
+   "category": "snack"
+  },
+  {
+   "id": "pakora-onion",
+   "nameEn": "Onion / palak pakora (5)",
+   "nameUrdu": "Piyaz pakoray",
+   "aliases": [
+    "bhajia"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 290,
+   "protein": 6,
+   "carbs": 24,
+   "fat": 19,
+   "category": "snack"
+  },
+  {
+   "id": "fish-pakora",
+   "nameEn": "Fish pakora",
+   "nameUrdu": "Machli pakoray",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 360,
+   "protein": 24,
+   "carbs": 14,
+   "fat": 23,
+   "category": "snack"
+  },
+  {
+   "id": "mirchi-pakora",
+   "nameEn": "Mirch pakora",
+   "nameUrdu": "Mirchi pakora",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 110,
+   "protein": 2,
+   "carbs": 9,
+   "fat": 7.5,
+   "category": "snack"
+  },
+  {
+   "id": "bun-kebab-anda",
+   "nameEn": "Anda bun kebab",
+   "nameUrdu": "Anda bun kebab",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 170,
+   "kcal": 430,
+   "protein": 16,
+   "carbs": 44,
+   "fat": 21,
+   "category": "fastfood"
+  },
+  {
+   "id": "chana-chaat-light",
+   "nameEn": "Chana chaat (no papri)",
+   "nameUrdu": "Chana chaat",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 230,
+   "protein": 11,
+   "carbs": 36,
+   "fat": 5,
+   "category": "snack"
+  },
+  {
+   "id": "bhel-puri",
+   "nameEn": "Bhel puri",
+   "nameUrdu": "Bhel puri",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 150,
+   "kcal": 280,
+   "protein": 6,
+   "carbs": 45,
+   "fat": 9,
+   "category": "snack"
+  },
+  {
+   "id": "pani-puri-10",
+   "nameEn": "Gol gappay (10)",
+   "nameUrdu": "Gol gappay",
+   "aliases": [
+    "pani puri"
+   ],
+   "unit": "serving",
+   "grams": 200,
+   "kcal": 330,
+   "protein": 6,
+   "carbs": 50,
+   "fat": 12,
+   "category": "snack"
+  },
+  {
+   "id": "chicken-tikka-roll",
+   "nameEn": "Chicken tikka roll (paratha)",
+   "nameUrdu": "Tikka roll",
+   "aliases": [
+    "bihari roll"
+   ],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 560,
+   "protein": 26,
+   "carbs": 48,
+   "fat": 29,
+   "category": "fastfood"
+  },
+  {
+   "id": "seekh-kebab-roll",
+   "nameEn": "Seekh kebab roll",
+   "nameUrdu": "Kabab roll",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 580,
+   "protein": 24,
+   "carbs": 48,
+   "fat": 32,
+   "category": "fastfood"
+  },
+  {
+   "id": "shawarma-platter",
+   "nameEn": "Shawarma platter (with fries and sauce)",
+   "nameUrdu": "Shawarma platter",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 950,
+   "protein": 42,
+   "carbs": 90,
+   "fat": 46,
+   "category": "fastfood"
+  },
+  {
+   "id": "shawarma-beef",
+   "nameEn": "Beef shawarma",
+   "nameUrdu": "Beef shawarma",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 250,
+   "kcal": 560,
+   "protein": 28,
+   "carbs": 50,
+   "fat": 27,
+   "category": "fastfood"
+  },
+  {
+   "id": "chicken-burger-street",
+   "nameEn": "Street chicken burger (anda)",
+   "nameUrdu": "Chicken anda burger",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 480,
+   "protein": 20,
+   "carbs": 45,
+   "fat": 24,
+   "category": "fastfood"
+  },
+  {
+   "id": "beef-burger-double",
+   "nameEn": "Double beef burger",
+   "nameUrdu": "Double patty burger",
+   "aliases": [
+    "double smash burger"
+   ],
+   "unit": "piece",
+   "grams": 300,
+   "kcal": 780,
+   "protein": 42,
+   "carbs": 45,
+   "fat": 47,
+   "category": "fastfood"
+  },
+  {
+   "id": "smash-burger",
+   "nameEn": "Smash burger (single, cheese)",
+   "nameUrdu": "Smash burger",
+   "aliases": [
+    "smashed burger"
+   ],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 600,
+   "protein": 30,
+   "carbs": 40,
+   "fat": 35,
+   "category": "fastfood"
+  },
+  {
+   "id": "loaded-fries",
+   "nameEn": "Loaded fries",
+   "nameUrdu": "Loaded fries",
+   "aliases": [
+    "cheese fries"
+   ],
+   "unit": "serving",
+   "grams": 300,
+   "kcal": 700,
+   "protein": 20,
+   "carbs": 60,
+   "fat": 42,
+   "category": "fastfood"
+  },
+  {
+   "id": "masala-fries",
+   "nameEn": "Masala fries (large)",
+   "nameUrdu": "Masala fries",
+   "aliases": [
+    "large fries"
+   ],
+   "unit": "serving",
+   "grams": 180,
+   "kcal": 520,
+   "protein": 6,
+   "carbs": 60,
+   "fat": 28,
+   "category": "fastfood"
+  },
+  {
+   "id": "nuggets-fastfood",
+   "nameEn": "Chicken nuggets (fast food, 6)",
+   "nameUrdu": "Nuggets",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 280,
+   "protein": 15,
+   "carbs": 16,
+   "fat": 17,
+   "category": "fastfood"
+  },
+  {
+   "id": "hot-wings-fastfood",
+   "nameEn": "Hot wings (fast food, 5)",
+   "nameUrdu": "Hot wings",
+   "aliases": [
+    "kfc hot wings"
+   ],
+   "unit": "serving",
+   "grams": 140,
+   "kcal": 380,
+   "protein": 28,
+   "carbs": 12,
+   "fat": 24,
+   "category": "fastfood"
+  },
+  {
+   "id": "pizza-slice-large",
+   "nameEn": "Pizza slice (large, loaded)",
+   "nameUrdu": "Bari pizza slice",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 160,
+   "kcal": 420,
+   "protein": 18,
+   "carbs": 40,
+   "fat": 20,
+   "category": "fastfood"
+  },
+  {
+   "id": "pizza-small",
+   "nameEn": "Small pizza (whole, 6-7 inch)",
+   "nameUrdu": "Small pizza",
+   "aliases": [
+    "personal pizza"
+   ],
+   "unit": "pizza",
+   "grams": 350,
+   "kcal": 900,
+   "protein": 38,
+   "carbs": 100,
+   "fat": 38,
+   "category": "fastfood"
+  },
+  {
+   "id": "pizza-fries",
+   "nameEn": "Pizza fries",
+   "nameUrdu": "Pizza fries",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 300,
+   "kcal": 720,
+   "protein": 25,
+   "carbs": 62,
+   "fat": 41,
+   "category": "fastfood"
+  },
+  {
+   "id": "garlic-bread",
+   "nameEn": "Garlic bread (2 pieces)",
+   "nameUrdu": "Garlic bread",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 80,
+   "kcal": 290,
+   "protein": 6,
+   "carbs": 32,
+   "fat": 15,
+   "category": "fastfood"
+  },
+  {
+   "id": "lasagna",
+   "nameEn": "Lasagna",
+   "nameUrdu": "Lasagna",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 300,
+   "kcal": 600,
+   "protein": 32,
+   "carbs": 45,
+   "fat": 33,
+   "category": "fastfood"
+  },
+  {
+   "id": "kfc-zinger",
+   "nameEn": "KFC Zinger",
+   "nameUrdu": "KFC Zinger",
+   "aliases": [
+    "zinger kfc"
+   ],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 520,
+   "protein": 26,
+   "carbs": 48,
+   "fat": 25,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-mighty-zinger",
+   "nameEn": "KFC Mighty Zinger",
+   "nameUrdu": "Mighty Zinger",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 320,
+   "kcal": 820,
+   "protein": 46,
+   "carbs": 60,
+   "fat": 43,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-zinger-stacker",
+   "nameEn": "KFC Zinger Stacker",
+   "nameUrdu": "Zinger stacker",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 330,
+   "kcal": 900,
+   "protein": 45,
+   "carbs": 62,
+   "fat": 52,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-chicken-piece",
+   "nameEn": "KFC fried chicken (1 piece)",
+   "nameUrdu": "KFC piece",
+   "aliases": [
+    "hot and crispy"
+   ],
+   "unit": "piece",
+   "grams": 130,
+   "kcal": 330,
+   "protein": 25,
+   "carbs": 11,
+   "fat": 21,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-twister",
+   "nameEn": "KFC Twister",
+   "nameUrdu": "Twister",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 230,
+   "kcal": 560,
+   "protein": 23,
+   "carbs": 52,
+   "fat": 28,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-fries-regular",
+   "nameEn": "KFC fries (regular)",
+   "nameUrdu": "KFC fries",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 110,
+   "kcal": 320,
+   "protein": 4,
+   "carbs": 41,
+   "fat": 15,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-big-mac",
+   "nameEn": "McDonald's Big Mac",
+   "nameUrdu": "Big Mac",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 215,
+   "kcal": 550,
+   "protein": 25,
+   "carbs": 45,
+   "fat": 30,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-mcchicken",
+   "nameEn": "McDonald's McChicken",
+   "nameUrdu": "McChicken",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 170,
+   "kcal": 420,
+   "protein": 15,
+   "carbs": 42,
+   "fat": 21,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-chicken-mcdeluxe",
+   "nameEn": "McDonald's Chicken McDeluxe / McCrispy",
+   "nameUrdu": "McCrispy",
+   "aliases": [
+    "mcdeluxe"
+   ],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 560,
+   "protein": 26,
+   "carbs": 50,
+   "fat": 28,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-fries-medium",
+   "nameEn": "McDonald's fries (medium)",
+   "nameUrdu": "McD fries",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 117,
+   "kcal": 340,
+   "protein": 4,
+   "carbs": 44,
+   "fat": 16,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-nuggets-6",
+   "nameEn": "McNuggets (6)",
+   "nameUrdu": "McNuggets",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 260,
+   "protein": 15,
+   "carbs": 16,
+   "fat": 15,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-mcflurry",
+   "nameEn": "McFlurry (Oreo, regular)",
+   "nameUrdu": "McFlurry",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 340,
+   "protein": 8,
+   "carbs": 53,
+   "fat": 11,
+   "category": "chain"
+  },
+  {
+   "id": "hardees-burger",
+   "nameEn": "Hardee's Famous Star / Mushroom Swiss",
+   "nameUrdu": "Hardees burger",
+   "aliases": [
+    "hardees"
+   ],
+   "unit": "piece",
+   "grams": 260,
+   "kcal": 680,
+   "protein": 30,
+   "carbs": 50,
+   "fat": 40,
+   "category": "chain"
+  },
+  {
+   "id": "subway-6inch",
+   "nameEn": "Subway 6-inch chicken sub",
+   "nameUrdu": "Subway",
+   "aliases": [
+    "subway sandwich"
+   ],
+   "unit": "piece",
+   "grams": 230,
+   "kcal": 400,
+   "protein": 26,
+   "carbs": 46,
+   "fat": 11,
+   "category": "chain"
+  },
+  {
+   "id": "dominos-slice",
+   "nameEn": "Pizza slice (chain, medium)",
+   "nameUrdu": "Pizza slice",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 110,
+   "kcal": 280,
+   "protein": 12,
+   "carbs": 30,
+   "fat": 12,
+   "category": "chain"
+  },
+  {
+   "id": "lays-small",
+   "nameEn": "Chips (small pack, ~20 g)",
+   "nameUrdu": "Chips",
+   "aliases": [
+    "chips"
+   ],
+   "unit": "pack",
+   "grams": 20,
+   "kcal": 110,
+   "protein": 1.3,
+   "carbs": 11,
+   "fat": 7,
+   "category": "packaged"
+  },
+  {
+   "id": "lays-large",
+   "nameEn": "Chips (large pack, ~60 g)",
+   "nameUrdu": "Bara chips",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 60,
+   "kcal": 320,
+   "protein": 4,
+   "carbs": 33,
+   "fat": 20,
+   "category": "packaged"
+  },
+  {
+   "id": "kurkure",
+   "nameEn": "Corn puffs / Kurkure-style (small)",
+   "nameUrdu": "Kurkure",
+   "aliases": [
+    "kurleez"
+   ],
+   "unit": "pack",
+   "grams": 25,
+   "kcal": 130,
+   "protein": 1.5,
+   "carbs": 15,
+   "fat": 7,
+   "category": "packaged"
+  },
+  {
+   "id": "slanty",
+   "nameEn": "Slanty / Wavy (small)",
+   "nameUrdu": "Slanty",
+   "aliases": [
+    "wavy"
+   ],
+   "unit": "pack",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.5,
+   "carbs": 12,
+   "fat": 5,
+   "category": "packaged"
+  },
+  {
+   "id": "popcorn",
+   "nameEn": "Popcorn (cinema, medium)",
+   "nameUrdu": "Popcorn",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 70,
+   "kcal": 380,
+   "protein": 6,
+   "carbs": 40,
+   "fat": 22,
+   "category": "snack"
+  },
+  {
+   "id": "popcorn-light",
+   "nameEn": "Popcorn (home, light)",
+   "nameUrdu": "Ghar wala popcorn",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 10,
+   "kcal": 40,
+   "protein": 1.2,
+   "carbs": 7.5,
+   "fat": 0.5,
+   "category": "snack"
+  },
+  {
+   "id": "biscuit-marie",
+   "nameEn": "Marie biscuits (4)",
+   "nameUrdu": "Marie biscuit",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 28,
+   "kcal": 125,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 4,
+   "category": "packaged"
+  },
+  {
+   "id": "biscuit-sooper",
+   "nameEn": "Glucose biscuits (4)",
+   "nameUrdu": "Glucose biscuit",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 145,
+   "protein": 2,
+   "carbs": 20,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "biscuit-zeera",
+   "nameEn": "Salty / zeera biscuits (4)",
+   "nameUrdu": "Namkeen biscuit",
+   "aliases": [
+    "salty biscuit"
+   ],
+   "unit": "serving",
+   "grams": 28,
+   "kcal": 140,
+   "protein": 2,
+   "carbs": 18,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "biscuit-cream",
+   "nameEn": "Cream sandwich biscuits (2)",
+   "nameUrdu": "Cream biscuit",
+   "aliases": [
+    "chocolatto"
+   ],
+   "unit": "serving",
+   "grams": 25,
+   "kcal": 120,
+   "protein": 1.2,
+   "carbs": 17,
+   "fat": 5,
+   "category": "packaged"
+  },
+  {
+   "id": "biscuit-tuc",
+   "nameEn": "Crackers (4)",
+   "nameUrdu": "Crackers",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 25,
+   "kcal": 125,
+   "protein": 2,
+   "carbs": 16,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "biscuit-digestive",
+   "nameEn": "Digestive biscuits (2)",
+   "nameUrdu": "Digestive",
+   "aliases": [
+    "mcvities"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 145,
+   "protein": 2,
+   "carbs": 19,
+   "fat": 7,
+   "category": "packaged"
+  },
+  {
+   "id": "nankhatai",
+   "nameEn": "Nankhatai",
+   "nameUrdu": "Nankhatai",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.3,
+   "carbs": 11,
+   "fat": 5.5,
+   "category": "sweet"
+  },
+  {
+   "id": "khatai-bakery",
+   "nameEn": "Bakery biscuit (zeera / butter, 1)",
+   "nameUrdu": "Bakery biscuit",
+   "aliases": [
+    "bakarkhani biscuit"
+   ],
+   "unit": "piece",
+   "grams": 15,
+   "kcal": 75,
+   "protein": 1,
+   "carbs": 9,
+   "fat": 4,
+   "category": "snack"
+  },
+  {
+   "id": "cake-rusk-pack",
+   "nameEn": "Cake / slice (packet, e.g. Bake Parlor)",
+   "nameUrdu": "Packet cake",
+   "aliases": [
+    "bake parlor"
+   ],
+   "unit": "piece",
+   "grams": 30,
+   "kcal": 120,
+   "protein": 1.5,
+   "carbs": 16,
+   "fat": 5.5,
+   "category": "packaged"
+  },
+  {
+   "id": "chocolate-bar",
+   "nameEn": "Chocolate bar (small, ~40 g)",
+   "nameUrdu": "Chocolate",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 40,
+   "kcal": 210,
+   "protein": 3,
+   "carbs": 25,
+   "fat": 11,
+   "category": "packaged"
+  },
+  {
+   "id": "chocolate-bar-large",
+   "nameEn": "Chocolate bar (large, ~90 g)",
+   "nameUrdu": "Bari chocolate",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 90,
+   "kcal": 480,
+   "protein": 6.5,
+   "carbs": 52,
+   "fat": 27,
+   "category": "packaged"
+  },
+  {
+   "id": "toffee",
+   "nameEn": "Toffee / candy (2)",
+   "nameUrdu": "Toffee",
+   "aliases": [
+    "eclairs",
+    "candy"
+   ],
+   "unit": "serving",
+   "grams": 10,
+   "kcal": 40,
+   "protein": 0.2,
+   "carbs": 8,
+   "fat": 0.8,
+   "category": "packaged"
+  },
+  {
+   "id": "bubble-gum",
+   "nameEn": "Chewing gum (1)",
+   "nameUrdu": "Bubble",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 3,
+   "kcal": 10,
+   "protein": 0,
+   "carbs": 2.5,
+   "fat": 0,
+   "category": "packaged"
+  },
+  {
+   "id": "protein-bar",
+   "nameEn": "Protein bar",
+   "nameUrdu": "Protein bar",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 60,
+   "kcal": 220,
+   "protein": 20,
+   "carbs": 20,
+   "fat": 7,
+   "category": "packaged"
+  },
+  {
+   "id": "granola-bar",
+   "nameEn": "Granola / cereal bar",
+   "nameUrdu": "Cereal bar",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 30,
+   "kcal": 130,
+   "protein": 2,
+   "carbs": 20,
+   "fat": 4.5,
+   "category": "packaged"
+  },
+  {
+   "id": "cornflakes-dry",
+   "nameEn": "Cornflakes (dry, 1 cup)",
+   "nameUrdu": "Cornflakes",
+   "aliases": [
+    "koko krunch",
+    "cereal"
+   ],
+   "unit": "cup",
+   "grams": 30,
+   "kcal": 115,
+   "protein": 2,
+   "carbs": 26,
+   "fat": 0.3,
+   "category": "breakfast"
+  },
+  {
+   "id": "namak-paray",
+   "nameEn": "Namak paray",
+   "nameUrdu": "Namak paray",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 150,
+   "protein": 2.5,
+   "carbs": 18,
+   "fat": 7.5,
+   "category": "snack"
+  },
+  {
+   "id": "shakar-paray",
+   "nameEn": "Shakar paray",
+   "nameUrdu": "Shakar paray",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 150,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 6.5,
+   "category": "sweet"
+  },
+  {
+   "id": "mathri",
+   "nameEn": "Mathri",
+   "nameUrdu": "Mathri",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.5,
+   "carbs": 11,
+   "fat": 5.5,
+   "category": "snack"
+  },
+  {
+   "id": "dal-moth",
+   "nameEn": "Daal moth (handful)",
+   "nameUrdu": "Daal moth",
+   "aliases": [
+    "daal sev"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 160,
+   "protein": 6,
+   "carbs": 13,
+   "fat": 9.5,
+   "category": "snack"
+  },
+  {
+   "id": "makhana",
+   "nameEn": "Roasted makhana (fox nuts)",
+   "nameUrdu": "Makhanay",
+   "aliases": [
+    "phool makhana"
+   ],
+   "unit": "cup",
+   "grams": 15,
+   "kcal": 55,
+   "protein": 1.5,
+   "carbs": 11,
+   "fat": 0.5,
+   "category": "snack"
+  },
+  {
+   "id": "walnuts",
+   "nameEn": "Walnuts (5 halves)",
+   "nameUrdu": "Akhrot",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 15,
+   "kcal": 100,
+   "protein": 2.3,
+   "carbs": 2,
+   "fat": 10,
+   "category": "snack"
+  },
+  {
+   "id": "cashews",
+   "nameEn": "Cashews (10)",
+   "nameUrdu": "Kaju",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 15,
+   "kcal": 85,
+   "protein": 2.7,
+   "carbs": 4.5,
+   "fat": 6.7,
+   "category": "snack"
+  },
+  {
+   "id": "pistachios",
+   "nameEn": "Pistachios (20)",
+   "nameUrdu": "Pista",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 15,
+   "kcal": 85,
+   "protein": 3,
+   "carbs": 4,
+   "fat": 7,
+   "category": "snack"
+  },
+  {
+   "id": "chilgoza",
+   "nameEn": "Chilgoza / pine nuts",
+   "nameUrdu": "Chilgoza",
+   "aliases": [
+    "pine nuts"
+   ],
+   "unit": "serving",
+   "grams": 15,
+   "kcal": 100,
+   "protein": 2,
+   "carbs": 2,
+   "fat": 10,
+   "category": "snack"
+  },
+  {
+   "id": "mixed-dry-fruit",
+   "nameEn": "Mixed dry fruit (handful)",
+   "nameUrdu": "Dry fruit",
+   "aliases": [
+    "meva"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 160,
+   "protein": 4,
+   "carbs": 10,
+   "fat": 12,
+   "category": "snack"
+  },
+  {
+   "id": "raisins",
+   "nameEn": "Raisins (kishmish)",
+   "nameUrdu": "Kishmish",
+   "aliases": [
+    "munakka"
+   ],
+   "unit": "tbsp",
+   "grams": 15,
+   "kcal": 45,
+   "protein": 0.5,
+   "carbs": 12,
+   "fat": 0,
+   "category": "snack"
+  },
+  {
+   "id": "dried-apricot",
+   "nameEn": "Dried apricots (5)",
+   "nameUrdu": "Khubani",
+   "aliases": [
+    "khumani"
+   ],
+   "unit": "serving",
+   "grams": 35,
+   "kcal": 85,
+   "protein": 1.2,
+   "carbs": 22,
+   "fat": 0.2,
+   "category": "snack"
+  },
+  {
+   "id": "dried-figs",
+   "nameEn": "Dried figs (2)",
+   "nameUrdu": "Anjeer",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 40,
+   "kcal": 100,
+   "protein": 1.3,
+   "carbs": 26,
+   "fat": 0.4,
+   "category": "snack"
+  },
+  {
+   "id": "coconut-dry",
+   "nameEn": "Dry coconut (khopra)",
+   "nameUrdu": "Khopra",
+   "aliases": [
+    "dried coconut"
+   ],
+   "unit": "serving",
+   "grams": 20,
+   "kcal": 130,
+   "protein": 1.4,
+   "carbs": 5,
+   "fat": 13,
+   "category": "snack"
+  },
+  {
+   "id": "chia-seeds",
+   "nameEn": "Chia seeds",
+   "nameUrdu": "Chia",
+   "aliases": [
+    "tukh malanga"
+   ],
+   "unit": "tbsp",
+   "grams": 12,
+   "kcal": 58,
+   "protein": 2,
+   "carbs": 5,
+   "fat": 3.7,
+   "category": "snack"
+  },
+  {
+   "id": "peanuts-roasted-salted",
+   "nameEn": "Roasted peanuts (packet)",
+   "nameUrdu": "Moongphali",
+   "aliases": [
+    "mungphali"
+   ],
+   "unit": "pack",
+   "grams": 50,
+   "kcal": 290,
+   "protein": 13,
+   "carbs": 8,
+   "fat": 24,
+   "category": "snack"
+  },
+  {
+   "id": "gajak-chikki",
+   "nameEn": "Chikki / gajak",
+   "nameUrdu": "Chikki",
+   "aliases": [
+    "gajak",
+    "rewri"
+   ],
+   "unit": "piece",
+   "grams": 25,
+   "kcal": 120,
+   "protein": 3,
+   "carbs": 15,
+   "fat": 6,
+   "category": "sweet"
+  },
+  {
+   "id": "gulab-jamun-small",
+   "nameEn": "Gulab jamun (small, in syrup)",
+   "nameUrdu": "Choti gulab jamun",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 30,
+   "kcal": 110,
+   "protein": 1.5,
+   "carbs": 16,
+   "fat": 4.5,
+   "category": "sweet"
+  },
+  {
+   "id": "cham-cham",
+   "nameEn": "Cham cham",
+   "nameUrdu": "Cham cham",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 180,
+   "protein": 3,
+   "carbs": 30,
+   "fat": 5.5,
+   "category": "sweet"
+  },
+  {
+   "id": "rasgulla",
+   "nameEn": "Rasgulla",
+   "nameUrdu": "Rasgulla",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 130,
+   "protein": 2.5,
+   "carbs": 28,
+   "fat": 1.2,
+   "category": "sweet"
+  },
+  {
+   "id": "barfi-khoya",
+   "nameEn": "Khoya barfi",
+   "nameUrdu": "Khoye ki barfi",
+   "aliases": [
+    "milk cake"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 170,
+   "protein": 4,
+   "carbs": 22,
+   "fat": 7.5,
+   "category": "sweet"
+  },
+  {
+   "id": "patisa",
+   "nameEn": "Patisa / soan papdi",
+   "nameUrdu": "Patisa",
+   "aliases": [
+    "soan papdi"
+   ],
+   "unit": "piece",
+   "grams": 30,
+   "kcal": 150,
+   "protein": 2,
+   "carbs": 18,
+   "fat": 8,
+   "category": "sweet"
+  },
+  {
+   "id": "halwa-gajar-shop",
+   "nameEn": "Gajar halwa (shop, with khoya)",
+   "nameUrdu": "Gajar halwa",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 150,
+   "kcal": 450,
+   "protein": 7,
+   "carbs": 50,
+   "fat": 25,
+   "category": "sweet"
+  },
+  {
+   "id": "halwa-anda",
+   "nameEn": "Anday ka halwa",
+   "nameUrdu": "Anda halwa",
+   "aliases": [
+    "egg halwa"
+   ],
+   "unit": "bowl",
+   "grams": 120,
+   "kcal": 420,
+   "protein": 10,
+   "carbs": 40,
+   "fat": 24,
+   "category": "sweet"
+  },
+  {
+   "id": "halwa-badam",
+   "nameEn": "Badam halwa",
+   "nameUrdu": "Badam halwa",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 100,
+   "kcal": 480,
+   "protein": 8,
+   "carbs": 40,
+   "fat": 32,
+   "category": "sweet"
+  },
+  {
+   "id": "halwa-chanay",
+   "nameEn": "Chanay ki daal ka halwa",
+   "nameUrdu": "Daal halwa",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 120,
+   "kcal": 480,
+   "protein": 9,
+   "carbs": 52,
+   "fat": 26,
+   "category": "sweet"
+  },
+  {
+   "id": "halwa-sohan",
+   "nameEn": "Sohan halwa",
+   "nameUrdu": "Sohan halwa",
+   "aliases": [
+    "multani sohan halwa"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 180,
+   "protein": 3,
+   "carbs": 22,
+   "fat": 9,
+   "category": "sweet"
+  },
+  {
+   "id": "halwa-habshi",
+   "nameEn": "Habshi halwa",
+   "nameUrdu": "Habshi halwa",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 170,
+   "protein": 3,
+   "carbs": 22,
+   "fat": 8,
+   "category": "sweet"
+  },
+  {
+   "id": "kheer-rice",
+   "nameEn": "Rice kheer (bowl)",
+   "nameUrdu": "Chawal ki kheer",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 300,
+   "protein": 8,
+   "carbs": 45,
+   "fat": 10,
+   "category": "sweet"
+  },
+  {
+   "id": "seviyan",
+   "nameEn": "Sweet seviyan (vermicelli)",
+   "nameUrdu": "Seviyan",
+   "aliases": [
+    "vermicelli"
+   ],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 360,
+   "protein": 8,
+   "carbs": 52,
+   "fat": 13,
+   "category": "sweet"
+  },
+  {
+   "id": "shahi-tukray",
+   "nameEn": "Shahi tukray",
+   "nameUrdu": "Shahi tukray",
+   "aliases": [
+    "shahi tukda"
+   ],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 400,
+   "protein": 8,
+   "carbs": 45,
+   "fat": 21,
+   "category": "sweet"
+  },
+  {
+   "id": "kulfi",
+   "nameEn": "Kulfi",
+   "nameUrdu": "Kulfi",
+   "aliases": [
+    "malai kulfi"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 190,
+   "protein": 5,
+   "carbs": 18,
+   "fat": 11,
+   "category": "sweet"
+  },
+  {
+   "id": "ice-cream-cone",
+   "nameEn": "Ice cream cone",
+   "nameUrdu": "Cone",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 220,
+   "protein": 3.5,
+   "carbs": 27,
+   "fat": 11,
+   "category": "sweet"
+  },
+  {
+   "id": "ice-cream-cup",
+   "nameEn": "Ice cream cup (small)",
+   "nameUrdu": "Ice cream cup",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 100,
+   "kcal": 200,
+   "protein": 3.5,
+   "carbs": 24,
+   "fat": 10,
+   "category": "sweet"
+  },
+  {
+   "id": "ice-lolly",
+   "nameEn": "Ice lolly (fruit)",
+   "nameUrdu": "Lolly",
+   "aliases": [
+    "chocobar"
+   ],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 70,
+   "protein": 0,
+   "carbs": 18,
+   "fat": 0,
+   "category": "sweet"
+  },
+  {
+   "id": "trifle",
+   "nameEn": "Trifle",
+   "nameUrdu": "Trifle",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 150,
+   "kcal": 280,
+   "protein": 6,
+   "carbs": 40,
+   "fat": 11,
+   "category": "sweet"
+  },
+  {
+   "id": "fruit-cream",
+   "nameEn": "Fruit cream / fruit chaat with cream",
+   "nameUrdu": "Fruit cream",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 200,
+   "kcal": 330,
+   "protein": 4,
+   "carbs": 38,
+   "fat": 18,
+   "category": "sweet"
+  },
+  {
+   "id": "doughnut",
+   "nameEn": "Doughnut (glazed)",
+   "nameUrdu": "Donut",
+   "aliases": [
+    "donut"
+   ],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 250,
+   "protein": 3.5,
+   "carbs": 30,
+   "fat": 13,
+   "category": "sweet"
+  },
+  {
+   "id": "brownie",
+   "nameEn": "Brownie",
+   "nameUrdu": "Brownie",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 250,
+   "protein": 3,
+   "carbs": 34,
+   "fat": 12,
+   "category": "sweet"
+  },
+  {
+   "id": "cupcake",
+   "nameEn": "Cupcake / muffin",
+   "nameUrdu": "Cupcake",
+   "aliases": [
+    "muffin"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 280,
+   "protein": 4,
+   "carbs": 38,
+   "fat": 13,
+   "category": "sweet"
+  },
+  {
+   "id": "pastry",
+   "nameEn": "Cream pastry",
+   "nameUrdu": "Pastry",
+   "aliases": [
+    "bakery pastry"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 300,
+   "protein": 3.5,
+   "carbs": 35,
+   "fat": 16,
+   "category": "sweet"
+  },
+  {
+   "id": "cake-slice-chocolate",
+   "nameEn": "Chocolate fudge cake slice",
+   "nameUrdu": "Chocolate cake",
+   "aliases": [
+    "fudge cake"
+   ],
+   "unit": "slice",
+   "grams": 110,
+   "kcal": 450,
+   "protein": 5,
+   "carbs": 58,
+   "fat": 22,
+   "category": "sweet"
+  },
+  {
+   "id": "cheesecake",
+   "nameEn": "Cheesecake slice",
+   "nameUrdu": "Cheesecake",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 110,
+   "kcal": 400,
+   "protein": 7,
+   "carbs": 32,
+   "fat": 28,
+   "category": "sweet"
+  },
+  {
+   "id": "jalebi-100g",
+   "nameEn": "Jalebi (100 g)",
+   "nameUrdu": "Jalebi pao bhar",
+   "aliases": [],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 400,
+   "protein": 3,
+   "carbs": 60,
+   "fat": 17,
+   "category": "sweet"
+  },
+  {
+   "id": "imarti",
+   "nameEn": "Imarti",
+   "nameUrdu": "Imarti",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 50,
+   "kcal": 200,
+   "protein": 2,
+   "carbs": 30,
+   "fat": 8,
+   "category": "sweet"
+  },
+  {
+   "id": "gulgulay",
+   "nameEn": "Gulgulay (2)",
+   "nameUrdu": "Gulgulay",
+   "aliases": [
+    "meethay pakoray"
+   ],
+   "unit": "serving",
+   "grams": 60,
+   "kcal": 230,
+   "protein": 3,
+   "carbs": 30,
+   "fat": 11,
+   "category": "sweet"
+  },
+  {
+   "id": "meethi-tikiya",
+   "nameEn": "Sweet bakery biscuit (1)",
+   "nameUrdu": "Meethi tikki",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 20,
+   "kcal": 95,
+   "protein": 1.2,
+   "carbs": 12,
+   "fat": 4.5,
+   "category": "sweet"
+  },
+  {
+   "id": "panjiri",
+   "nameEn": "Panjiri",
+   "nameUrdu": "Panjiri",
+   "aliases": [],
+   "unit": "tbsp",
+   "grams": 20,
+   "kcal": 105,
+   "protein": 2,
+   "carbs": 10,
+   "fat": 6.5,
+   "category": "sweet"
+  },
+  {
+   "id": "pinni",
+   "nameEn": "Pinni / dry fruit laddu",
+   "nameUrdu": "Pinni",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 200,
+   "protein": 4,
+   "carbs": 18,
+   "fat": 13,
+   "category": "sweet"
+  },
+  {
+   "id": "besan-laddu",
+   "nameEn": "Besan laddu",
+   "nameUrdu": "Besan laddu",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 35,
+   "kcal": 170,
+   "protein": 3,
+   "carbs": 18,
+   "fat": 10,
+   "category": "sweet"
+  },
+  {
+   "id": "motichoor-laddu",
+   "nameEn": "Motichoor laddu",
+   "nameUrdu": "Motichoor laddu",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 180,
+   "protein": 2.5,
+   "carbs": 25,
+   "fat": 8,
+   "category": "sweet"
+  },
+  {
+   "id": "dates-medjool",
+   "nameEn": "Dates (large, Medjool / Ajwa)",
+   "nameUrdu": "Ajwa khajoor",
+   "aliases": [
+    "ajwa"
+   ],
+   "unit": "piece",
+   "grams": 24,
+   "kcal": 66,
+   "protein": 0.4,
+   "carbs": 18,
+   "fat": 0,
+   "category": "fruit"
+  },
+  {
+   "id": "apple-small",
+   "nameEn": "Apple (small)",
+   "nameUrdu": "Chhota saib",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 62,
+   "protein": 0.3,
+   "carbs": 16.5,
+   "fat": 0.2,
+   "category": "fruit"
+  },
+  {
+   "id": "pear",
+   "nameEn": "Pear",
+   "nameUrdu": "Nashpati",
+   "aliases": [
+    "nashpati"
+   ],
+   "unit": "piece",
+   "grams": 170,
+   "kcal": 100,
+   "protein": 0.6,
+   "carbs": 27,
+   "fat": 0.2,
+   "category": "fruit"
+  },
+  {
+   "id": "peach",
+   "nameEn": "Peach",
+   "nameUrdu": "Aaru",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 60,
+   "protein": 1.4,
+   "carbs": 14,
+   "fat": 0.4,
+   "category": "fruit"
+  },
+  {
+   "id": "plum",
+   "nameEn": "Plum",
+   "nameUrdu": "Aloo bukhara",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 66,
+   "kcal": 30,
+   "protein": 0.5,
+   "carbs": 7.5,
+   "fat": 0.2,
+   "category": "fruit"
+  },
+  {
+   "id": "apricot",
+   "nameEn": "Apricot (fresh)",
+   "nameUrdu": "Khubani",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 35,
+   "kcal": 17,
+   "protein": 0.5,
+   "carbs": 4,
+   "fat": 0.1,
+   "category": "fruit"
+  },
+  {
+   "id": "cherries",
+   "nameEn": "Cherries (cup)",
+   "nameUrdu": "Cherry",
+   "aliases": [
+    "gilas"
+   ],
+   "unit": "cup",
+   "grams": 140,
+   "kcal": 90,
+   "protein": 1.5,
+   "carbs": 22,
+   "fat": 0.3,
+   "category": "fruit"
+  },
+  {
+   "id": "strawberries",
+   "nameEn": "Strawberries (cup)",
+   "nameUrdu": "Strawberry",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 150,
+   "kcal": 50,
+   "protein": 1,
+   "carbs": 12,
+   "fat": 0.5,
+   "category": "fruit"
+  },
+  {
+   "id": "lychee",
+   "nameEn": "Lychee (10)",
+   "nameUrdu": "Lychee",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 66,
+   "protein": 0.8,
+   "carbs": 16.5,
+   "fat": 0.4,
+   "category": "fruit"
+  },
+  {
+   "id": "chikoo",
+   "nameEn": "Chikoo (sapodilla)",
+   "nameUrdu": "Chikoo",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 100,
+   "kcal": 83,
+   "protein": 0.4,
+   "carbs": 20,
+   "fat": 1.1,
+   "category": "fruit"
+  },
+  {
+   "id": "jamun",
+   "nameEn": "Jamun (handful)",
+   "nameUrdu": "Jamun",
+   "aliases": [
+    "java plum"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 60,
+   "protein": 0.7,
+   "carbs": 15,
+   "fat": 0.2,
+   "category": "fruit"
+  },
+  {
+   "id": "falsa",
+   "nameEn": "Falsa (cup)",
+   "nameUrdu": "Falsa",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 100,
+   "kcal": 90,
+   "protein": 1.5,
+   "carbs": 21,
+   "fat": 0.1,
+   "category": "fruit"
+  },
+  {
+   "id": "loquat",
+   "nameEn": "Loquat (5)",
+   "nameUrdu": "Lokat",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 47,
+   "protein": 0.4,
+   "carbs": 12,
+   "fat": 0.2,
+   "category": "fruit"
+  },
+  {
+   "id": "pineapple",
+   "nameEn": "Pineapple (cup)",
+   "nameUrdu": "Ananas",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 165,
+   "kcal": 82,
+   "protein": 0.9,
+   "carbs": 22,
+   "fat": 0.2,
+   "category": "fruit"
+  },
+  {
+   "id": "kiwi",
+   "nameEn": "Kiwi",
+   "nameUrdu": "Kiwi",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 75,
+   "kcal": 45,
+   "protein": 0.8,
+   "carbs": 11,
+   "fat": 0.4,
+   "category": "fruit"
+  },
+  {
+   "id": "mango-large",
+   "nameEn": "Mango (large, e.g. chaunsa)",
+   "nameUrdu": "Bara aam",
+   "aliases": [
+    "chaunsa",
+    "sindhri",
+    "anwar ratol"
+   ],
+   "unit": "piece",
+   "grams": 300,
+   "kcal": 180,
+   "protein": 2.4,
+   "carbs": 45,
+   "fat": 1.1,
+   "category": "fruit"
+  },
+  {
+   "id": "mango-slice-cup",
+   "nameEn": "Mango (1 cup cubes)",
+   "nameUrdu": "Aam",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 165,
+   "kcal": 100,
+   "protein": 1.4,
+   "carbs": 25,
+   "fat": 0.6,
+   "category": "fruit"
+  },
+  {
+   "id": "banana-small",
+   "nameEn": "Banana (small)",
+   "nameUrdu": "Chhota kela",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 70,
+   "protein": 0.9,
+   "carbs": 18,
+   "fat": 0.3,
+   "category": "fruit"
+  },
+  {
+   "id": "musk-melon-slice",
+   "nameEn": "Melon (2 slices)",
+   "nameUrdu": "Kharbooza",
+   "aliases": [
+    "garma"
+   ],
+   "unit": "serving",
+   "grams": 200,
+   "kcal": 70,
+   "protein": 1.7,
+   "carbs": 16,
+   "fat": 0.4,
+   "category": "fruit"
+  },
+  {
+   "id": "watermelon-slice-large",
+   "nameEn": "Watermelon (large slice)",
+   "nameUrdu": "Tarbooz",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 400,
+   "kcal": 120,
+   "protein": 2.4,
+   "carbs": 30,
+   "fat": 0.6,
+   "category": "fruit"
+  },
+  {
+   "id": "grapefruit",
+   "nameEn": "Grapefruit / malta",
+   "nameUrdu": "Malta",
+   "aliases": [
+    "chakotra"
+   ],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 80,
+   "protein": 1.6,
+   "carbs": 20,
+   "fat": 0.3,
+   "category": "fruit"
+  },
+  {
+   "id": "amrood-chaat",
+   "nameEn": "Guava with chaat masala",
+   "nameUrdu": "Amrood",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 100,
+   "protein": 3.8,
+   "carbs": 21,
+   "fat": 1.4,
+   "category": "fruit"
+  },
+  {
+   "id": "fruit-bowl",
+   "nameEn": "Mixed fruit bowl",
+   "nameUrdu": "Fruit bowl",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 250,
+   "kcal": 140,
+   "protein": 1.8,
+   "carbs": 35,
+   "fat": 0.6,
+   "category": "fruit"
+  },
+  {
+   "id": "chicken-corn-soup",
+   "nameEn": "Chicken corn soup",
+   "nameUrdu": "Chicken corn soup",
+   "aliases": [
+    "corn soup"
+   ],
+   "unit": "bowl",
+   "grams": 300,
+   "kcal": 220,
+   "protein": 12,
+   "carbs": 28,
+   "fat": 6.5,
+   "category": "snack"
+  },
+  {
+   "id": "hot-and-sour-soup",
+   "nameEn": "Hot and sour soup",
+   "nameUrdu": "Hot and sour",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 300,
+   "kcal": 180,
+   "protein": 10,
+   "carbs": 20,
+   "fat": 6,
+   "category": "snack"
+  },
+  {
+   "id": "chicken-yakhni",
+   "nameEn": "Chicken yakhni (broth)",
+   "nameUrdu": "Yakhni",
+   "aliases": [
+    "chicken soup",
+    "bone broth"
+   ],
+   "unit": "bowl",
+   "grams": 300,
+   "kcal": 80,
+   "protein": 9,
+   "carbs": 2,
+   "fat": 4,
+   "category": "protein"
+  },
+  {
+   "id": "lentil-soup",
+   "nameEn": "Lentil soup",
+   "nameUrdu": "Daal soup",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 300,
+   "kcal": 180,
+   "protein": 11,
+   "carbs": 26,
+   "fat": 3.5,
+   "category": "daal"
+  },
+  {
+   "id": "chicken-wrap-healthy",
+   "nameEn": "Grilled chicken wrap (no mayo)",
+   "nameUrdu": "Chicken wrap",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 380,
+   "protein": 32,
+   "carbs": 36,
+   "fat": 11,
+   "category": "fastfood"
+  },
+  {
+   "id": "chicken-rice-bowl",
+   "nameEn": "Grilled chicken rice bowl",
+   "nameUrdu": "Chicken rice bowl",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 400,
+   "kcal": 560,
+   "protein": 40,
+   "carbs": 65,
+   "fat": 14,
+   "category": "rice"
+  },
+  {
+   "id": "shadi-plate",
+   "nameEn": "Wedding plate (biryani, qorma, naan, salad)",
+   "nameUrdu": "Shadi ki plate",
+   "aliases": [
+    "dawat plate",
+    "wedding food"
+   ],
+   "unit": "plate",
+   "grams": 600,
+   "kcal": 1300,
+   "protein": 50,
+   "carbs": 130,
+   "fat": 64,
+   "category": "rice"
+  },
+  {
+   "id": "shadi-dessert",
+   "nameEn": "Wedding dessert (kheer / halwa / ice cream)",
+   "nameUrdu": "Shadi ka meetha",
+   "aliases": [],
+   "unit": "bowl",
+   "grams": 150,
+   "kcal": 350,
+   "protein": 6,
+   "carbs": 45,
+   "fat": 16,
+   "category": "sweet"
+  },
+  {
+   "id": "kn-nuggets",
+   "nameEn": "K&N's Chicken Nuggets (6, fried)",
+   "nameUrdu": "K&N nuggets",
+   "aliases": [
+    "kns nuggets",
+    "knn nuggets",
+    "k and n nuggets"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 270,
+   "protein": 14,
+   "carbs": 16,
+   "fat": 16.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-tempura",
+   "nameEn": "K&N's Tempura Nuggets (6)",
+   "nameUrdu": "K&N tempura",
+   "aliases": [
+    "kns tempura"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 280,
+   "protein": 13,
+   "carbs": 18,
+   "fat": 17,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-popcorn",
+   "nameEn": "K&N's Chicken Popcorn (15 pieces)",
+   "nameUrdu": "K&N popcorn",
+   "aliases": [
+    "kns popcorn chicken"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 290,
+   "protein": 14,
+   "carbs": 20,
+   "fat": 17,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-burger-patty-brand",
+   "nameEn": "K&N's Chicken Burger patty",
+   "nameUrdu": "K&N burger patty",
+   "aliases": [
+    "kns burger"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 170,
+   "protein": 10,
+   "carbs": 9,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-crispy-burger",
+   "nameEn": "K&N's Crispy Chicken Burger patty (fried)",
+   "nameUrdu": "K&N crispy burger",
+   "aliases": [
+    "kns crispy patty"
+   ],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 240,
+   "protein": 12,
+   "carbs": 16,
+   "fat": 14,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-seekh-brand",
+   "nameEn": "K&N's Chicken Seekh Kabab (1)",
+   "nameUrdu": "K&N seekh",
+   "aliases": [
+    "kns seekh",
+    "knn seekh kabab"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 90,
+   "protein": 6,
+   "carbs": 3,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-shami-brand",
+   "nameEn": "K&N's Chicken Shami Kabab (1)",
+   "nameUrdu": "K&N shami",
+   "aliases": [
+    "kns shami"
+   ],
+   "unit": "piece",
+   "grams": 45,
+   "kcal": 100,
+   "protein": 6,
+   "carbs": 6,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-chapli-brand",
+   "nameEn": "K&N's Chapli Kabab (1)",
+   "nameUrdu": "K&N chapli",
+   "aliases": [
+    "kns chapli"
+   ],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 190,
+   "protein": 11,
+   "carbs": 6,
+   "fat": 13.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-reshmi",
+   "nameEn": "K&N's Reshmi Kabab (1)",
+   "nameUrdu": "K&N reshmi",
+   "aliases": [
+    "kns reshmi kabab"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 85,
+   "protein": 6,
+   "carbs": 2,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-gola",
+   "nameEn": "K&N's Gola Kabab (4)",
+   "nameUrdu": "K&N gola",
+   "aliases": [
+    "kns gola kabab"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 240,
+   "protein": 14,
+   "carbs": 5,
+   "fat": 18,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-hot-wings",
+   "nameEn": "K&N's Hot Wings (6, fried)",
+   "nameUrdu": "K&N wings",
+   "aliases": [
+    "kns wings"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 380,
+   "protein": 24,
+   "carbs": 14,
+   "fat": 25,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-stix",
+   "nameEn": "K&N's Chicken Stix / strips (5)",
+   "nameUrdu": "K&N strips",
+   "aliases": [
+    "kns strips",
+    "chicken strips"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 260,
+   "protein": 15,
+   "carbs": 15,
+   "fat": 15,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-fillet",
+   "nameEn": "K&N's Crispy Fillet (1, fried)",
+   "nameUrdu": "K&N fillet",
+   "aliases": [
+    "kns crispy fillet"
+   ],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 230,
+   "protein": 15,
+   "carbs": 15,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-cordon",
+   "nameEn": "K&N's Chicken Cordon Bleu (1)",
+   "nameUrdu": "Cordon bleu",
+   "aliases": [
+    "kns cordon bleu"
+   ],
+   "unit": "piece",
+   "grams": 120,
+   "kcal": 300,
+   "protein": 17,
+   "carbs": 16,
+   "fat": 19,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-kofta",
+   "nameEn": "K&N's Chicken Kofta (5)",
+   "nameUrdu": "K&N kofta",
+   "aliases": [
+    "kns kofta"
+   ],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 210,
+   "protein": 14,
+   "carbs": 6,
+   "fat": 14.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-franks",
+   "nameEn": "K&N's Chicken Franks / sausage (1)",
+   "nameUrdu": "K&N franks",
+   "aliases": [
+    "kns sausage",
+    "kns franks"
+   ],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 90,
+   "protein": 5,
+   "carbs": 3,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-cocktail",
+   "nameEn": "K&N's Cocktail sausages (5)",
+   "nameUrdu": "Cocktail sausage",
+   "aliases": [
+    "kns cocktail"
+   ],
+   "unit": "serving",
+   "grams": 75,
+   "kcal": 170,
+   "protein": 9,
+   "carbs": 5,
+   "fat": 12.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-salami",
+   "nameEn": "K&N's Chicken Salami (2 slices)",
+   "nameUrdu": "K&N salami",
+   "aliases": [
+    "kns salami",
+    "kns luncheon"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 60,
+   "protein": 5,
+   "carbs": 1.5,
+   "fat": 4,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-tikka",
+   "nameEn": "K&N's Chicken Tikka Chunks (100 g)",
+   "nameUrdu": "K&N tikka",
+   "aliases": [
+    "kns tikka"
+   ],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 170,
+   "protein": 22,
+   "carbs": 4,
+   "fat": 7.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-samosa",
+   "nameEn": "K&N's Chicken Samosa (2, fried)",
+   "nameUrdu": "K&N samosa",
+   "aliases": [
+    "kns samosa"
+   ],
+   "unit": "serving",
+   "grams": 60,
+   "kcal": 190,
+   "protein": 6,
+   "carbs": 18,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-spring-roll",
+   "nameEn": "K&N's Spring Roll (2, fried)",
+   "nameUrdu": "K&N spring roll",
+   "aliases": [
+    "kns roll"
+   ],
+   "unit": "serving",
+   "grams": 70,
+   "kcal": 200,
+   "protein": 6,
+   "carbs": 20,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-chicken-pizza",
+   "nameEn": "K&N's Chicken Pizza (frozen, half)",
+   "nameUrdu": "K&N pizza",
+   "aliases": [
+    "kns pizza"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 380,
+   "protein": 17,
+   "carbs": 42,
+   "fat": 16,
+   "category": "packaged"
+  },
+  {
+   "id": "kn-mince",
+   "nameEn": "K&N's Chicken Mince (100 g cooked)",
+   "nameUrdu": "K&N qeema",
+   "aliases": [
+    "kns mince"
+   ],
+   "unit": "100 g",
+   "grams": 100,
+   "kcal": 190,
+   "protein": 22,
+   "carbs": 0,
+   "fat": 11,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-paratha",
+   "nameEn": "MENU Plain Paratha (1, cooked)",
+   "nameUrdu": "MENU paratha",
+   "aliases": [
+    "menu frozen paratha"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 260,
+   "protein": 5,
+   "carbs": 32,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-aloo-paratha",
+   "nameEn": "MENU Aloo Paratha (1)",
+   "nameUrdu": "MENU aloo paratha",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 110,
+   "kcal": 300,
+   "protein": 6,
+   "carbs": 40,
+   "fat": 13,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-lachha",
+   "nameEn": "MENU Lachha Paratha (1)",
+   "nameUrdu": "MENU lachha",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 320,
+   "protein": 5,
+   "carbs": 38,
+   "fat": 16,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-nuggets",
+   "nameEn": "MENU Chicken Nuggets (6)",
+   "nameUrdu": "MENU nuggets",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 270,
+   "protein": 14,
+   "carbs": 16,
+   "fat": 16.5,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-shami",
+   "nameEn": "MENU Shami Kabab (1)",
+   "nameUrdu": "MENU shami",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 45,
+   "kcal": 100,
+   "protein": 6,
+   "carbs": 6,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-samosa",
+   "nameEn": "MENU Samosa (2, fried)",
+   "nameUrdu": "MENU samosa",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 60,
+   "kcal": 190,
+   "protein": 5,
+   "carbs": 20,
+   "fat": 10,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-roll",
+   "nameEn": "MENU Spring Roll (2, fried)",
+   "nameUrdu": "MENU roll",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 70,
+   "kcal": 200,
+   "protein": 6,
+   "carbs": 20,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "menu-kachori",
+   "nameEn": "MENU Kachori (1, fried)",
+   "nameUrdu": "MENU kachori",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 220,
+   "protein": 4.5,
+   "carbs": 23,
+   "fat": 12.5,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-paratha",
+   "nameEn": "Dawn Plain Paratha (1, cooked)",
+   "nameUrdu": "Dawn paratha",
+   "aliases": [
+    "dawn frozen paratha"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 260,
+   "protein": 5,
+   "carbs": 32,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-whole-wheat-paratha",
+   "nameEn": "Dawn Whole Wheat Paratha (1)",
+   "nameUrdu": "Dawn atta paratha",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 240,
+   "protein": 6,
+   "carbs": 30,
+   "fat": 11,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-aloo-paratha",
+   "nameEn": "Dawn Aloo Paratha (1)",
+   "nameUrdu": "Dawn aloo paratha",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 110,
+   "kcal": 300,
+   "protein": 6,
+   "carbs": 40,
+   "fat": 13,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-crispy-fillet",
+   "nameEn": "Dawn Chicken Crispy Fillet (1, fried)",
+   "nameUrdu": "Dawn crispy fillet",
+   "aliases": [
+    "dawn fillet"
+   ],
+   "unit": "piece",
+   "grams": 90,
+   "kcal": 230,
+   "protein": 15,
+   "carbs": 15,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-crispy-fillet-burger",
+   "nameEn": "Dawn crispy fillet burger (bun + mayo)",
+   "nameUrdu": "Dawn fillet burger",
+   "aliases": [
+    "dawn burger"
+   ],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 530,
+   "protein": 22,
+   "carbs": 46,
+   "fat": 28,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-nuggets",
+   "nameEn": "Dawn Chicken Nuggets (6)",
+   "nameUrdu": "Dawn nuggets",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 270,
+   "protein": 14,
+   "carbs": 16,
+   "fat": 16.5,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-bread-white",
+   "nameEn": "Dawn white bread (slice)",
+   "nameUrdu": "Dawn bread",
+   "aliases": [
+    "dawn double roti"
+   ],
+   "unit": "slice",
+   "grams": 28,
+   "kcal": 70,
+   "protein": 2.5,
+   "carbs": 13,
+   "fat": 1,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-bread-brown",
+   "nameEn": "Dawn brown bread (slice)",
+   "nameUrdu": "Dawn brown bread",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 28,
+   "kcal": 68,
+   "protein": 3,
+   "carbs": 12,
+   "fat": 1,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-bun",
+   "nameEn": "Dawn burger bun",
+   "nameUrdu": "Dawn bun",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 55,
+   "kcal": 150,
+   "protein": 5,
+   "carbs": 27,
+   "fat": 2.5,
+   "category": "packaged"
+  },
+  {
+   "id": "dawn-cake",
+   "nameEn": "Dawn plain cake slice",
+   "nameUrdu": "Dawn cake",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 30,
+   "kcal": 120,
+   "protein": 1.5,
+   "carbs": 16,
+   "fat": 5.5,
+   "category": "packaged"
+  },
+  {
+   "id": "sabroso-nuggets",
+   "nameEn": "Sabroso Chicken Nuggets (6)",
+   "nameUrdu": "Sabroso nuggets",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 100,
+   "kcal": 270,
+   "protein": 14,
+   "carbs": 16,
+   "fat": 16.5,
+   "category": "packaged"
+  },
+  {
+   "id": "sabroso-seekh",
+   "nameEn": "Sabroso Seekh Kabab (1)",
+   "nameUrdu": "Sabroso seekh",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 40,
+   "kcal": 90,
+   "protein": 6,
+   "carbs": 3,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "sabroso-burger",
+   "nameEn": "Sabroso Burger patty",
+   "nameUrdu": "Sabroso patty",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 170,
+   "protein": 10,
+   "carbs": 9,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "monsalwa-paratha",
+   "nameEn": "Mon Salwa Paratha (1)",
+   "nameUrdu": "Mon Salwa paratha",
+   "aliases": [
+    "monsalwa"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 260,
+   "protein": 5,
+   "carbs": 32,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "monsalwa-samosa",
+   "nameEn": "Mon Salwa Samosa (2, fried)",
+   "nameUrdu": "Mon Salwa samosa",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 60,
+   "kcal": 190,
+   "protein": 5,
+   "carbs": 20,
+   "fat": 10,
+   "category": "packaged"
+  },
+  {
+   "id": "monsalwa-roll",
+   "nameEn": "Mon Salwa Roll (2, fried)",
+   "nameUrdu": "Mon Salwa roll",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 70,
+   "kcal": 200,
+   "protein": 6,
+   "carbs": 20,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "monsalwa-kabab",
+   "nameEn": "Mon Salwa Shami Kabab (1)",
+   "nameUrdu": "Mon Salwa shami",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 45,
+   "kcal": 100,
+   "protein": 6,
+   "carbs": 6,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "kolson-slanty",
+   "nameEn": "Kolson Slanty (small)",
+   "nameUrdu": "Slanty",
+   "aliases": [
+    "kolson"
+   ],
+   "unit": "pack",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.5,
+   "carbs": 12,
+   "fat": 5,
+   "category": "packaged"
+  },
+  {
+   "id": "kolson-noodles",
+   "nameEn": "Kolson noodles (1 pack)",
+   "nameUrdu": "Kolson noodles",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 65,
+   "kcal": 300,
+   "protein": 6,
+   "carbs": 42,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "knorr-noodles",
+   "nameEn": "Knorr noodles (1 pack)",
+   "nameUrdu": "Knorr noodles",
+   "aliases": [
+    "knorr chicken noodles"
+   ],
+   "unit": "pack",
+   "grams": 66,
+   "kcal": 310,
+   "protein": 6,
+   "carbs": 42,
+   "fat": 13,
+   "category": "packaged"
+  },
+  {
+   "id": "shan-ready-biryani",
+   "nameEn": "Ready-to-eat biryani (pack)",
+   "nameUrdu": "Ready biryani",
+   "aliases": [
+    "mitchells ready meal"
+   ],
+   "unit": "pack",
+   "grams": 300,
+   "kcal": 520,
+   "protein": 18,
+   "carbs": 70,
+   "fat": 18,
+   "category": "packaged"
+  },
+  {
+   "id": "olpers-milk",
+   "nameEn": "Olper's milk (1 cup)",
+   "nameUrdu": "Olpers",
+   "aliases": [
+    "olpers full cream"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 155,
+   "protein": 8,
+   "carbs": 12,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "olpers-lite",
+   "nameEn": "Olper's Lite milk (1 cup)",
+   "nameUrdu": "Olpers lite",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 105,
+   "protein": 8,
+   "carbs": 12.5,
+   "fat": 2.5,
+   "category": "dairy"
+  },
+  {
+   "id": "milkpak",
+   "nameEn": "Nestle Milkpak (1 cup)",
+   "nameUrdu": "Milkpak",
+   "aliases": [
+    "nestle milk pak"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 155,
+   "protein": 8,
+   "carbs": 12,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "haleeb",
+   "nameEn": "Haleeb milk (1 cup)",
+   "nameUrdu": "Haleeb",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 150,
+   "protein": 7.5,
+   "carbs": 12,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "nurpur-milk",
+   "nameEn": "Nurpur milk (1 cup)",
+   "nameUrdu": "Nurpur",
+   "aliases": [
+    "nurpur doodh"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 155,
+   "protein": 8,
+   "carbs": 12,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "dayfresh",
+   "nameEn": "Dayfresh / Prema milk (1 cup)",
+   "nameUrdu": "Dayfresh",
+   "aliases": [
+    "prema"
+   ],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 155,
+   "protein": 8,
+   "carbs": 12,
+   "fat": 8,
+   "category": "dairy"
+  },
+  {
+   "id": "everyday",
+   "nameEn": "Nestle Everyday whitener (2 tsp)",
+   "nameUrdu": "Everyday",
+   "aliases": [
+    "nestle everyday"
+   ],
+   "unit": "serving",
+   "grams": 8,
+   "kcal": 45,
+   "protein": 0.5,
+   "carbs": 4.5,
+   "fat": 2.5,
+   "category": "dairy"
+  },
+  {
+   "id": "tarang",
+   "nameEn": "Tarang whitener (2 tsp)",
+   "nameUrdu": "Tarang",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 8,
+   "kcal": 45,
+   "protein": 0.5,
+   "carbs": 4.5,
+   "fat": 2.5,
+   "category": "dairy"
+  },
+  {
+   "id": "nestle-yogurt",
+   "nameEn": "Nestle / Olper's yogurt (1 cup)",
+   "nameUrdu": "Nestle dahi",
+   "aliases": [
+    "olpers dahi",
+    "nestle dahi"
+   ],
+   "unit": "cup",
+   "grams": 200,
+   "kcal": 140,
+   "protein": 7,
+   "carbs": 10,
+   "fat": 7.5,
+   "category": "dairy"
+  },
+  {
+   "id": "nestle-fruit-yogurt",
+   "nameEn": "Nestle fruit yogurt (cup)",
+   "nameUrdu": "Fruit yogurt",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 100,
+   "kcal": 105,
+   "protein": 3.5,
+   "carbs": 16,
+   "fat": 3,
+   "category": "dairy"
+  },
+  {
+   "id": "nesvita",
+   "nameEn": "Nestle Nesvita milk (1 cup)",
+   "nameUrdu": "Nesvita",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 250,
+   "kcal": 120,
+   "protein": 9,
+   "carbs": 13,
+   "fat": 3.5,
+   "category": "dairy"
+  },
+  {
+   "id": "olpers-cream",
+   "nameEn": "Olper's / Nestle cream (2 tbsp)",
+   "nameUrdu": "Packet cream",
+   "aliases": [
+    "nestle cream"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 75,
+   "protein": 0.7,
+   "carbs": 1,
+   "fat": 7.5,
+   "category": "dairy"
+  },
+  {
+   "id": "adams-cheese",
+   "nameEn": "Adam's / Nurpur cheddar slice",
+   "nameUrdu": "Adams cheese",
+   "aliases": [
+    "adams",
+    "nurpur cheese"
+   ],
+   "unit": "slice",
+   "grams": 20,
+   "kcal": 75,
+   "protein": 4.5,
+   "carbs": 0.5,
+   "fat": 6,
+   "category": "dairy"
+  },
+  {
+   "id": "nurpur-butter",
+   "nameEn": "Nurpur / Olper's butter (1 tbsp)",
+   "nameUrdu": "Nurpur butter",
+   "aliases": [
+    "olpers butter"
+   ],
+   "unit": "tbsp",
+   "grams": 14,
+   "kcal": 100,
+   "protein": 0.1,
+   "carbs": 0,
+   "fat": 11,
+   "category": "dairy"
+  },
+  {
+   "id": "milo-pack",
+   "nameEn": "Nestle Milo pack",
+   "nameUrdu": "Milo pack",
+   "aliases": [
+    "milo dabba"
+   ],
+   "unit": "pack",
+   "grams": 180,
+   "kcal": 150,
+   "protein": 5,
+   "carbs": 22,
+   "fat": 4.5,
+   "category": "drink"
+  },
+  {
+   "id": "olpers-flavoured",
+   "nameEn": "Olper's flavoured milk (pack)",
+   "nameUrdu": "Olpers chocolate",
+   "aliases": [
+    "olpers flavoured milk"
+   ],
+   "unit": "pack",
+   "grams": 225,
+   "kcal": 185,
+   "protein": 6.5,
+   "carbs": 27,
+   "fat": 5.5,
+   "category": "drink"
+  },
+  {
+   "id": "good-milk-laban",
+   "nameEn": "Laban / Raita drink (Nestle)",
+   "nameUrdu": "Laban",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 250,
+   "kcal": 120,
+   "protein": 6,
+   "carbs": 9,
+   "fat": 6.5,
+   "category": "drink"
+  },
+  {
+   "id": "walls-cornetto",
+   "nameEn": "Wall's Cornetto",
+   "nameUrdu": "Cornetto",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 230,
+   "protein": 3.5,
+   "carbs": 28,
+   "fat": 11.5,
+   "category": "sweet"
+  },
+  {
+   "id": "walls-feast",
+   "nameEn": "Wall's Feast",
+   "nameUrdu": "Feast",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 70,
+   "kcal": 240,
+   "protein": 3,
+   "carbs": 24,
+   "fat": 15,
+   "category": "sweet"
+  },
+  {
+   "id": "walls-magnum",
+   "nameEn": "Magnum (classic)",
+   "nameUrdu": "Magnum",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 260,
+   "protein": 3.5,
+   "carbs": 25,
+   "fat": 16,
+   "category": "sweet"
+  },
+  {
+   "id": "walls-kulfa",
+   "nameEn": "Wall's Kulfa / Kulfi stick",
+   "nameUrdu": "Kulfa",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 160,
+   "protein": 3,
+   "carbs": 18,
+   "fat": 8.5,
+   "category": "sweet"
+  },
+  {
+   "id": "walls-chocobar",
+   "nameEn": "Wall's Chocobar / Max",
+   "nameUrdu": "Chocobar",
+   "aliases": [
+    "walls max"
+   ],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 180,
+   "protein": 2.5,
+   "carbs": 18,
+   "fat": 11,
+   "category": "sweet"
+  },
+  {
+   "id": "walls-paddle-pop",
+   "nameEn": "Paddle Pop / ice lolly",
+   "nameUrdu": "Paddle pop",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 60,
+   "kcal": 90,
+   "protein": 1,
+   "carbs": 18,
+   "fat": 1.5,
+   "category": "sweet"
+  },
+  {
+   "id": "walls-tub-scoop",
+   "nameEn": "Wall's / Omore tub ice cream (1 scoop)",
+   "nameUrdu": "Tub ice cream",
+   "aliases": [
+    "omore",
+    "igloo"
+   ],
+   "unit": "scoop",
+   "grams": 65,
+   "kcal": 130,
+   "protein": 2,
+   "carbs": 16,
+   "fat": 6.5,
+   "category": "sweet"
+  },
+  {
+   "id": "igloo-cone",
+   "nameEn": "Igloo / Omore cone",
+   "nameUrdu": "Igloo cone",
+   "aliases": [
+    "omore cone"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 220,
+   "protein": 3.5,
+   "carbs": 27,
+   "fat": 11,
+   "category": "sweet"
+  },
+  {
+   "id": "lu-prince",
+   "nameEn": "LU Prince (2 biscuits)",
+   "nameUrdu": "Prince",
+   "aliases": [
+    "prince biscuit"
+   ],
+   "unit": "serving",
+   "grams": 25,
+   "kcal": 120,
+   "protein": 1.3,
+   "carbs": 17,
+   "fat": 5.2,
+   "category": "packaged"
+  },
+  {
+   "id": "lu-candi",
+   "nameEn": "LU Candi (4)",
+   "nameUrdu": "Candi",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 150,
+   "protein": 2,
+   "carbs": 20,
+   "fat": 7,
+   "category": "packaged"
+  },
+  {
+   "id": "lu-tuc",
+   "nameEn": "LU TUC (4)",
+   "nameUrdu": "TUC",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 24,
+   "kcal": 120,
+   "protein": 2,
+   "carbs": 15,
+   "fat": 5.8,
+   "category": "packaged"
+  },
+  {
+   "id": "lu-zeera-plus",
+   "nameEn": "LU Zeera Plus (4)",
+   "nameUrdu": "Zeera plus",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 28,
+   "kcal": 140,
+   "protein": 2,
+   "carbs": 18,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "lu-oreo",
+   "nameEn": "Oreo (2)",
+   "nameUrdu": "Oreo",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 22,
+   "kcal": 105,
+   "protein": 1,
+   "carbs": 15,
+   "fat": 4.5,
+   "category": "packaged"
+  },
+  {
+   "id": "lu-wheatable",
+   "nameEn": "LU Wheatable (4)",
+   "nameUrdu": "Wheatable",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 145,
+   "protein": 2.5,
+   "carbs": 19,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-sooper",
+   "nameEn": "Peek Freans Sooper (4)",
+   "nameUrdu": "Sooper",
+   "aliases": [
+    "sooper biscuit"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 145,
+   "protein": 2,
+   "carbs": 20,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-rio",
+   "nameEn": "Peek Freans Rio (2)",
+   "nameUrdu": "Rio",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 25,
+   "kcal": 120,
+   "protein": 1.2,
+   "carbs": 17,
+   "fat": 5,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-gluco",
+   "nameEn": "Peek Freans Gluco (4)",
+   "nameUrdu": "Gluco",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 28,
+   "kcal": 125,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 4,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-chocolicious",
+   "nameEn": "Peek Freans Chocolicious (2)",
+   "nameUrdu": "Chocolicious",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 150,
+   "protein": 1.8,
+   "carbs": 19,
+   "fat": 7.5,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-butter-puff",
+   "nameEn": "Peek Freans Butter Puff (4)",
+   "nameUrdu": "Butter puff",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 25,
+   "kcal": 130,
+   "protein": 1.8,
+   "carbs": 15,
+   "fat": 7,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-marie",
+   "nameEn": "Peek Freans Marie (4)",
+   "nameUrdu": "Marie",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 28,
+   "kcal": 125,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 4,
+   "category": "packaged"
+  },
+  {
+   "id": "pf-cake-up",
+   "nameEn": "Peek Freans Cake Up (1)",
+   "nameUrdu": "Cake up",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 28,
+   "kcal": 120,
+   "protein": 1.5,
+   "carbs": 16,
+   "fat": 5.5,
+   "category": "packaged"
+  },
+  {
+   "id": "bisconni-chocolate-chip",
+   "nameEn": "Bisconni Chocolate Chip Cookies (2)",
+   "nameUrdu": "Bisconni cookies",
+   "aliases": [
+    "chocolate chip cookies"
+   ],
+   "unit": "serving",
+   "grams": 30,
+   "kcal": 150,
+   "protein": 1.8,
+   "carbs": 19,
+   "fat": 7.5,
+   "category": "packaged"
+  },
+  {
+   "id": "bisconni-novita",
+   "nameEn": "Bisconni Novita / Cocomo (pack)",
+   "nameUrdu": "Cocomo",
+   "aliases": [
+    "novita"
+   ],
+   "unit": "pack",
+   "grams": 25,
+   "kcal": 125,
+   "protein": 1.5,
+   "carbs": 15,
+   "fat": 6.5,
+   "category": "packaged"
+  },
+  {
+   "id": "hilal-tiger",
+   "nameEn": "Tiger biscuits (pack)",
+   "nameUrdu": "Tiger",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 30,
+   "kcal": 140,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 5,
+   "category": "packaged"
+  },
+  {
+   "id": "lays-masala",
+   "nameEn": "Lays (any flavour, regular pack ~30 g)",
+   "nameUrdu": "Lays",
+   "aliases": [
+    "lays masala",
+    "lays french cheese",
+    "lays salted"
+   ],
+   "unit": "pack",
+   "grams": 30,
+   "kcal": 160,
+   "protein": 2,
+   "carbs": 16,
+   "fat": 10,
+   "category": "packaged"
+  },
+  {
+   "id": "super-crisp",
+   "nameEn": "Super Crisp (small)",
+   "nameUrdu": "Super crisp",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 20,
+   "kcal": 105,
+   "protein": 1.3,
+   "carbs": 12,
+   "fat": 6,
+   "category": "packaged"
+  },
+  {
+   "id": "kurkure-pack",
+   "nameEn": "Kurkure (regular pack)",
+   "nameUrdu": "Kurkure",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 30,
+   "kcal": 160,
+   "protein": 2,
+   "carbs": 18,
+   "fat": 9,
+   "category": "packaged"
+  },
+  {
+   "id": "cheetos-pack",
+   "nameEn": "Cheetos (regular pack)",
+   "nameUrdu": "Cheetos",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 30,
+   "kcal": 160,
+   "protein": 2,
+   "carbs": 17,
+   "fat": 9.5,
+   "category": "packaged"
+  },
+  {
+   "id": "pringles",
+   "nameEn": "Pringles (1/4 tube)",
+   "nameUrdu": "Pringles",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 40,
+   "kcal": 210,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 13,
+   "category": "packaged"
+  },
+  {
+   "id": "dairy-milk",
+   "nameEn": "Cadbury Dairy Milk (small bar)",
+   "nameUrdu": "Dairy Milk",
+   "aliases": [
+    "cadbury"
+   ],
+   "unit": "bar",
+   "grams": 35,
+   "kcal": 185,
+   "protein": 2.7,
+   "carbs": 20,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "kitkat",
+   "nameEn": "KitKat (4 finger)",
+   "nameUrdu": "KitKat",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 41,
+   "kcal": 210,
+   "protein": 2.7,
+   "carbs": 26,
+   "fat": 10.5,
+   "category": "packaged"
+  },
+  {
+   "id": "snickers",
+   "nameEn": "Snickers",
+   "nameUrdu": "Snickers",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 50,
+   "kcal": 245,
+   "protein": 4.5,
+   "carbs": 30,
+   "fat": 12,
+   "category": "packaged"
+  },
+  {
+   "id": "mars",
+   "nameEn": "Mars / Twix bar",
+   "nameUrdu": "Mars",
+   "aliases": [
+    "twix",
+    "bounty"
+   ],
+   "unit": "bar",
+   "grams": 50,
+   "kcal": 230,
+   "protein": 2.2,
+   "carbs": 34,
+   "fat": 9,
+   "category": "packaged"
+  },
+  {
+   "id": "perk",
+   "nameEn": "Perk / Kitkat 2-finger",
+   "nameUrdu": "Perk",
+   "aliases": [],
+   "unit": "bar",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.3,
+   "carbs": 13,
+   "fat": 5,
+   "category": "packaged"
+  },
+  {
+   "id": "cocomo",
+   "nameEn": "Cocomo / Choco bites",
+   "nameUrdu": "Choco bites",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 20,
+   "kcal": 100,
+   "protein": 1.2,
+   "carbs": 12,
+   "fat": 5.5,
+   "category": "packaged"
+  },
+  {
+   "id": "nutella-pack",
+   "nameEn": "Nutella & Go (1 pack)",
+   "nameUrdu": "Nutella go",
+   "aliases": [],
+   "unit": "pack",
+   "grams": 52,
+   "kcal": 260,
+   "protein": 4,
+   "carbs": 30,
+   "fat": 13,
+   "category": "packaged"
+  },
+  {
+   "id": "coca-cola-can",
+   "nameEn": "Coca-Cola / Pepsi (can, 330-345 ml)",
+   "nameUrdu": "Coke",
+   "aliases": [
+    "coca cola",
+    "pepsi",
+    "coke can",
+    "pepsi can"
+   ],
+   "unit": "can",
+   "grams": 345,
+   "kcal": 145,
+   "protein": 0,
+   "carbs": 37,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "sprite-can",
+   "nameEn": "Sprite / 7up (can)",
+   "nameUrdu": "Sprite",
+   "aliases": [
+    "7up",
+    "seven up"
+   ],
+   "unit": "can",
+   "grams": 345,
+   "kcal": 140,
+   "protein": 0,
+   "carbs": 35,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "fanta-can",
+   "nameEn": "Fanta / Mirinda (can)",
+   "nameUrdu": "Fanta",
+   "aliases": [
+    "mirinda"
+   ],
+   "unit": "can",
+   "grams": 345,
+   "kcal": 160,
+   "protein": 0,
+   "carbs": 40,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "dew-can",
+   "nameEn": "Mountain Dew (can)",
+   "nameUrdu": "Dew",
+   "aliases": [
+    "mountain dew"
+   ],
+   "unit": "can",
+   "grams": 345,
+   "kcal": 170,
+   "protein": 0,
+   "carbs": 42,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "coke-zero",
+   "nameEn": "Coke Zero / Pepsi Black / Diet",
+   "nameUrdu": "Coke zero",
+   "aliases": [
+    "pepsi black",
+    "diet coke",
+    "diet pepsi"
+   ],
+   "unit": "can",
+   "grams": 345,
+   "kcal": 2,
+   "protein": 0,
+   "carbs": 0.5,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "pakola",
+   "nameEn": "Pakola (bottle)",
+   "nameUrdu": "Pakola",
+   "aliases": [],
+   "unit": "bottle",
+   "grams": 250,
+   "kcal": 115,
+   "protein": 0,
+   "carbs": 29,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "gourmet-cola",
+   "nameEn": "Gourmet Cola / Next Cola (500 ml)",
+   "nameUrdu": "Gourmet cola",
+   "aliases": [
+    "next cola"
+   ],
+   "unit": "bottle",
+   "grams": 500,
+   "kcal": 210,
+   "protein": 0,
+   "carbs": 53,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "sting-can",
+   "nameEn": "Sting energy drink",
+   "nameUrdu": "Sting",
+   "aliases": [],
+   "unit": "bottle",
+   "grams": 250,
+   "kcal": 120,
+   "protein": 0,
+   "carbs": 30,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "red-bull",
+   "nameEn": "Red Bull (can)",
+   "nameUrdu": "Red bull",
+   "aliases": [],
+   "unit": "can",
+   "grams": 250,
+   "kcal": 112,
+   "protein": 0,
+   "carbs": 27,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "nestle-juice",
+   "nameEn": "Nestle Fruita Vitals / Shezan juice (200 ml)",
+   "nameUrdu": "Juice dabba",
+   "aliases": [
+    "nestle juice",
+    "shezan",
+    "fruita vitals",
+    "frooto",
+    "slice"
+   ],
+   "unit": "pack",
+   "grams": 200,
+   "kcal": 110,
+   "protein": 0,
+   "carbs": 27,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "shezan-mango",
+   "nameEn": "Shezan mango drink (250 ml)",
+   "nameUrdu": "Shezan mango",
+   "aliases": [],
+   "unit": "bottle",
+   "grams": 250,
+   "kcal": 135,
+   "protein": 0,
+   "carbs": 33,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "rooh-afza-water",
+   "nameEn": "Rooh Afza with water",
+   "nameUrdu": "Rooh afza",
+   "aliases": [
+    "sharbat"
+   ],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 100,
+   "protein": 0,
+   "carbs": 25,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "tang-orange",
+   "nameEn": "Tang (1 glass)",
+   "nameUrdu": "Tang",
+   "aliases": [],
+   "unit": "glass",
+   "grams": 250,
+   "kcal": 90,
+   "protein": 0,
+   "carbs": 22,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "nestle-water",
+   "nameEn": "Water (any brand)",
+   "nameUrdu": "Pani",
+   "aliases": [
+    "nestle pure life",
+    "aquafina",
+    "water"
+   ],
+   "unit": "bottle",
+   "grams": 500,
+   "kcal": 0,
+   "protein": 0,
+   "carbs": 0,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "gatorade",
+   "nameEn": "Gatorade / sports drink (500 ml)",
+   "nameUrdu": "Gatorade",
+   "aliases": [
+    "sports drink"
+   ],
+   "unit": "bottle",
+   "grams": 500,
+   "kcal": 130,
+   "protein": 0,
+   "carbs": 32,
+   "fat": 0,
+   "category": "drink"
+  },
+  {
+   "id": "kfc-krunch",
+   "nameEn": "KFC Krunch Burger",
+   "nameUrdu": "Krunch burger",
+   "aliases": [
+    "kfc krunch"
+   ],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 380,
+   "protein": 15,
+   "carbs": 40,
+   "fat": 18,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-krunch-combo",
+   "nameEn": "KFC Krunch Combo (burger, fries, drink)",
+   "nameUrdu": "Krunch combo",
+   "aliases": [],
+   "unit": "meal",
+   "grams": 550,
+   "kcal": 840,
+   "protein": 20,
+   "carbs": 115,
+   "fat": 33,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-zinger-combo",
+   "nameEn": "KFC Zinger Combo (burger, fries, drink)",
+   "nameUrdu": "Zinger combo",
+   "aliases": [],
+   "unit": "meal",
+   "grams": 650,
+   "kcal": 980,
+   "protein": 31,
+   "carbs": 125,
+   "fat": 40,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-strips",
+   "nameEn": "KFC Strips (3)",
+   "nameUrdu": "KFC strips",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 120,
+   "kcal": 330,
+   "protein": 24,
+   "carbs": 16,
+   "fat": 19,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-popcorn",
+   "nameEn": "KFC Popcorn Chicken (regular)",
+   "nameUrdu": "KFC popcorn",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 110,
+   "kcal": 320,
+   "protein": 18,
+   "carbs": 18,
+   "fat": 20,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-rice-box",
+   "nameEn": "KFC Rice & Spice / rice box",
+   "nameUrdu": "KFC rice",
+   "aliases": [],
+   "unit": "box",
+   "grams": 350,
+   "kcal": 580,
+   "protein": 25,
+   "carbs": 75,
+   "fat": 20,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-coleslaw",
+   "nameEn": "KFC Coleslaw",
+   "nameUrdu": "Coleslaw",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 100,
+   "kcal": 150,
+   "protein": 1,
+   "carbs": 13,
+   "fat": 10.5,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-mashed",
+   "nameEn": "KFC Mashed potato",
+   "nameUrdu": "KFC mash",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 110,
+   "kcal": 110,
+   "protein": 2,
+   "carbs": 15,
+   "fat": 4.5,
+   "category": "chain"
+  },
+  {
+   "id": "kfc-chicken-bucket-2",
+   "nameEn": "KFC 2-piece meal (no drink)",
+   "nameUrdu": "2 piece meal",
+   "aliases": [],
+   "unit": "meal",
+   "grams": 400,
+   "kcal": 870,
+   "protein": 54,
+   "carbs": 60,
+   "fat": 46,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-quarter-pounder",
+   "nameEn": "McDonald's Quarter Pounder with Cheese",
+   "nameUrdu": "Quarter pounder",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 520,
+   "protein": 30,
+   "carbs": 42,
+   "fat": 26,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-mcspicy",
+   "nameEn": "McDonald's McSpicy / Spicy Chicken",
+   "nameUrdu": "McSpicy",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 520,
+   "protein": 24,
+   "carbs": 48,
+   "fat": 25,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-mcroyale",
+   "nameEn": "McDonald's McRoyale",
+   "nameUrdu": "McRoyale",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 230,
+   "kcal": 560,
+   "protein": 30,
+   "carbs": 44,
+   "fat": 29,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-chicken-big-mac",
+   "nameEn": "McDonald's Chicken Big Mac",
+   "nameUrdu": "Chicken big mac",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 210,
+   "kcal": 540,
+   "protein": 27,
+   "carbs": 46,
+   "fat": 27,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-apple-pie",
+   "nameEn": "McDonald's Apple Pie",
+   "nameUrdu": "Apple pie",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 230,
+   "protein": 2,
+   "carbs": 30,
+   "fat": 11,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-sundae",
+   "nameEn": "McDonald's Sundae",
+   "nameUrdu": "Sundae",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 160,
+   "kcal": 300,
+   "protein": 7,
+   "carbs": 50,
+   "fat": 8,
+   "category": "chain"
+  },
+  {
+   "id": "mcd-meal-medium",
+   "nameEn": "McDonald's medium meal (burger, fries, drink)",
+   "nameUrdu": "McD meal",
+   "aliases": [],
+   "unit": "meal",
+   "grams": 700,
+   "kcal": 1050,
+   "protein": 30,
+   "carbs": 140,
+   "fat": 42,
+   "category": "chain"
+  },
+  {
+   "id": "hardees-thickburger",
+   "nameEn": "Hardee's Thickburger",
+   "nameUrdu": "Thickburger",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 300,
+   "kcal": 850,
+   "protein": 40,
+   "carbs": 55,
+   "fat": 52,
+   "category": "chain"
+  },
+  {
+   "id": "hardees-chicken-fillet",
+   "nameEn": "Hardee's Chicken Fillet",
+   "nameUrdu": "Hardees chicken",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 560,
+   "protein": 26,
+   "carbs": 52,
+   "fat": 27,
+   "category": "chain"
+  },
+  {
+   "id": "hardees-fries",
+   "nameEn": "Hardee's Fries (medium)",
+   "nameUrdu": "Hardees fries",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 130,
+   "kcal": 390,
+   "protein": 5,
+   "carbs": 50,
+   "fat": 19,
+   "category": "chain"
+  },
+  {
+   "id": "bk-whopper",
+   "nameEn": "Burger King Whopper",
+   "nameUrdu": "Whopper",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 270,
+   "kcal": 660,
+   "protein": 28,
+   "carbs": 50,
+   "fat": 39,
+   "category": "chain"
+  },
+  {
+   "id": "bk-chicken-royale",
+   "nameEn": "Burger King Chicken Royale",
+   "nameUrdu": "Chicken royale",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 210,
+   "kcal": 570,
+   "protein": 24,
+   "carbs": 48,
+   "fat": 31,
+   "category": "chain"
+  },
+  {
+   "id": "subway-footlong",
+   "nameEn": "Subway Footlong chicken sub",
+   "nameUrdu": "Subway footlong",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 460,
+   "kcal": 800,
+   "protein": 52,
+   "carbs": 92,
+   "fat": 22,
+   "category": "chain"
+  },
+  {
+   "id": "subway-6inch-tikka",
+   "nameEn": "Subway 6-inch chicken tikka",
+   "nameUrdu": "Subway tikka",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 230,
+   "kcal": 390,
+   "protein": 26,
+   "carbs": 46,
+   "fat": 10,
+   "category": "chain"
+  },
+  {
+   "id": "pizza-hut-medium-slice",
+   "nameEn": "Pizza Hut pan pizza slice (medium)",
+   "nameUrdu": "Pizza hut slice",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 120,
+   "kcal": 300,
+   "protein": 13,
+   "carbs": 32,
+   "fat": 13,
+   "category": "chain"
+  },
+  {
+   "id": "pizza-hut-large-slice",
+   "nameEn": "Pizza Hut large slice",
+   "nameUrdu": "Pizza hut large",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 160,
+   "kcal": 400,
+   "protein": 17,
+   "carbs": 42,
+   "fat": 18,
+   "category": "chain"
+  },
+  {
+   "id": "dominos-medium-slice",
+   "nameEn": "Domino's medium slice",
+   "nameUrdu": "Dominos slice",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 110,
+   "kcal": 270,
+   "protein": 12,
+   "carbs": 30,
+   "fat": 11,
+   "category": "chain"
+  },
+  {
+   "id": "broadway-slice",
+   "nameEn": "Broadway Pizza slice (large)",
+   "nameUrdu": "Broadway",
+   "aliases": [
+    "broadway pizza"
+   ],
+   "unit": "slice",
+   "grams": 160,
+   "kcal": 420,
+   "protein": 18,
+   "carbs": 40,
+   "fat": 20,
+   "category": "chain"
+  },
+  {
+   "id": "cheezious-slice",
+   "nameEn": "Cheezious slice (large)",
+   "nameUrdu": "Cheezious",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 160,
+   "kcal": 430,
+   "protein": 18,
+   "carbs": 40,
+   "fat": 21,
+   "category": "chain"
+  },
+  {
+   "id": "cheezious-crown-crust",
+   "nameEn": "Cheezious Crown Crust slice",
+   "nameUrdu": "Crown crust",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 180,
+   "kcal": 500,
+   "protein": 21,
+   "carbs": 42,
+   "fat": 27,
+   "category": "chain"
+  },
+  {
+   "id": "pizza-14-whole",
+   "nameEn": "Large pizza (14 inch, whole)",
+   "nameUrdu": "Puri bari pizza",
+   "aliases": [
+    "large pizza"
+   ],
+   "unit": "pizza",
+   "grams": 1300,
+   "kcal": 3300,
+   "protein": 140,
+   "carbs": 330,
+   "fat": 150,
+   "category": "chain"
+  },
+  {
+   "id": "pizza-medium-whole",
+   "nameEn": "Medium pizza (whole, 10-12 inch)",
+   "nameUrdu": "Medium pizza",
+   "aliases": [],
+   "unit": "pizza",
+   "grams": 800,
+   "kcal": 2000,
+   "protein": 85,
+   "carbs": 210,
+   "fat": 90,
+   "category": "chain"
+  },
+  {
+   "id": "burger-lab-single",
+   "nameEn": "Burger Lab single smash (cheese)",
+   "nameUrdu": "Burger lab",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 220,
+   "kcal": 600,
+   "protein": 30,
+   "carbs": 40,
+   "fat": 35,
+   "category": "chain"
+  },
+  {
+   "id": "burger-lab-double",
+   "nameEn": "Burger Lab double smash",
+   "nameUrdu": "Burger lab double",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 320,
+   "kcal": 880,
+   "protein": 48,
+   "carbs": 42,
+   "fat": 58,
+   "category": "chain"
+  },
+  {
+   "id": "johnny-jugnu-wrap",
+   "nameEn": "Johnny & Jugnu wrap / zinger",
+   "nameUrdu": "Johnny jugnu",
+   "aliases": [
+    "johnny and jugnu"
+   ],
+   "unit": "piece",
+   "grams": 250,
+   "kcal": 650,
+   "protein": 28,
+   "carbs": 55,
+   "fat": 35,
+   "category": "chain"
+  },
+  {
+   "id": "ranchers-burger",
+   "nameEn": "Ranchers / Howdy beef burger",
+   "nameUrdu": "Ranchers",
+   "aliases": [
+    "howdy",
+    "ranchers burger"
+   ],
+   "unit": "piece",
+   "grams": 280,
+   "kcal": 750,
+   "protein": 38,
+   "carbs": 46,
+   "fat": 45,
+   "category": "chain"
+  },
+  {
+   "id": "optp-fries",
+   "nameEn": "OPTP fries (regular)",
+   "nameUrdu": "OPTP",
+   "aliases": [
+    "optp masala fries"
+   ],
+   "unit": "serving",
+   "grams": 150,
+   "kcal": 440,
+   "protein": 5,
+   "carbs": 52,
+   "fat": 23,
+   "category": "chain"
+  },
+  {
+   "id": "optp-burger",
+   "nameEn": "OPTP Chicken Burger",
+   "nameUrdu": "OPTP burger",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 200,
+   "kcal": 500,
+   "protein": 22,
+   "carbs": 45,
+   "fat": 25,
+   "category": "chain"
+  },
+  {
+   "id": "savour-pulao-kabab",
+   "nameEn": "Savour Foods pulao kebab (single)",
+   "nameUrdu": "Savour pulao",
+   "aliases": [
+    "savour",
+    "savour foods"
+   ],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 850,
+   "protein": 38,
+   "carbs": 95,
+   "fat": 34,
+   "category": "chain"
+  },
+  {
+   "id": "savour-pulao-double",
+   "nameEn": "Savour Foods pulao (2 kebab, 1 chicken piece)",
+   "nameUrdu": "Savour special",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 550,
+   "kcal": 1100,
+   "protein": 52,
+   "carbs": 100,
+   "fat": 54,
+   "category": "chain"
+  },
+  {
+   "id": "student-biryani-plate",
+   "nameEn": "Student Biryani (single plate)",
+   "nameUrdu": "Student biryani",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 800,
+   "protein": 34,
+   "carbs": 95,
+   "fat": 30,
+   "category": "chain"
+  },
+  {
+   "id": "kababjees-seekh",
+   "nameEn": "Kababjees seekh kebab (2) with naan",
+   "nameUrdu": "Kababjees",
+   "aliases": [
+    "kababjees"
+   ],
+   "unit": "plate",
+   "grams": 300,
+   "kcal": 750,
+   "protein": 34,
+   "carbs": 55,
+   "fat": 43,
+   "category": "chain"
+  },
+  {
+   "id": "kababjees-chicken-boti",
+   "nameEn": "Kababjees chicken tikka boti (serving)",
+   "nameUrdu": "Kababjees boti",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 200,
+   "kcal": 380,
+   "protein": 44,
+   "carbs": 4,
+   "fat": 20,
+   "category": "chain"
+  },
+  {
+   "id": "butt-karahi",
+   "nameEn": "Butt karahi (chicken, per person)",
+   "nameUrdu": "Butt karahi",
+   "aliases": [
+    "lakshmi chowk karahi"
+   ],
+   "unit": "serving",
+   "grams": 300,
+   "kcal": 650,
+   "protein": 40,
+   "carbs": 8,
+   "fat": 51,
+   "category": "chain"
+  },
+  {
+   "id": "bundu-khan-bbq",
+   "nameEn": "Bundu Khan BBQ platter (per person)",
+   "nameUrdu": "Bundu khan",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 300,
+   "kcal": 650,
+   "protein": 55,
+   "carbs": 10,
+   "fat": 43,
+   "category": "chain"
+  },
+  {
+   "id": "monal-platter",
+   "nameEn": "Restaurant BBQ platter (per person)",
+   "nameUrdu": "BBQ platter",
+   "aliases": [
+    "monal",
+    "tandoori restaurant"
+   ],
+   "unit": "serving",
+   "grams": 350,
+   "kcal": 750,
+   "protein": 60,
+   "carbs": 12,
+   "fat": 51,
+   "category": "chain"
+  },
+  {
+   "id": "haveli-karahi",
+   "nameEn": "Restaurant mutton karahi (per person)",
+   "nameUrdu": "Mutton karahi restaurant",
+   "aliases": [],
+   "unit": "serving",
+   "grams": 300,
+   "kcal": 700,
+   "protein": 42,
+   "carbs": 8,
+   "fat": 55,
+   "category": "chain"
+  },
+  {
+   "id": "waris-nihari",
+   "nameEn": "Waris / Muhammadi nihari (plate, no naan)",
+   "nameUrdu": "Waris nihari",
+   "aliases": [
+    "muhammadi nihari"
+   ],
+   "unit": "plate",
+   "grams": 350,
+   "kcal": 720,
+   "protein": 38,
+   "carbs": 12,
+   "fat": 58,
+   "category": "chain"
+  },
+  {
+   "id": "javed-nihari",
+   "nameEn": "Javed nihari with 1 naan",
+   "nameUrdu": "Javed nihari",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 980,
+   "protein": 45,
+   "carbs": 62,
+   "fat": 60,
+   "category": "chain"
+  },
+  {
+   "id": "cafe-dhaba-paratha-chai",
+   "nameEn": "Dhaba paratha with chai",
+   "nameUrdu": "Dhaba nashta",
+   "aliases": [],
+   "unit": "plate",
+   "grams": 280,
+   "kcal": 470,
+   "protein": 9,
+   "carbs": 58,
+   "fat": 22,
+   "category": "chain"
+  },
+  {
+   "id": "food-panda-chinese",
+   "nameEn": "Chinese takeaway (chicken + rice, per person)",
+   "nameUrdu": "Chinese khana",
+   "aliases": [
+    "chinese food"
+   ],
+   "unit": "plate",
+   "grams": 450,
+   "kcal": 800,
+   "protein": 35,
+   "carbs": 95,
+   "fat": 30,
+   "category": "chain"
+  },
+  {
+   "id": "gloria-jeans-latte",
+   "nameEn": "Gloria Jean's / Tim Hortons latte (regular)",
+   "nameUrdu": "Latte",
+   "aliases": [
+    "gloria jeans",
+    "tim hortons",
+    "espresso latte"
+   ],
+   "unit": "cup",
+   "grams": 350,
+   "kcal": 190,
+   "protein": 10,
+   "carbs": 18,
+   "fat": 9,
+   "category": "chain"
+  },
+  {
+   "id": "tim-hortons-iced-capp",
+   "nameEn": "Tim Hortons Iced Capp (medium)",
+   "nameUrdu": "Iced capp",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 450,
+   "kcal": 360,
+   "protein": 4,
+   "carbs": 50,
+   "fat": 16,
+   "category": "chain"
+  },
+  {
+   "id": "cafe-cappuccino-large",
+   "nameEn": "Cappuccino (large, full milk)",
+   "nameUrdu": "Bara cappuccino",
+   "aliases": [],
+   "unit": "cup",
+   "grams": 450,
+   "kcal": 220,
+   "protein": 11,
+   "carbs": 20,
+   "fat": 11,
+   "category": "chain"
+  },
+  {
+   "id": "gourmet-cake-slice",
+   "nameEn": "Gourmet / bakery cake slice",
+   "nameUrdu": "Gourmet cake",
+   "aliases": [
+    "gourmet bakers"
+   ],
+   "unit": "slice",
+   "grams": 100,
+   "kcal": 380,
+   "protein": 4.5,
+   "carbs": 50,
+   "fat": 18,
+   "category": "chain"
+  },
+  {
+   "id": "bakery-chicken-patties",
+   "nameEn": "Bakery chicken patties (United King / Kaybees)",
+   "nameUrdu": "Bakery patties",
+   "aliases": [
+    "united king",
+    "kaybees"
+   ],
+   "unit": "piece",
+   "grams": 80,
+   "kcal": 280,
+   "protein": 7,
+   "carbs": 24,
+   "fat": 17,
+   "category": "chain"
+  },
+  {
+   "id": "bakery-pizza-slice",
+   "nameEn": "Bakery pizza slice",
+   "nameUrdu": "Bakery pizza",
+   "aliases": [],
+   "unit": "slice",
+   "grams": 100,
+   "kcal": 250,
+   "protein": 10,
+   "carbs": 30,
+   "fat": 10,
+   "category": "chain"
+  },
+  {
+   "id": "bakery-sandwich",
+   "nameEn": "Bakery chicken sandwich",
+   "nameUrdu": "Bakery sandwich",
+   "aliases": [],
+   "unit": "piece",
+   "grams": 150,
+   "kcal": 350,
+   "protein": 14,
+   "carbs": 34,
+   "fat": 17,
+   "category": "chain"
   }
  ]
 }

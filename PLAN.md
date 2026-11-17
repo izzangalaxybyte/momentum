@@ -73,7 +73,7 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 - [x] Today screen calorie/protein ring
 
 **1b. Food logging**
-- [x] `data/foods_pk.json` (182 desi items to start) + macro sanity checks
+- [x] `data/foods_pk.json` (182 desi items to start, now 752 incl. brands and restaurants) + macro sanity checks
 - [x] Search over English / Roman Urdu / aliases
 - [x] Log by meal, quantities in household units, recents/favourites, custom foods
 - [x] Write nutrition to Health Connect

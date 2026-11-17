@@ -36,6 +36,8 @@ interface MomentumDao {
     suspend fun dayTotalsNow(from: Long): List<DayTotal>
     @Query("SELECT foodId, COUNT(*) AS uses FROM food_log WHERE deleted = 0 AND foodId IS NOT NULL GROUP BY foodId ORDER BY MAX(createdAt) DESC LIMIT 30")
     fun recentFoods(): Flow<List<FoodUse>>
+    @Query("SELECT foodId, COUNT(*) AS uses FROM food_log WHERE deleted = 0 AND foodId IS NOT NULL GROUP BY foodId ORDER BY MAX(createdAt) DESC LIMIT 30")
+    suspend fun recentFoodsNow(): List<FoodUse>
 
     // ladders
     @Query("SELECT * FROM ladder_state WHERE deleted = 0") fun ladderStates(): Flow<List<LadderStateEntity>>

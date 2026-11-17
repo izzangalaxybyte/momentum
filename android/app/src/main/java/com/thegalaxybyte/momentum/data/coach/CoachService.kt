@@ -32,17 +32,19 @@ class CoachService(private val client: CoachClient, private val repo: Repo, priv
         client.chat(UUID.randomUUID().toString(), text, Days.today()).forEach { dao.upsertCoachMessage(it) }
     }
 
-    suspend fun parseMeal(text: String, photoJpegB64: String?): MealResult {
-        val custom = repo.dao.allFoods()
-        return client.meal(text, photoJpegB64, repo.searchFoods("", custom))
-    }
+    /** The foods worth sending for this request (see [FoodShortlist]): keeps each call small. */
+    private suspend fun shortlist(text: String, hasPhoto: Boolean) = FoodShortlist.pick(
+        text, repo.searchFoods("", repo.dao.allFoods()), repo.dao.recentFoodsNow().map { it.foodId }, hasPhoto,
+    )
+
+    suspend fun parseMeal(text: String, photoJpegB64: String?): MealResult =
+        client.meal(text, photoJpegB64, shortlist(text, photoJpegB64 != null))
 
     /** "How many calories is this?" / "Which is better?", with what's left for today. */
     suspend fun askFood(question: String, photoJpegB64: String?): AskResult {
-        val custom = repo.dao.allFoods()
         val today = plan.today()
         return client.ask(
-            question, photoJpegB64, repo.searchFoods("", custom),
+            question, photoJpegB64, shortlist(question, photoJpegB64 != null),
             today?.let { it.targets.target - it.eatenKcal }, today?.let { it.targets.proteinG - it.eatenProtein },
         )
     }

@@ -6,7 +6,8 @@ A personal fitness and weight-loss coach for Android.
   weights and reps, with progressive overload that keeps working with limited home equipment
   (heavier → more reps → slow tempo → harder variation).
 - Calorie and protein targets that re-calibrate weekly from your real intake and weight trend.
-- Food tracker with a built-in Pakistani/desi food database (roti, biryani, karahi, daal, chai…),
+- Food tracker with a built-in Pakistani/desi food database of 752 items (roti, biryani, karahi, daal,
+  chai…, plus brands like K&N's, Dawn and MENU and chains like KFC, Savour Foods and Cheezious),
   measured in pieces, plates, bowls and cups, plus your own custom foods.
 - Reads walks, runs, steps, heart rate and weight from a Samsung Galaxy Watch via Health Connect,
   and writes your food log back so Samsung Health shows it too.
