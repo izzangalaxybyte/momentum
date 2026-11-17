@@ -1,0 +1,27 @@
+version = 0.1
+
+# Normally GitHub Actions deploys (.github/workflows/deploy.yml, `--config-env ci`, OIDC credentials).
+# Local deploys (`sam build && sam deploy` from infra/) use your default AWS profile.
+[default.global.parameters]
+stack_name = "momentum"
+region = "eu-central-1"
+
+[default.build.parameters]
+cached = true
+
+[default.deploy.parameters]
+capabilities = "CAPABILITY_IAM"
+resolve_s3 = true
+s3_prefix = "momentum"
+confirm_changeset = true
+tags = "app=momentum"
+
+[ci.global.parameters]
+stack_name = "momentum"
+region = "eu-central-1"
+
+[ci.deploy.parameters]
+capabilities = "CAPABILITY_IAM"
+resolve_s3 = true
+s3_prefix = "momentum"
+tags = "app=momentum"

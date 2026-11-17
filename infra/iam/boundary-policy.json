@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MomentumData",
+      "Effect": "Allow",
+      "Action": "dynamodb:*",
+      "Resource": [
+        "arn:aws:dynamodb:eu-central-1:${ACCOUNT_ID}:table/momentum-*",
+        "arn:aws:dynamodb:eu-central-1:${ACCOUNT_ID}:table/momentum-*/index/*"
+      ]
+    },
+    {
+      "Sid": "MomentumParams",
+      "Effect": "Allow",
+      "Action": ["ssm:GetParameter", "ssm:GetParameters", "ssm:GetParametersByPath"],
+      "Resource": "arn:aws:ssm:eu-central-1:${ACCOUNT_ID}:parameter/momentum/*"
+    },
+    {
+      "Sid": "DecryptParamsViaSsm",
+      "Effect": "Allow",
+      "Action": "kms:Decrypt",
+      "Resource": "*",
+      "Condition": {"StringEquals": {"kms:ViaService": "ssm.eu-central-1.amazonaws.com"}}
+    },
+    {
+      "Sid": "OwnLogs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:eu-central-1:${ACCOUNT_ID}:log-group:/aws/lambda/momentum-*"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# secrets
+.env
+*.jks
+*.p12
+keystore.properties
+local.properties
+
+# python
+__pycache__/
+.venv/
+.pytest_cache/
+
+# sam
+infra/.aws-sam/
+
+# android / gradle
+.gradle/
+build/
+.idea/
+*.iml
+.kotlin/
+captures/
+
+.DS_Store

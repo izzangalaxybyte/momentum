@@ -1,0 +1,95 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OwnStack",
+      "Effect": "Allow",
+      "Action": "cloudformation:*",
+      "Resource": [
+        "arn:aws:cloudformation:eu-central-1:${ACCOUNT_ID}:stack/momentum/*",
+        "arn:aws:cloudformation:eu-central-1:${ACCOUNT_ID}:stack/aws-sam-cli-managed-default/*",
+        "arn:aws:cloudformation:eu-central-1:${ACCOUNT_ID}:changeSet/*"
+      ]
+    },
+    {
+      "Sid": "SamTransform",
+      "Effect": "Allow",
+      "Action": "cloudformation:CreateChangeSet",
+      "Resource": "arn:aws:cloudformation:eu-central-1:aws:transform/Serverless-2016-10-31"
+    },
+    {
+      "Sid": "TemplateChecks",
+      "Effect": "Allow",
+      "Action": ["cloudformation:ValidateTemplate", "cloudformation:GetTemplateSummary", "cloudformation:ListStacks"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SamArtifacts",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": ["arn:aws:s3:::aws-sam-cli-managed-default-*", "arn:aws:s3:::aws-sam-cli-managed-default-*/*"]
+    },
+    {
+      "Sid": "CreateRolesOnlyWithBoundary",
+      "Effect": "Allow",
+      "Action": ["iam:CreateRole", "iam:PutRolePolicy", "iam:AttachRolePolicy", "iam:PutRolePermissionsBoundary"],
+      "Resource": "arn:aws:iam::${ACCOUNT_ID}:role/momentum-*",
+      "Condition": {"StringEquals": {"iam:PermissionsBoundary": "arn:aws:iam::${ACCOUNT_ID}:policy/momentum-boundary"}}
+    },
+    {
+      "Sid": "ManageOwnRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole", "iam:DeleteRole", "iam:TagRole", "iam:UntagRole", "iam:UpdateAssumeRolePolicy",
+        "iam:GetRolePolicy", "iam:DeleteRolePolicy", "iam:DetachRolePolicy",
+        "iam:ListRolePolicies", "iam:ListAttachedRolePolicies", "iam:ListRoleTags"
+      ],
+      "Resource": "arn:aws:iam::${ACCOUNT_ID}:role/momentum-*"
+    },
+    {
+      "Sid": "PassOwnRolesToLambda",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::${ACCOUNT_ID}:role/momentum-*",
+      "Condition": {"StringEquals": {"iam:PassedToService": ["lambda.amazonaws.com", "scheduler.amazonaws.com"]}}
+    },
+    {
+      "Sid": "OwnFunctions",
+      "Effect": "Allow",
+      "Action": "lambda:*",
+      "Resource": "arn:aws:lambda:eu-central-1:${ACCOUNT_ID}:function:momentum-*"
+    },
+    {
+      "Sid": "OwnTable",
+      "Effect": "Allow",
+      "Action": "dynamodb:*",
+      "Resource": [
+        "arn:aws:dynamodb:eu-central-1:${ACCOUNT_ID}:table/momentum-*",
+        "arn:aws:dynamodb:eu-central-1:${ACCOUNT_ID}:table/momentum-*/index/*"
+      ]
+    },
+    {
+      "Sid": "HttpApis",
+      "Effect": "Allow",
+      "Action": ["apigateway:GET", "apigateway:POST", "apigateway:PUT", "apigateway:PATCH", "apigateway:DELETE", "apigateway:TagResource", "apigateway:UntagResource"],
+      "Resource": ["arn:aws:apigateway:eu-central-1::/apis", "arn:aws:apigateway:eu-central-1::/apis/*", "arn:aws:apigateway:eu-central-1::/tags/*"]
+    },
+    {
+      "Sid": "OwnLogsAndSchedules",
+      "Effect": "Allow",
+      "Action": ["logs:*", "scheduler:*"],
+      "Resource": [
+        "arn:aws:logs:eu-central-1:${ACCOUNT_ID}:log-group:/aws/lambda/momentum-*",
+        "arn:aws:logs:eu-central-1:${ACCOUNT_ID}:log-group:/aws/lambda/momentum-*:*",
+        "arn:aws:scheduler:eu-central-1:${ACCOUNT_ID}:schedule/default/momentum-*"
+      ]
+    },
+    {
+      "Sid": "ReadOnlyInventoryInRegion",
+      "Effect": "Allow",
+      "Action": ["lambda:GetAccountSettings", "lambda:ListFunctions", "dynamodb:ListTables", "logs:DescribeLogGroups", "ssm:DescribeParameters"],
+      "Resource": "*",
+      "Condition": {"StringEquals": {"aws:RequestedRegion": "eu-central-1"}}
+    }
+  ]
+}

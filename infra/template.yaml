@@ -1,0 +1,79 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Momentum backend (sync API, DynamoDB). Deployed by .github/workflows/deploy.yml.
+
+Globals:
+  Function:
+    Runtime: python3.13
+    Architectures: [arm64]
+    MemorySize: 256
+    Timeout: 15
+    # Roles created by this stack are capped by the boundary (infra/iam/boundary-policy.json).
+    PermissionsBoundary: !Sub arn:aws:iam::${AWS::AccountId}:policy/momentum-boundary
+
+Resources:
+  DataTable:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      TableName: momentum-data
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: pk, AttributeType: S }
+        - { AttributeName: sk, AttributeType: S }
+        - { AttributeName: gsi1pk, AttributeType: S }
+        - { AttributeName: gsi1sk, AttributeType: S }
+      KeySchema:
+        - { AttributeName: pk, KeyType: HASH }
+        - { AttributeName: sk, KeyType: RANGE }
+      GlobalSecondaryIndexes:
+        - IndexName: gsi1
+          KeySchema:
+            - { AttributeName: gsi1pk, KeyType: HASH }
+            - { AttributeName: gsi1sk, KeyType: RANGE }
+          Projection: { ProjectionType: ALL }
+      PointInTimeRecoverySpecification: { PointInTimeRecoveryEnabled: true }
+      TimeToLiveSpecification: { AttributeName: expiresAt, Enabled: true }
+      SSESpecification: { SSEEnabled: true }
+      Tags: [{ Key: app, Value: momentum }]
+
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 20
+        ThrottlingRateLimit: 10
+
+  ApiLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /aws/lambda/momentum-api
+      RetentionInDays: 14
+
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: momentum-api
+      CodeUri: ../backend/src
+      Handler: momentum_api.app.handler
+      LoggingConfig: { LogGroup: !Ref ApiLogs }
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref DataTable
+          TOKEN_HASH_PARAM: /momentum/api-token-hash
+      Policies:
+        - DynamoDBCrudPolicy: { TableName: !Ref DataTable }
+        - SSMParameterReadPolicy: { ParameterName: momentum/* }
+      Events:
+        Health: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: GET, Path: /health } }
+        Push: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /sync/push } }
+        Pull: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: GET, Path: /sync/pull } }
+      Tags: { app: momentum }
+
+Outputs:
+  ApiUrl:
+    Description: Base URL the Android app talks to
+    Value: !Sub https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com
+  TableName:
+    Value: !Ref DataTable
