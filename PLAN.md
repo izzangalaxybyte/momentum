@@ -46,59 +46,58 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 |---|---|
 | Name | Momentum |
 | Platform | Android (Kotlin + Compose), distributed via Appster |
-| Backend | AWS Lambda (Python) + DynamoDB + API Gateway + S3/CloudFront, SAM, eu-central-1 |
+| Backend | AWS Lambda (Python) + DynamoDB + API Gateway, SAM, eu-central-1, auto-deployed from `main` |
 | Data | Offline-first Room on phone; DynamoDB as durable copy; last-write-wins sync |
 | Watch | Samsung Galaxy Watch → Samsung Health → Health Connect |
 | AI | Claude Haiku via OpenRouter, called from Lambda only |
 | Food | Built-in Pakistani/desi food DB + AI parsing (text/photo) |
-| Exercise demos | free-exercise-db images (looping) + cues + curated video links, cached offline |
+| Exercise demos | free-exercise-db images (looping, bundled) + cues + video link |
 | Auth | Single-user bearer token (hash in SSM) |
 | Repo | Public, github.com/izzangalaxybyte/momentum, push straight to main |
 
 ### Phase 0 — Foundations
 
-- [ ] Android project skeleton (`android/`): Compose, Hilt, Room, Navigation, theme, CI build
-- [ ] Release signing key created and stored outside the repo; `keystore.properties` gitignored
-- [ ] Backend skeleton (`backend/`, uv) with `GET /health`, unit tests
-- [ ] SAM template (`infra/`): HTTP API, authorizer, DynamoDB table + GSI1, SSM params, budget alarm
-- [ ] Dedicated least-privilege `momentum` AWS profile; first `sam deploy`
-- [ ] Token generation script; SSM hash
-- [ ] GitHub Actions: Android build + unit tests, backend tests
+- [x] Android project skeleton (`android/`): Compose, Room, Navigation, theme, CI build
+- [x] Release signing key created and stored outside the repo (`~/.momentum/`)
+- [x] Backend (`backend/`, uv) with `GET /health`, sync API, unit tests
+- [x] SAM template (`infra/`): HTTP API, Lambda, DynamoDB table + GSI1, SSM token hash
+- [x] Least-privilege GitHub OIDC deploy role; **auto-deploy on push to `main`**
+- [x] Token generation script; SSM hash
+- [x] GitHub Actions: Android build + unit tests, backend tests + deploy
 
 ### Phase 1 — Core app (v0.1)
 
 **1a. Onboarding and calories**
-- [ ] Profile, equipment, training days, goal
-- [ ] CalorieEngine + WeightTrend with unit tests
-- [ ] Today screen calorie/protein ring
+- [x] Profile, equipment, training days, goal
+- [x] CalorieEngine + WeightTrend with unit tests
+- [x] Today screen calorie/protein ring
 
 **1b. Food logging**
-- [ ] `data/foods_pk.json` (~250 desi items) + validation script
-- [ ] Seed into Room, FTS search over English/Roman Urdu/aliases
-- [ ] Log by meal, quantities in household units, recents/favourites, custom foods
-- [ ] Write nutrition to Health Connect
+- [x] `data/foods_pk.json` (182 desi items to start) + macro sanity checks
+- [x] Search over English / Roman Urdu / aliases
+- [x] Log by meal, quantities in household units, recents/favourites, custom foods
+- [x] Write nutrition to Health Connect
 
 **1c. Weight and Health Connect**
-- [ ] Manual weigh-ins + trend chart
-- [ ] Health Connect permissions, incremental import (exercise, distance, steps, HR, calories, weight)
-- [ ] Dedup and hourly background import
+- [x] Manual weigh-ins + trend chart
+- [x] Health Connect permissions, incremental import (exercise, distance, steps, HR, calories, weight)
+- [x] Dedup and hourly background import
 
 **1d. Training**
-- [ ] `data/exercises.json`: ladders, cues, mistakes, muscles, media refs, video links
-- [ ] Verify free-exercise-db licence + coverage; upload media to S3/CloudFront; media manifest
-- [ ] ProgressionEngine, CardioPlanner, WeekPlanner with unit tests
-- [ ] Session runner (demo, targets, set logging, ratings, rest timer)
-- [ ] Exercise detail screen with history
-- [ ] Media prefetch on Wi-Fi
+- [x] `data/exercises.json`: ladders, cues, mistakes, muscles, media refs, video links
+- [x] Verify free-exercise-db licence + coverage; demo frames bundled in the app
+- [x] ProgressionEngine, CardioPlanner, WeekPlanner with unit tests
+- [x] Session runner (demo, targets, set logging, ratings, rest timer)
+- [x] Exercise detail screen with history
 
 **1e. Sync**
-- [ ] `/sync/push` and `/sync/pull` Lambdas with conditional writes + tests
-- [ ] Android outbox/pull sync engine, triggered on open, after writes, periodically
-- [ ] Pairing screen (enter token), sync status in Settings, JSON export
+- [x] `/sync/push` and `/sync/pull` Lambdas with conditional writes + tests
+- [x] Android outbox/pull sync engine, triggered on open, after writes, periodically
+- [x] Token entry in Settings, restore-from-cloud on first launch, sync status, JSON export
 
 **1f. Release v0.1**
-- [ ] Progress screen (weight, calories, strength, cardio, steps)
-- [ ] App icon PNG, release build, publish to Appster
+- [x] Progress screen (weight, calories, strength, cardio, steps)
+- [x] App icon PNG, release build, publish to Appster
 - [ ] Use it for 1–2 weeks; fix issues
 
 ### Phase 2 — AI coach (v0.2)
@@ -120,7 +119,7 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 
 ### Open items
 
-- Exact dumbbell load steps (ask in onboarding).
+- Exact dumbbell load steps: entered in onboarding (default 2, 3, 4, 5 kg); edit in Settings.
 - Exact OpenRouter model id for Claude Haiku (confirm when wiring phase 2).
 - Confirm Samsung Health → Health Connect sharing is enabled on the phone.
 - Doctor check-up before starting training.

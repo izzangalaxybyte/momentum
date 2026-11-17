@@ -34,17 +34,16 @@ Single user (me). Multi-user is a possible future, not a design target.
 ```
 PHONE (Android, offline-first)                         AWS  (eu-central-1, Frankfurt)
 ┌─────────────────────────────────────┐          ┌──────────────────────────────────────┐
-│ UI: Jetpack Compose                 │          │ API Gateway (HTTP API)               │
-│ ViewModels                          │          │   └─ Lambda authorizer (bearer token)│
-│ Domain: rule engines (pure Kotlin)  │  HTTPS   │ Lambdas (Python 3.13, arm64)         │
-│ Room DB (full local copy)           │◄────────►│   ├─ sync    push / pull changes     │
-│ Sync engine (outbox + pull cursor)  │          │   ├─ coach   chat, meal parsing      │──► OpenRouter
-│ Health Connect reader/writer        │          │   └─ review  weekly review (cron)    │     (Claude Haiku)
-│ Media cache (exercise demos)        │◄──┐      │ DynamoDB (single table, on-demand)   │
-│ WorkManager (sync, prefetch)        │   │      │ EventBridge Scheduler (weekly)       │
-└──────────────▲──────────────────────┘   └──────│ S3 + CloudFront (exercise media)     │
-               │                                 │ SSM Parameter Store (secrets)        │
-   Samsung Galaxy Watch                          └──────────────────────────────────────┘
+│ UI: Jetpack Compose                 │          │ API Gateway (HTTP API, throttled)    │
+│ Domain: rule engines (pure Kotlin)  │  HTTPS   │ Lambda momentum-api (Python 3.13)    │
+│ Room DB (full local copy)           │◄────────►│   ├─ /sync/push, /sync/pull          │
+│ Sync engine (dirty rows + cursor)   │          │   └─ bearer-token check (hash in SSM)│
+│ Health Connect reader/writer        │          │ DynamoDB momentum-data (single table)│
+│ Exercise demos + food DB (bundled)  │          │ SSM Parameter Store                  │
+│ WorkManager (hourly import + sync)  │          │ phase 2: coach/review Lambdas,       │──► OpenRouter
+└──────────────▲──────────────────────┘          │   EventBridge weekly schedule        │    (Claude Haiku)
+               │                                 └──────────────────────────────────────┘
+   Samsung Galaxy Watch
    → Samsung Health → Health Connect
 ```
 
@@ -58,16 +57,17 @@ for AI features.
 
 ```
 momentum/
-  android/             Android app (Kotlin, Gradle)
-  backend/             Lambda code (Python, managed with uv)
-    momentum_api/      handlers: sync, coach, review, authorizer
+  android/             Android app (Kotlin, Gradle); icon.png for the store
+  backend/             Lambda code (Python, uv)
+    src/momentum_api/  app.py (routes), auth.py (token), store.py (DynamoDB)
     tests/
-  infra/               AWS SAM template + deploy config
-  data/
-    foods_pk.json      desi food database (seed)
-    exercises.json     exercise catalogue, ladders, cues, media refs
-    media/             media manifest (files themselves live in S3)
-  scripts/             helpers (seed/validate data, upload media, publish)
+  infra/               AWS SAM template + samconfig; iam/ (deploy role + policies)
+  data/                bundled into the APK as assets
+    foods_pk.json      desi food database (generated)
+    exercises.json     exercise catalogue, ladders, cues (generated)
+    exercises/<id>/    demo frames 0.jpg, 1.jpg (public domain)
+  scripts/             build_data.py, new-token.sh, write-env.sh, release.sh
+  .github/workflows/   deploy.yml (backend test + deploy), android.yml (build + tests)
   ARCHITECTURE.md
   PLAN.md
 ```
@@ -81,18 +81,20 @@ momentum/
 | Concern | Choice |
 |---|---|
 | Language / UI | Kotlin, Jetpack Compose, Material 3, single activity, Navigation Compose |
-| DI | Hilt |
-| Local DB | Room (+ FTS4 for food search) |
+| DI | A small hand-written `AppContainer` (no framework needed at this size) |
+| Local DB | Room (KSP) |
+| Food search | In memory over the bundled list + custom foods (English, Roman Urdu, aliases) |
 | Settings | DataStore |
-| Secrets on device | Android Keystore-backed encryption (Tink) for the API token |
-| Background work | WorkManager |
-| Health data | Health Connect SDK (`androidx.health.connect:connect-client`) |
-| Networking | Ktor client + kotlinx.serialization |
-| Images / demos | Coil (disk cache) |
-| Charts | Vico |
-| Min / target SDK | minSdk 28, target latest |
+| Secrets on device | API token encrypted with an AES-GCM key held in the Android Keystore |
+| Background work | WorkManager (hourly import + sync, and a sync a few seconds after each change) |
+| Health data | Health Connect SDK (`androidx.health.connect:connect-client` 1.1.0) |
+| Networking | OkHttp + kotlinx.serialization |
+| Images / demos | Coil, loading bundled asset images |
+| Charts | Compose Canvas (weight trend, calories, cardio minutes) |
+| Min / target SDK | minSdk 28, target 36 |
+| Release | R8 minify + resource shrinking (~7.5 MB APK) |
 
-One Gradle module, organised by layer and feature. Split into modules later only if build times hurt.
+One Gradle module, organised by layer. Split into modules later only if build times hurt.
 
 ### 4.2 Layers
 
@@ -189,25 +191,23 @@ Every syncable table has: `id` (UUID string), `updatedAt` (epoch ms, client cloc
 
 | Table | Key fields |
 |---|---|
-| `Profile` | sex, birthYear, heightCm, startWeightKg, goalWeightKg, activityLevel, trainingDays |
-| `Equipment` | kind (dumbbell, bar, plate), availableLoadsKg (list), count |
+| `Profile` | sex, birthYear, heightCm, start/goal weight, trainingDays, dumbbellLoads, barLoads, startEpochDay, targetKcal (+ when it was set) |
 | `WeightEntry` | date, kg, source (manual, health_connect) |
-| `Food` | nameEn, nameUrdu (Roman), aliases, unit, gramsPerUnit, kcal, proteinG, carbsG, fatG, category, isCustom |
-| `FoodFts` | FTS4 index over names + aliases |
+| `Food` | custom foods only: name, unit, grams, kcal, protein, carbs, fat (built-ins ship as an asset) |
 | `FoodLog` | date, meal, foodId?, freeText?, quantity, kcal, proteinG, carbsG, fatG, source (manual, ai_text, ai_photo) |
-| `Exercise` | slug, name, type (weight_reps, reps, time), ladderId, ladderStep, mediaRef, cues |
-| `ExerciseState` | exerciseId / ladderId, currentStep, loadKg, repMin, repMax, tempo, consecutiveMisses |
+| `ExerciseState` | per ladder: step, loadKg, stage (normal / high reps / slow tempo), misses, holdSec |
 | `WorkoutSession` | date, plannedDayId, startedAt, endedAt, notes |
 | `SetLog` | sessionId, exerciseId, setIndex, loadKg, reps, durationSec, rating (easy, good, hard) |
 | `CardioSession` | hcRecordId, type, start, durationSec, distanceM, avgHr, maxHr, kcal, rating |
 | `DailyActivity` | date, steps, activeKcal |
-| `PlannedDay` | date, items (strength A/B, walk 30 min, intervals…), status |
-| `CoachMessage` | role, content, createdAt (phase 2) |
-| `WeeklyReview` | weekStart, summary, proposals (JSON), decision (pending, accepted, rejected) (phase 2) |
-| `SyncState` | lastPullCursor, lastPushAt |
+| `Setting` | small synced values, e.g. the cardio plan state (phase, weekly minutes, interval level) |
+| `CoachMessage`, `WeeklyReview` | phase 2 |
 
-`Food` (built-in rows) and `Exercise` are seeded from `data/*.json` bundled as app assets and
-versioned; seed upgrades merge without touching custom rows. Only custom foods sync.
+The week plan is computed on the fly from these (never stored), and the sync cursor lives in
+device-local DataStore.
+
+The built-in foods and the exercise catalogue are read straight from the bundled `data/*.json`
+(generated by `scripts/build_data.py`), so app updates bring new items without a migration.
 
 ---
 
@@ -218,7 +218,8 @@ versioned; seed upgrades merge without touching custom rows. Only custom foods s
   `ActiveCaloriesBurnedRecord`, `TotalCaloriesBurnedRecord`, `WeightRecord`.
 - Write permissions: `NutritionRecord` (food log shows up in Samsung Health), `WeightRecord`
   (manual weigh-ins).
-- Incremental sync with Health Connect **changes tokens**: on app open and hourly in WorkManager.
+- On app open and hourly in WorkManager the app re-reads the **last 14 days** (simpler and self-healing
+  compared with change tokens) and upserts only rows that changed.
 - Dedup by Health Connect record id (`metadata.id`); records the app wrote itself are skipped on read.
 - Imported data lands in Room, then syncs to AWS like everything else. Health Connect has no cloud
   API, so the phone is the only bridge.
@@ -231,20 +232,24 @@ versioned; seed upgrades merge without touching custom rows. Only custom foods s
 
 | Component | Purpose |
 |---|---|
-| API Gateway HTTP API | Single HTTPS entry point, throttled |
-| Lambda authorizer | Validates the bearer token |
-| `sync` Lambda | Push / pull changes |
-| `coach` Lambda | Chat and meal parsing (phase 2) |
-| `review` Lambda | Weekly review, triggered by EventBridge Scheduler (phase 2) |
-| DynamoDB table `momentum` | All user data, on-demand capacity, point-in-time recovery on |
-| S3 bucket + CloudFront | Exercise demo media (bucket private, CloudFront Origin Access Control) |
-| SSM Parameter Store | `/momentum/api-token-hash`, `/momentum/openrouter-key` (SecureString) |
-| CloudWatch | Logs (14-day retention, no food/photo content logged), $5 budget alarm |
+| API Gateway HTTP API | Single HTTPS entry point, throttled (10 req/s, burst 20) |
+| `momentum-api` Lambda | Routes `/health`, `/sync/push`, `/sync/pull`; checks the bearer token itself |
+| `coach` / `review` Lambdas | Chat, meal parsing, weekly review via EventBridge Scheduler (phase 2) |
+| DynamoDB table `momentum-data` | All user data, on-demand, point-in-time recovery, TTL on tombstones, retained on stack delete |
+| SSM Parameter Store | `/momentum/api-token-hash`; phase 2: `/momentum/openrouter-key` (SecureString) |
+| CloudWatch | Logs with 14-day retention; request bodies are never logged |
+
+Exercise demos are bundled in the APK (about 3 MB), so there is no media bucket or CDN.
 
 - Region: **eu-central-1 (Frankfurt)**, closest EU/US region to Pakistan.
 - Lambdas: Python 3.13, arm64, AWS Lambda Powertools, pydantic models; deps via uv.
-- Infra as code: AWS SAM (`infra/template.yaml`). Deploy with a dedicated, least-privilege
-  `momentum` AWS profile (separate from the Appster one).
+- Infra as code: AWS SAM (`infra/template.yaml`).
+- **Auto-deploy:** every push to `main` that touches `backend/` or `infra/` runs
+  `.github/workflows/deploy.yml`: backend tests, then `sam build && sam deploy`, then a `/health`
+  smoke test. AWS credentials come from GitHub OIDC: the role `github-momentum-deploy` (created by
+  `infra/iam/github-oidc.sh`) can only be assumed from this repo's `main` branch and only manage
+  `momentum-*` resources; roles it creates are capped by the `momentum-boundary` policy. No AWS keys
+  are stored anywhere.
 
 ### 6.2 API
 
@@ -257,7 +262,6 @@ All endpoints require `Authorization: Bearer <token>`.
 | `POST /coach/meal` | `{text}` or `{imageBase64, mimeType}` | `{items: [{name, matchedFoodId?, quantity, unit, kcal, proteinG, carbsG, fatG, confidence}]}` |
 | `POST /coach/chat` | `{message}` | `{reply}` (history persisted as `CoachMessage`) |
 | `POST /coach/review/run` | — | triggers a review now (manual) |
-| `GET /media/manifest` | — | exercise media URLs + versions |
 | `GET /health` | — | liveness |
 
 Weekly reviews and coach messages are ordinary synced records, so the app gets them through `pull`.
@@ -267,16 +271,16 @@ Weekly reviews and coach messages are ordinary synced records, so the app gets t
 | Attribute | Example |
 |---|---|
 | `pk` | `USER#me` |
-| `sk` | `FOODLOG#2026-11-17#<uuid>`, `WEIGHT#2026-11-17#<uuid>`, `SET#<sessionId>#<uuid>` … |
+| `sk` | `<type>#<id>`, e.g. `FoodLog#<uuid>`, `ExerciseState#push`, `Profile#me` |
 | `type` | `FoodLog` |
 | `updatedAt` | client timestamp (conflict resolution) |
 | `serverUpdatedAt` | server timestamp (pull cursor) |
 | `deleted` | tombstone flag |
-| `data` | the record body (map) |
+| `data` | the record body (JSON string) |
 | `gsi1pk` / `gsi1sk` | `USER#me` / `<serverUpdatedAt>#<type>#<id>` |
 
 - `GSI1` answers "everything changed since cursor" for pull.
-- Date-prefixed sort keys answer "this user's food log for a date range" for the review Lambda.
+- Records carry their own `epochDay`, so the phase-2 review Lambda filters by date after a type query.
 - Tombstones expire via DynamoDB TTL after 180 days.
 
 ### 6.4 Sync protocol
@@ -296,9 +300,11 @@ skew while keeping "my latest edit wins" semantics.
 ### 6.5 Authentication
 
 Single user, so a long random token instead of an identity provider:
-- Generated once (`scripts/new-token`), shown once, entered in the app during onboarding (or via QR).
-- Stored on the phone encrypted with Keystore; only its SHA-256 hash is stored in SSM.
-- The authorizer compares hashes in constant time and caches the decision briefly.
+- Generated once by `scripts/new-token.sh` (25 characters, ~124 bits, grouped for typing), saved to
+  `~/.momentum/api-token`, entered in the app (Settings → Cloud sync, or "Restore" on first launch).
+- Stored on the phone encrypted with a Keystore key; only its SHA-256 hash is stored in SSM.
+- The Lambda compares hashes in constant time (case, spaces and dashes ignored) and caches the hash
+  for 5 minutes.
 - Rotation: generate a new token, update SSM, re-pair the app.
 - Upgrade path if other users are ever added: Amazon Cognito with Google sign-in, `pk = USER#<sub>`.
 
@@ -350,16 +356,16 @@ Single user, so a long random token instead of an identity provider:
   Unlicense) — start and end position images, shown as a looping two-frame animation. Licence and
   coverage to be verified for every exercise in the home programme; gaps are filled with curated
   video links.
-- Media is uploaded to S3 and served via CloudFront. The app caches with Coil and prefetches the
-  coming week's exercises on Wi-Fi, so demos work offline.
-- The manifest (`GET /media/manifest`) is versioned so new/changed media is picked up automatically.
+- The frames are bundled in the APK (`data/exercises/`, ~3 MB), so demos always work offline.
+- Where the library had no exact match (wall push-up, knee push-up, chair squat) the closest movement
+  is shown and the first cue says so.
 
 ---
 
 ## 10. Security and privacy
 
-- Public repo: no secrets in git. `.gitignore` covers `keystore.properties`, `*.jks`, `.env`,
-  `samconfig` overrides. Secrets live in SSM or on-device encrypted storage.
+- Public repo: no secrets in git. The signing key and its password live in `~/.momentum/`, the API
+  token in `~/.momentum/api-token` and SSM (hash only); `.env` only holds the public API URL.
 - HTTPS only; API Gateway throttling; authorizer on every route.
 - Health and food data is sensitive: DynamoDB encryption at rest (default), no payload logging,
   14-day log retention, PITR backups.
@@ -369,18 +375,11 @@ Single user, so a long random token instead of an identity provider:
 
 ## 11. Release
 
-- Release APK signed with Momentum's own release key, created once and stored outside the repo
-  (keep it forever; Appster refuses a changed certificate).
-- `versionCode` bumped every release.
-- Publish to Appster:
-
-  ```bash
-  uv run --project ~/Documents/GitHub/appster ~/Documents/GitHub/appster/scripts/publish.py \
-    android/app/build/outputs/apk/release/app-release.apk \
-    --changelog "What changed" --icon data/icon.png --name "Momentum"
-  ```
-
-- Backend: `sam build && sam deploy --profile momentum` from `infra/`.
+- Release APK signed with Momentum's own key (`~/.momentum/release.p12`, created once; keep it and
+  `~/.momentum/keystore.properties` backed up forever: Appster refuses a changed certificate).
+- `versionCode` = number of commits on `main`, so it always increases.
+- Build and publish to Appster in one step: `scripts/release.sh "What changed"`.
+- Backend: automatic on push to `main`; manual fallback `sam build && sam deploy` from `infra/`.
 
 ---
 
@@ -388,8 +387,7 @@ Single user, so a long random token instead of an identity provider:
 
 | Item | Monthly |
 |---|---|
-| Lambda, API Gateway, DynamoDB on-demand, S3, CloudFront | ~$0–1 (mostly free tier) |
+| Lambda, API Gateway, DynamoDB on-demand | ~$0–1 (mostly free tier) |
 | OpenRouter, Claude Haiku (daily meal parsing + weekly review + some chat) | < $1 |
 | **Total** | **~$1–2** |
 
-A $5 AWS budget alarm catches surprises.

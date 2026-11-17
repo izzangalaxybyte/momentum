@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android Auto Backup: only the database and settings; the encrypted API token (secrets store) is not included. -->
+<full-backup-content>
+    <include domain="database" path="." />
+    <include domain="sharedpref" path="." />
+    <include domain="file" path="datastore/settings.preferences_pb" />
+</full-backup-content>

@@ -1,0 +1,878 @@
+{
+ "version": 1,
+ "mediaLicense": "Unlicense (public domain), github.com/yuhonas/free-exercise-db",
+ "sessions": {
+  "strength-a": [
+   "squat",
+   "push",
+   "row",
+   "hinge",
+   "core-a"
+  ],
+  "strength-b": [
+   "lunge",
+   "push",
+   "press",
+   "row",
+   "core-b"
+  ]
+ },
+ "exercises": [
+  {
+   "id": "wall-pushup",
+   "name": "Wall push-up",
+   "ladder": "push",
+   "step": 0,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Hands on a wall at shoulder height, a bit wider than shoulders (the demo uses a box; a wall is easier)",
+    "Body in one straight line from head to heels",
+    "Lower your chest to the wall, elbows at about 45°",
+    "Push back until arms are straight"
+   ],
+   "mistakes": [
+    "Sagging hips or sticking your bum out",
+    "Flaring elbows straight out to the sides"
+   ],
+   "muscles": [
+    "chest",
+    "triceps",
+    "shoulders"
+   ],
+   "fedbId": "Incline_Push-Up",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/wall-pushup/0.jpg",
+    "exercises/wall-pushup/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Wall%20push-up%20proper%20form%20beginner"
+  },
+  {
+   "id": "incline-pushup",
+   "name": "Incline push-up (hands on table)",
+   "ladder": "push",
+   "step": 1,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Hands on a sturdy table or bed edge",
+    "Brace your stomach and squeeze your glutes",
+    "Lower until your chest nearly touches the edge",
+    "Press up to straight arms"
+   ],
+   "mistakes": [
+    "Letting the hips drop",
+    "Only doing half the range"
+   ],
+   "muscles": [
+    "chest",
+    "triceps",
+    "shoulders"
+   ],
+   "fedbId": "Incline_Push-Up",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/incline-pushup/0.jpg",
+    "exercises/incline-pushup/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Incline%20push-up%20%28hands%20on%20table%29%20proper%20form%20beginner"
+  },
+  {
+   "id": "knee-pushup",
+   "name": "Knee push-up",
+   "ladder": "push",
+   "step": 2,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Knees on the floor, hands under shoulders (the demo shows the full version)",
+    "Straight line from head to knees",
+    "Lower your chest to a fist's height from the floor",
+    "Push the floor away"
+   ],
+   "mistakes": [
+    "Hips bent like a hinge",
+    "Head dropping forward"
+   ],
+   "muscles": [
+    "chest",
+    "triceps",
+    "shoulders"
+   ],
+   "fedbId": "Pushups",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/knee-pushup/0.jpg",
+    "exercises/knee-pushup/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Knee%20push-up%20proper%20form%20beginner"
+  },
+  {
+   "id": "pushup",
+   "name": "Push-up",
+   "ladder": "push",
+   "step": 3,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Hands under shoulders, feet together",
+    "Squeeze glutes and brace like a plank",
+    "Lower your chest to just above the floor",
+    "Push up while keeping the body rigid"
+   ],
+   "mistakes": [
+    "Hips sagging",
+    "Elbows flared at 90°"
+   ],
+   "muscles": [
+    "chest",
+    "triceps",
+    "shoulders",
+    "core"
+   ],
+   "fedbId": "Pushups",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/pushup/0.jpg",
+    "exercises/pushup/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Push-up%20proper%20form%20beginner"
+  },
+  {
+   "id": "decline-pushup",
+   "name": "Feet-elevated push-up",
+   "ladder": "push",
+   "step": 4,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Feet on a step or low chair, hands on the floor",
+    "Body in a straight line",
+    "Lower slowly, chest towards the floor",
+    "Push up fully"
+   ],
+   "mistakes": [
+    "Piking the hips up",
+    "Rushing the lowering"
+   ],
+   "muscles": [
+    "upper chest",
+    "shoulders",
+    "triceps"
+   ],
+   "fedbId": "Decline_Push-Up",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/decline-pushup/0.jpg",
+    "exercises/decline-pushup/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Feet-elevated%20push-up%20proper%20form%20beginner"
+  },
+  {
+   "id": "chair-squat",
+   "name": "Chair squat",
+   "ladder": "squat",
+   "step": 0,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Stand in front of a chair, feet shoulder-width (the demo shows the same squat without the chair)",
+    "Sit back and down until you touch the chair",
+    "Keep your chest up and knees over toes",
+    "Stand up by pushing through your heels"
+   ],
+   "mistakes": [
+    "Dropping onto the chair",
+    "Knees caving inwards"
+   ],
+   "muscles": [
+    "quads",
+    "glutes"
+   ],
+   "fedbId": "Bodyweight_Squat",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/chair-squat/0.jpg",
+    "exercises/chair-squat/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Chair%20squat%20proper%20form%20beginner"
+  },
+  {
+   "id": "bodyweight-squat",
+   "name": "Bodyweight squat",
+   "ladder": "squat",
+   "step": 1,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Feet shoulder-width, toes slightly out",
+    "Arms forward for balance",
+    "Squat as deep as is comfortable with a flat back",
+    "Drive up through the whole foot"
+   ],
+   "mistakes": [
+    "Heels lifting",
+    "Rounding the lower back at the bottom"
+   ],
+   "muscles": [
+    "quads",
+    "glutes",
+    "hamstrings"
+   ],
+   "fedbId": "Bodyweight_Squat",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/bodyweight-squat/0.jpg",
+    "exercises/bodyweight-squat/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Bodyweight%20squat%20proper%20form%20beginner"
+  },
+  {
+   "id": "goblet-squat",
+   "name": "Goblet squat (dumbbell)",
+   "ladder": "squat",
+   "step": 2,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": false,
+   "cues": [
+    "Hold one dumbbell vertically at your chest",
+    "Elbows point down, chest stays tall",
+    "Squat between your knees",
+    "Stand up tall and squeeze your glutes"
+   ],
+   "mistakes": [
+    "Letting the weight pull you forward",
+    "Knees caving in"
+   ],
+   "muscles": [
+    "quads",
+    "glutes",
+    "core"
+   ],
+   "fedbId": "Goblet_Squat",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/goblet-squat/0.jpg",
+    "exercises/goblet-squat/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Goblet%20squat%20%28dumbbell%29%20proper%20form%20beginner"
+  },
+  {
+   "id": "split-squat",
+   "name": "Split squat (dumbbells)",
+   "ladder": "squat",
+   "step": 3,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Long stride stance, dumbbells at your sides",
+    "Lower the back knee straight down towards the floor",
+    "Front knee stays over the foot",
+    "Push through the front heel to rise"
+   ],
+   "mistakes": [
+    "Stance too short",
+    "Leaning far forward"
+   ],
+   "muscles": [
+    "quads",
+    "glutes"
+   ],
+   "fedbId": "Split_Squat_with_Dumbbells",
+   "bodyweightStart": true,
+   "images": [
+    "exercises/split-squat/0.jpg",
+    "exercises/split-squat/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Split%20squat%20%28dumbbells%29%20proper%20form%20beginner"
+  },
+  {
+   "id": "step-up",
+   "name": "Dumbbell step-up",
+   "ladder": "squat",
+   "step": 4,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Use a sturdy step or low bench",
+    "Place the whole foot on the step",
+    "Drive up through that heel, don't push off the back foot",
+    "Step down slowly"
+   ],
+   "mistakes": [
+    "Pushing off the back leg",
+    "Wobbly knee"
+   ],
+   "muscles": [
+    "quads",
+    "glutes"
+   ],
+   "fedbId": "Dumbbell_Step_Ups",
+   "bodyweightStart": true,
+   "images": [
+    "exercises/step-up/0.jpg",
+    "exercises/step-up/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Dumbbell%20step-up%20proper%20form%20beginner"
+  },
+  {
+   "id": "reverse-lunge",
+   "name": "Reverse lunge",
+   "ladder": "lunge",
+   "step": 0,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Stand tall (dumbbells at sides once bodyweight is easy)",
+    "Step one foot back and lower both knees",
+    "Front shin stays roughly vertical",
+    "Push through the front foot to return"
+   ],
+   "mistakes": [
+    "Front knee shooting past the toes",
+    "Short wobbly steps"
+   ],
+   "muscles": [
+    "quads",
+    "glutes",
+    "hamstrings"
+   ],
+   "fedbId": "Dumbbell_Rear_Lunge",
+   "bodyweightStart": true,
+   "images": [
+    "exercises/reverse-lunge/0.jpg",
+    "exercises/reverse-lunge/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Reverse%20lunge%20proper%20form%20beginner"
+  },
+  {
+   "id": "forward-lunge",
+   "name": "Forward lunge (dumbbells)",
+   "ladder": "lunge",
+   "step": 1,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Dumbbells at your sides",
+    "Step forward and lower the back knee",
+    "Keep the torso upright",
+    "Push back to standing"
+   ],
+   "mistakes": [
+    "Back knee slamming the floor",
+    "Leaning the torso forward"
+   ],
+   "muscles": [
+    "quads",
+    "glutes"
+   ],
+   "fedbId": "Dumbbell_Lunges",
+   "bodyweightStart": true,
+   "images": [
+    "exercises/forward-lunge/0.jpg",
+    "exercises/forward-lunge/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Forward%20lunge%20%28dumbbells%29%20proper%20form%20beginner"
+  },
+  {
+   "id": "walking-lunge",
+   "name": "Walking lunge",
+   "ladder": "lunge",
+   "step": 2,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Lunge forward, then bring the back foot through into the next lunge",
+    "Keep steps long and controlled",
+    "Torso upright",
+    "Count reps per leg"
+   ],
+   "mistakes": [
+    "Rushing",
+    "Narrow tightrope stance"
+   ],
+   "muscles": [
+    "quads",
+    "glutes",
+    "hamstrings"
+   ],
+   "fedbId": "Bodyweight_Walking_Lunge",
+   "bodyweightStart": true,
+   "images": [
+    "exercises/walking-lunge/0.jpg",
+    "exercises/walking-lunge/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Walking%20lunge%20proper%20form%20beginner"
+  },
+  {
+   "id": "glute-bridge",
+   "name": "Glute bridge",
+   "ladder": "hinge",
+   "step": 0,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Lie on your back, knees bent, feet flat",
+    "Push through your heels and lift the hips",
+    "Squeeze glutes hard at the top for 1 second",
+    "Lower slowly"
+   ],
+   "mistakes": [
+    "Arching the lower back instead of using glutes",
+    "Feet too far from the hips"
+   ],
+   "muscles": [
+    "glutes",
+    "hamstrings"
+   ],
+   "fedbId": "Butt_Lift_Bridge",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/glute-bridge/0.jpg",
+    "exercises/glute-bridge/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Glute%20bridge%20proper%20form%20beginner"
+  },
+  {
+   "id": "bar-rdl",
+   "name": "Romanian deadlift (bar)",
+   "ladder": "hinge",
+   "step": 1,
+   "type": "weight_reps",
+   "equipment": "bar",
+   "perSide": false,
+   "cues": [
+    "Hold the bar at your thighs, soft knees",
+    "Push your hips back, bar slides down your legs",
+    "Back stays flat; stop when you feel the hamstrings stretch",
+    "Drive hips forward to stand"
+   ],
+   "mistakes": [
+    "Rounding the back",
+    "Squatting the weight down instead of hinging"
+   ],
+   "muscles": [
+    "hamstrings",
+    "glutes",
+    "lower back"
+   ],
+   "fedbId": "Romanian_Deadlift",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/bar-rdl/0.jpg",
+    "exercises/bar-rdl/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Romanian%20deadlift%20%28bar%29%20proper%20form%20beginner"
+  },
+  {
+   "id": "single-leg-bridge",
+   "name": "Single-leg glute bridge",
+   "ladder": "hinge",
+   "step": 2,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": true,
+   "cues": [
+    "One foot on the floor, the other leg straight up",
+    "Lift the hips by pushing through the planted heel",
+    "Keep the hips level",
+    "Lower slowly"
+   ],
+   "mistakes": [
+    "Hips tilting to one side",
+    "Pushing through the toes"
+   ],
+   "muscles": [
+    "glutes",
+    "hamstrings"
+   ],
+   "fedbId": "Single_Leg_Glute_Bridge",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/single-leg-bridge/0.jpg",
+    "exercises/single-leg-bridge/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Single-leg%20glute%20bridge%20proper%20form%20beginner"
+  },
+  {
+   "id": "db-row",
+   "name": "Bent-over dumbbell row",
+   "ladder": "row",
+   "step": 0,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": false,
+   "cues": [
+    "Hinge forward with a flat back, dumbbells hanging",
+    "Pull the dumbbells to your lower ribs",
+    "Squeeze your shoulder blades together",
+    "Lower under control"
+   ],
+   "mistakes": [
+    "Rounding the back",
+    "Jerking the weight with the body"
+   ],
+   "muscles": [
+    "upper back",
+    "lats",
+    "biceps"
+   ],
+   "fedbId": "Bent_Over_Two-Dumbbell_Row",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/db-row/0.jpg",
+    "exercises/db-row/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Bent-over%20dumbbell%20row%20proper%20form%20beginner"
+  },
+  {
+   "id": "one-arm-row",
+   "name": "One-arm dumbbell row",
+   "ladder": "row",
+   "step": 1,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Support one hand and knee on a bed or chair",
+    "Pull the dumbbell towards your hip",
+    "Pause at the top, elbow close to the body",
+    "Lower slowly to a full stretch"
+   ],
+   "mistakes": [
+    "Twisting the torso to lift",
+    "Shrugging the shoulder"
+   ],
+   "muscles": [
+    "lats",
+    "upper back",
+    "biceps"
+   ],
+   "fedbId": "One-Arm_Dumbbell_Row",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/one-arm-row/0.jpg",
+    "exercises/one-arm-row/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=One-arm%20dumbbell%20row%20proper%20form%20beginner"
+  },
+  {
+   "id": "bar-row",
+   "name": "Bent-over bar row",
+   "ladder": "row",
+   "step": 2,
+   "type": "weight_reps",
+   "equipment": "bar",
+   "perSide": false,
+   "cues": [
+    "Hinge to about 45°, flat back",
+    "Pull the bar to your belly button",
+    "Elbows go back, not out",
+    "Lower with control"
+   ],
+   "mistakes": [
+    "Standing up as you pull",
+    "Rounding the back"
+   ],
+   "muscles": [
+    "upper back",
+    "lats",
+    "biceps"
+   ],
+   "fedbId": "Bent_Over_Barbell_Row",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/bar-row/0.jpg",
+    "exercises/bar-row/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Bent-over%20bar%20row%20proper%20form%20beginner"
+  },
+  {
+   "id": "db-floor-press",
+   "name": "Dumbbell floor press",
+   "ladder": "press",
+   "step": 0,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": false,
+   "cues": [
+    "Lie on the floor, knees bent, dumbbells over the chest",
+    "Lower until the upper arms touch the floor",
+    "Pause briefly",
+    "Press up until arms are straight"
+   ],
+   "mistakes": [
+    "Bouncing elbows off the floor",
+    "Wrists bent back"
+   ],
+   "muscles": [
+    "chest",
+    "triceps"
+   ],
+   "fedbId": "Dumbbell_Floor_Press",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/db-floor-press/0.jpg",
+    "exercises/db-floor-press/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Dumbbell%20floor%20press%20proper%20form%20beginner"
+  },
+  {
+   "id": "db-shoulder-press",
+   "name": "Dumbbell shoulder press",
+   "ladder": "press",
+   "step": 1,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": false,
+   "cues": [
+    "Sit or stand tall, dumbbells at shoulder height",
+    "Brace your stomach",
+    "Press overhead until arms are straight",
+    "Lower to the shoulders slowly"
+   ],
+   "mistakes": [
+    "Arching the lower back",
+    "Pressing forward instead of up"
+   ],
+   "muscles": [
+    "shoulders",
+    "triceps"
+   ],
+   "fedbId": "Dumbbell_Shoulder_Press",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/db-shoulder-press/0.jpg",
+    "exercises/db-shoulder-press/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Dumbbell%20shoulder%20press%20proper%20form%20beginner"
+  },
+  {
+   "id": "one-arm-press",
+   "name": "One-arm dumbbell press",
+   "ladder": "press",
+   "step": 2,
+   "type": "weight_reps",
+   "equipment": "dumbbell",
+   "perSide": true,
+   "cues": [
+    "Stand tall, one dumbbell at the shoulder",
+    "Brace hard so you don't lean",
+    "Press straight up",
+    "Lower slowly"
+   ],
+   "mistakes": [
+    "Leaning to the side",
+    "Shrugging"
+   ],
+   "muscles": [
+    "shoulders",
+    "triceps",
+    "core"
+   ],
+   "fedbId": "Dumbbell_One-Arm_Shoulder_Press",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/one-arm-press/0.jpg",
+    "exercises/one-arm-press/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=One-arm%20dumbbell%20press%20proper%20form%20beginner"
+  },
+  {
+   "id": "plank",
+   "name": "Plank",
+   "ladder": "core-a",
+   "step": 0,
+   "type": "time",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Forearms on the floor, elbows under shoulders",
+    "Straight line from head to heels (knees down to start if needed)",
+    "Squeeze glutes and brace the stomach",
+    "Breathe slowly"
+   ],
+   "mistakes": [
+    "Hips too high or sagging",
+    "Holding your breath"
+   ],
+   "muscles": [
+    "core",
+    "shoulders"
+   ],
+   "fedbId": "Plank",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/plank/0.jpg",
+    "exercises/plank/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Plank%20proper%20form%20beginner"
+  },
+  {
+   "id": "side-plank",
+   "name": "Side plank",
+   "ladder": "core-a",
+   "step": 1,
+   "type": "time",
+   "equipment": "none",
+   "perSide": true,
+   "cues": [
+    "Lie on your side, elbow under the shoulder",
+    "Lift the hips into a straight line (bottom knee down to start)",
+    "Don't let the hips sink",
+    "Switch sides"
+   ],
+   "mistakes": [
+    "Hips sagging",
+    "Rolling forward"
+   ],
+   "muscles": [
+    "obliques",
+    "core"
+   ],
+   "fedbId": "Side_Bridge",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/side-plank/0.jpg",
+    "exercises/side-plank/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Side%20plank%20proper%20form%20beginner"
+  },
+  {
+   "id": "pushup-side-plank",
+   "name": "Push-up to side plank",
+   "ladder": "core-a",
+   "step": 2,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Do a push-up",
+    "At the top rotate into a side plank, arm up",
+    "Return and repeat to the other side",
+    "Move slowly and controlled"
+   ],
+   "mistakes": [
+    "Rushing the rotation",
+    "Hips sagging"
+   ],
+   "muscles": [
+    "core",
+    "chest",
+    "shoulders"
+   ],
+   "fedbId": "Push_Up_to_Side_Plank",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/pushup-side-plank/0.jpg",
+    "exercises/pushup-side-plank/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Push-up%20to%20side%20plank%20proper%20form%20beginner"
+  },
+  {
+   "id": "dead-bug",
+   "name": "Dead bug",
+   "ladder": "core-b",
+   "step": 0,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": true,
+   "cues": [
+    "Lie on your back, arms up, knees bent at 90°",
+    "Press your lower back into the floor",
+    "Slowly extend opposite arm and leg",
+    "Return and switch sides"
+   ],
+   "mistakes": [
+    "Lower back lifting off the floor",
+    "Moving fast"
+   ],
+   "muscles": [
+    "deep core"
+   ],
+   "fedbId": "Dead_Bug",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/dead-bug/0.jpg",
+    "exercises/dead-bug/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Dead%20bug%20proper%20form%20beginner"
+  },
+  {
+   "id": "superman",
+   "name": "Superman",
+   "ladder": "core-b",
+   "step": 1,
+   "type": "reps",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Lie face down, arms forward",
+    "Lift arms, chest and legs a little off the floor",
+    "Hold 2 seconds",
+    "Lower slowly"
+   ],
+   "mistakes": [
+    "Cranking the neck up",
+    "Jerking up"
+   ],
+   "muscles": [
+    "lower back",
+    "glutes"
+   ],
+   "fedbId": "Superman",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/superman/0.jpg",
+    "exercises/superman/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Superman%20proper%20form%20beginner"
+  },
+  {
+   "id": "mountain-climber",
+   "name": "Mountain climbers (slow)",
+   "ladder": "core-b",
+   "step": 2,
+   "type": "time",
+   "equipment": "none",
+   "perSide": false,
+   "cues": [
+    "Start in a high plank",
+    "Drive one knee towards the chest, then switch",
+    "Keep the hips level",
+    "Start slow; speed comes later"
+   ],
+   "mistakes": [
+    "Hips bouncing up",
+    "Hands drifting forward"
+   ],
+   "muscles": [
+    "core",
+    "shoulders",
+    "cardio"
+   ],
+   "fedbId": "Mountain_Climbers",
+   "bodyweightStart": false,
+   "images": [
+    "exercises/mountain-climber/0.jpg",
+    "exercises/mountain-climber/1.jpg"
+   ],
+   "video": "https://www.youtube.com/results?search_query=Mountain%20climbers%20%28slow%29%20proper%20form%20beginner"
+  }
+ ]
+}
