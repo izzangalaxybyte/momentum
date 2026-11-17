@@ -13,7 +13,11 @@
     {
       "Sid": "MomentumParams",
       "Effect": "Allow",
-      "Action": ["ssm:GetParameter", "ssm:GetParameters", "ssm:GetParametersByPath"],
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath"
+      ],
       "Resource": "arn:aws:ssm:eu-central-1:${ACCOUNT_ID}:parameter/momentum/*"
     },
     {
@@ -21,13 +25,27 @@
       "Effect": "Allow",
       "Action": "kms:Decrypt",
       "Resource": "*",
-      "Condition": {"StringEquals": {"kms:ViaService": "ssm.eu-central-1.amazonaws.com"}}
+      "Condition": {
+        "StringEquals": {
+          "kms:ViaService": "ssm.eu-central-1.amazonaws.com"
+        }
+      }
     },
     {
       "Sid": "OwnLogs",
       "Effect": "Allow",
-      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
       "Resource": "arn:aws:logs:eu-central-1:${ACCOUNT_ID}:log-group:/aws/lambda/momentum-*"
+    },
+    {
+      "Sid": "InvokeOwnFunctions",
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:eu-central-1:${ACCOUNT_ID}:function:momentum-*"
     }
   ]
 }

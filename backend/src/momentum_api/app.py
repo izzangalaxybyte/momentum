@@ -4,6 +4,11 @@ Routes
   GET  /health        liveness, no auth
   POST /sync/push     {changes: [{type, id, updatedAt, deleted, data}]} -> {applied: [ids], stale: [ids]}
   GET  /sync/pull     ?since=<cursor>&limit=<n> -> {changes: [...], cursor, hasMore}
+  POST /coach/meal    {text?, image?: {mediaType, data}, foods: [{id, name, unit}]} -> {items, note}
+  POST /coach/review  {today?} -> {review}  (also run every Monday by EventBridge Scheduler)
+  POST /coach/chat    {id, text, today?} -> {messages: [mine, reply]}
+
+Coach records (CoachReview, CoachMessage) are stored like synced rows, so the phone also gets them by pulling.
 """
 
 import base64
@@ -11,7 +16,7 @@ import json
 import logging
 from typing import Any
 
-from . import auth, store
+from . import auth, coach, llm, store
 
 log = logging.getLogger()
 log.setLevel(logging.INFO)
@@ -82,13 +87,45 @@ def pull(event: dict[str, Any]) -> dict[str, Any]:
     return _resp(200, {"changes": [c.to_json() for c in changes], "cursor": new_cursor, "hasMore": has_more})
 
 
+def _today(payload: dict[str, Any]) -> int | None:
+    t = payload.get("today")
+    if t is None:
+        return None
+    if isinstance(t, bool) or not isinstance(t, int) or not 10_000 < t < 100_000:
+        raise ValueError("bad today")
+    return t
+
+
+def _coach(fn):
+    """Run a coach call: bad input -> 400, model trouble -> 502 with a message the app can show."""
+    def run(event: dict[str, Any]) -> dict[str, Any]:
+        try:
+            payload = _body(event)
+            if not isinstance(payload, dict):
+                raise ValueError("body must be an object")
+            return _resp(200, fn(payload))
+        except (ValueError, json.JSONDecodeError) as e:
+            return _resp(400, {"error": str(e)})
+        except llm.CoachError as e:
+            log.warning("coach unavailable: %s", e)
+            return _resp(502, {"error": "The coach is unavailable right now. Try again in a minute."})
+    return run
+
+
 ROUTES = {
     ("POST", "/sync/push"): push,
     ("GET", "/sync/pull"): pull,
+    ("POST", "/coach/meal"): _coach(coach.parse_meal),
+    ("POST", "/coach/review"): _coach(lambda p: {"review": coach.weekly_review(_today(p))}),
+    ("POST", "/coach/chat"): _coach(lambda p: {"messages": coach.chat(p, _today(p))}),
 }
 
 
 def handler(event: dict[str, Any], _context: Any) -> dict[str, Any]:
+    if event.get("action") == "weekly-review":  # EventBridge Scheduler, not HTTP
+        review = coach.weekly_review()
+        log.info("weekly review stored for week %s", review["id"])
+        return {"ok": True, "week": review["id"]}
     http = event.get("requestContext", {}).get("http", {})
     method, path = http.get("method", ""), event.get("rawPath", "")
     if (method, path) == ("GET", "/health"):

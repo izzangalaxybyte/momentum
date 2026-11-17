@@ -1,15 +1,22 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
-Description: Momentum backend (sync API, DynamoDB). Deployed by .github/workflows/deploy.yml.
+Description: Momentum backend (sync API, AI coach, DynamoDB). Deployed by .github/workflows/deploy.yml.
 
 Globals:
   Function:
     Runtime: python3.13
     Architectures: [arm64]
     MemorySize: 256
-    Timeout: 15
+    # Coach calls wait on the model (meal photos take a few seconds); HTTP APIs stop at 30 s.
+    Timeout: 29
     # Roles created by this stack are capped by the boundary (infra/iam/boundary-policy.json).
     PermissionsBoundary: !Sub arn:aws:iam::${AWS::AccountId}:policy/momentum-boundary
+
+Parameters:
+  CoachModel:
+    Type: String
+    Default: anthropic/claude-haiku-5.5
+    Description: OpenRouter model id for the coach (switch models with a deploy, no app release)
 
 Resources:
   DataTable:
@@ -62,13 +69,34 @@ Resources:
         Variables:
           TABLE_NAME: !Ref DataTable
           TOKEN_HASH_PARAM: /momentum/api-token-hash
+          OPENROUTER_KEY_PARAM: /momentum/openrouter-api-key  # SecureString, created by hand (see README)
+          COACH_MODEL: !Ref CoachModel
+          COACH_UTC_OFFSET_MIN: "300"  # the phone's time zone (Pakistan) for "today" in scheduled reviews
       Policies:
         - DynamoDBCrudPolicy: { TableName: !Ref DataTable }
         - SSMParameterReadPolicy: { ParameterName: momentum/* }
+        - Statement:
+            - Effect: Allow
+              Action: kms:Decrypt
+              Resource: "*"
+              Condition: { StringEquals: { kms:ViaService: !Sub "ssm.${AWS::Region}.amazonaws.com" } }
       Events:
         Health: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: GET, Path: /health } }
         Push: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /sync/push } }
         Pull: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: GET, Path: /sync/pull } }
+        Meal: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/meal } }
+        Review: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/review } }
+        Chat: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/chat } }
+        WeeklyReview:
+          Type: ScheduleV2
+          Properties:
+            Name: momentum-weekly-review
+            Description: Monday-morning coach review (stored in DynamoDB, synced to the phone)
+            ScheduleExpression: cron(0 6 ? * MON *)
+            ScheduleExpressionTimezone: Asia/Karachi
+            Input: '{"action": "weekly-review"}'
+            PermissionsBoundary: !Sub arn:aws:iam::${AWS::AccountId}:policy/momentum-boundary
+            RetryPolicy: { MaximumRetryAttempts: 2 }
       Tags: { app: momentum }
 
 Outputs:

@@ -23,7 +23,7 @@ USER = "me"  # single-user app; becomes the Cognito subject if users are ever ad
 
 SYNC_TYPES = frozenset({
     "Profile", "Equipment", "WeightEntry", "Food", "FoodLog", "ExerciseState", "WorkoutSession",
-    "SetLog", "CardioSession", "DailyActivity", "PlannedDay", "Setting",
+    "SetLog", "CardioSession", "DailyActivity", "PlannedDay", "Setting", "CoachReview", "CoachMessage",
 })
 
 TOMBSTONE_TTL_DAYS = 180
@@ -99,3 +99,24 @@ def changes_since(cursor: str, limit: int, now_ms: int | None = None) -> tuple[l
     ]
     new_cursor = items[-1]["gsi1sk"] if items else cursor
     return changes, new_cursor, "LastEvaluatedKey" in resp
+
+
+def records(type_: str) -> list[dict[str, Any]]:
+    """Every live (not deleted) record of one type, as the client's data objects."""
+    cond = Key("pk").eq(f"USER#{USER}") & Key("sk").begins_with(f"{type_}#")
+    out: list[dict[str, Any]] = []
+    kwargs: dict[str, Any] = {"KeyConditionExpression": cond}
+    while True:
+        resp = _table().query(**kwargs)
+        out += [json.loads(i["data"]) for i in resp.get("Items", []) if not i.get("deleted")]
+        if "LastEvaluatedKey" not in resp:
+            return out
+        kwargs["ExclusiveStartKey"] = resp["LastEvaluatedKey"]
+
+
+def put_record(type_: str, data: dict[str, Any], now_ms: int | None = None) -> dict[str, Any]:
+    """Write a server-made record (coach reviews and messages) so it syncs down to the phone."""
+    t = now_ms if now_ms is not None else _now_ms()
+    row = {**data, "updatedAt": t, "deleted": False, "dirty": False}
+    put_change(Change(type=type_, id=row["id"], updated_at=t, deleted=False, data=row), now_ms=t)
+    return row
