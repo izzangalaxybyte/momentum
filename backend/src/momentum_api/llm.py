@@ -67,8 +67,9 @@ def _post(body: dict[str, Any], timeout: float) -> dict[str, Any]:
 
 
 def chat(system: str, messages: list[dict[str, Any]], *, max_tokens: int = 1000, effort: str = "low",
-         schema: dict[str, Any] | None = None, timeout: float = 25) -> tuple[str, dict[str, Any]]:
-    """One completion. `messages` are OpenAI-style ({role, content}); returns (text, usage)."""
+         schema: dict[str, Any] | None = None, timeout: float = 25, web: bool = False) -> tuple[str, dict[str, Any]]:
+    """One completion. `messages` are OpenAI-style ({role, content}); returns (text, usage).
+    web=True lets the model search the web (the model maker's own search; ~1 cent per search)."""
     m = model()
     body: dict[str, Any] = {
         "model": m,
@@ -78,6 +79,8 @@ def chat(system: str, messages: list[dict[str, Any]], *, max_tokens: int = 1000,
         "reasoning": {"effort": effort, "exclude": True},
         "usage": {"include": True},
     }
+    if web:
+        body["plugins"] = [{"id": "web", "engine": "native", "max_results": 4}]
     if schema:
         body["response_format"] = {"type": "json_schema", "json_schema": {"name": "answer", "strict": True, "schema": schema}}
     data = _post(body, timeout)
@@ -88,8 +91,9 @@ def chat(system: str, messages: list[dict[str, Any]], *, max_tokens: int = 1000,
     if choice.get("finish_reason") == "length":
         raise CoachError("answer was cut off")
     usage = data.get("usage") or {}
-    log.info("coach call model=%s in=%s out=%s cost=%s", data.get("model"), usage.get("prompt_tokens"),
-             usage.get("completion_tokens"), usage.get("cost"))
+    log.info("coach call model=%s in=%s out=%s searches=%s cost=%s", data.get("model"), usage.get("prompt_tokens"),
+             usage.get("completion_tokens"), (usage.get("server_tool_use_details") or {}).get("web_search_requests", 0),
+             usage.get("cost"))
     return text, usage
 
 
@@ -105,10 +109,10 @@ def _parse_json(text: str) -> Any:
 
 
 def json_call(system: str, messages: list[dict[str, Any]], schema: dict[str, Any],
-              check: Callable[[Any], Any], **kwargs: Any) -> Any:
+              check: Callable[[Any], Any], attempts: int = 2, **kwargs: Any) -> Any:
     """Ask for JSON matching `schema`; `check` validates/cleans it (raise ValueError to reject). One retry."""
     last: Exception | None = None
-    for _ in range(2):
+    for _ in range(attempts):
         text, _usage = chat(system, messages, schema=schema, **kwargs)
         try:
             return check(_parse_json(text))

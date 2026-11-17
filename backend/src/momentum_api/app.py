@@ -5,6 +5,7 @@ Routes
   POST /sync/push     {changes: [{type, id, updatedAt, deleted, data}]} -> {applied: [ids], stale: [ids]}
   GET  /sync/pull     ?since=<cursor>&limit=<n> -> {changes: [...], cursor, hasMore}
   POST /coach/meal    {text?, image?: {mediaType, data}, foods: [{id, name, unit}]} -> {items, note}
+  POST /coach/ask     {question, image?, foods, kcalLeft?, proteinLeft?} -> {options, best, answer}
   POST /coach/review  {today?} -> {review}  (also run every Monday by EventBridge Scheduler)
   POST /coach/chat    {id, text, today?} -> {messages: [mine, reply]}
 
@@ -116,6 +117,7 @@ ROUTES = {
     ("POST", "/sync/push"): push,
     ("GET", "/sync/pull"): pull,
     ("POST", "/coach/meal"): _coach(coach.parse_meal),
+    ("POST", "/coach/ask"): _coach(coach.ask_food),
     ("POST", "/coach/review"): _coach(lambda p: {"review": coach.weekly_review(_today(p), include_today=True)}),
     ("POST", "/coach/chat"): _coach(lambda p: {"messages": coach.chat(p, _today(p))}),
 }

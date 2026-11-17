@@ -85,6 +85,7 @@ Resources:
         Push: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /sync/push } }
         Pull: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: GET, Path: /sync/pull } }
         Meal: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/meal } }
+        Ask: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/ask } }
         Review: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/review } }
         Chat: { Type: HttpApi, Properties: { ApiId: !Ref HttpApi, Method: POST, Path: /coach/chat } }
         WeeklyReview:

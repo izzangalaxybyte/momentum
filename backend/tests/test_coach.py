@@ -51,7 +51,7 @@ def test_meal_matches_catalog_and_cleans_answer(coach_api):
     assert status == 200
     roti, qeema, huge = body["items"]
     assert roti == {"foodId": "roti", "name": "Roti (chapati)", "unit": "1 roti", "quantity": 2.0, "kcal": None,
-                    "protein": None, "carbs": None, "fat": None}
+                    "protein": None, "carbs": None, "fat": None, "branded": False}
     assert qeema["foodId"] is None and qeema["name"] == "Qeema" and qeema["kcal"] == 250
     assert huge["quantity"] == 50 and huge["kcal"] == 5000
     sent = coach_api.calls[0]
@@ -175,3 +175,84 @@ def test_chat_validation(coach_api):
     assert call(coach_api, "POST", "/coach/chat", {"id": "msg-00000001", "text": ""})[0] == 400
     assert call(coach_api, "POST", "/coach/chat", {"id": "a#b-000000", "text": "hi"})[0] == 400
     assert call(coach_api, "POST", "/coach/chat", {"id": "msg-00000001", "text": "hi", "today": "x"})[0] == 400
+
+
+BURGER = {"foodId": "chicken-burger", "name": "Dawn crispy fillet burger", "quantity": 1, "unit": "piece",
+          "kcal": 480, "protein": 22, "carbs": 45, "fat": 22, "lookup": "Dawn chicken crispy fillet nutrition Pakistan"}
+FOODS_WITH_BURGER = FOODS + [{"id": "chicken-burger", "name": "Chicken burger", "unit": "piece"}]
+
+
+def test_branded_item_is_looked_up_online(coach_api):
+    roti = {"foodId": "roti", "name": "x", "quantity": 1, "unit": "x", "kcal": 0, "protein": 0, "carbs": 0, "fat": 0,
+            "lookup": None}
+    coach_api.answers += [
+        {"items": [roti, BURGER], "note": "Assumed one tablespoon of mayo."},
+        {"items": [{"index": 1, "kcal": 520, "protein": 25, "carbs": 48, "fat": 24, "source": "carrefour.pk"},
+                   {"index": 0, "kcal": 1, "protein": 1, "carbs": 1, "fat": 1, "source": "nope"}]},  # not a lookup item
+    ]
+    status, body = call(coach_api, "POST", "/coach/meal", {"text": "roti and a dawn burger", "foods": FOODS_WITH_BURGER})
+    assert status == 200
+    roti_out, burger = body["items"]
+    assert roti_out["foodId"] == "roti" and roti_out["kcal"] is None
+    # branded: never mapped onto the generic list item, and the online figures replace the estimate
+    assert burger["foodId"] is None and burger["name"] == "Dawn crispy fillet burger"
+    assert burger["kcal"] == 520 and burger["source"] == "carrefour.pk"
+    assert body["note"] == "Assumed one tablespoon of mayo. Looked up online: Dawn crispy fillet burger: carrefour.pk."
+    first, second = coach_api.calls
+    assert "plugins" not in first
+    assert second["plugins"] == [{"id": "web", "engine": "native", "max_results": 4}]
+    assert "1. Dawn crispy fillet burger" in second["messages"][1]["content"]
+
+
+def test_failed_lookup_keeps_the_estimate(coach_api):
+    coach_api.answers += [{"items": [BURGER], "note": ""}, "not json"]
+    status, body = call(coach_api, "POST", "/coach/meal", {"text": "dawn burger", "foods": FOODS_WITH_BURGER})
+    assert status == 200
+    assert body["items"][0]["kcal"] == 480 and "source" not in body["items"][0]
+    assert body["note"] == "Couldn't find Dawn crispy fillet burger online, so that's an estimate."
+    assert body["items"][0]["branded"] is True
+    assert len(coach_api.calls) == 2  # the lookup isn't retried
+
+
+def test_lookups_are_capped(coach_api):
+    from momentum_api import coach
+    coach_api.answers += [{"items": [dict(BURGER, name=f"Burger {i}") for i in range(5)], "note": ""},
+                          {"items": []}]
+    call(coach_api, "POST", "/coach/meal", {"text": "five burgers", "foods": FOODS_WITH_BURGER})
+    asked = coach_api.calls[1]["messages"][1]["content"]
+    assert asked.count("search:") == coach.MAX_LOOKUPS
+
+
+def test_ask_compares_options_with_budget(coach_api):
+    coach_api.answers.append({"options": [
+        {"foodId": "roti", "name": "x", "quantity": 2, "unit": "x", "kcal": 0, "protein": 0, "carbs": 0, "fat": 0, "lookup": None},
+        {"foodId": None, "name": "Chicken biryani plate", "quantity": 1, "unit": "plate", "kcal": 750, "protein": 30,
+         "carbs": 90, "fat": 28, "lookup": None}], "best": 0, "answer": "Go for the rotis."})
+    foods = [dict(f, kcal=120, protein=4) for f in FOODS]
+    status, body = call(coach_api, "POST", "/coach/ask",
+                        {"question": "2 roti or biryani?", "foods": foods, "kcalLeft": 800, "proteinLeft": 60})
+    assert status == 200
+    assert body["best"] == 0 and body["answer"] == "Go for the rotis."
+    assert body["options"][0]["foodId"] == "roti" and body["options"][1]["kcal"] == 750
+    text = coach_api.calls[0]["messages"][1]["content"][0]["text"]
+    assert "roti | Roti (chapati) | 1 roti | 120 kcal, 4 g protein per unit" in text
+    assert text.endswith("Left for today: 800 kcal, 60 g protein")
+
+
+def test_ask_rewrites_answer_after_lookup(coach_api):
+    coach_api.answers += [
+        {"options": [BURGER], "best": 5, "answer": "About 480 kcal."},
+        {"items": [{"index": 0, "kcal": 610, "protein": 30, "carbs": 50, "fat": 30, "source": "kfcpakistan.com"}]},
+        "About 610 kcal; fits if you keep dinner light.",
+    ]
+    status, body = call(coach_api, "POST", "/coach/ask", {"question": "dawn burger calories?", "foods": FOODS})
+    assert status == 200
+    assert body["best"] is None  # out of range
+    assert body["options"][0]["kcal"] == 610
+    assert body["answer"] == ("About 610 kcal; fits if you keep dinner light. "
+                              "Looked up online: Dawn crispy fillet burger: kfcpakistan.com.")
+    assert "Final numbers:\n0. Dawn crispy fillet burger: 610 kcal" in coach_api.calls[2]["messages"][1]["content"]
+
+
+def test_ask_needs_a_question(coach_api):
+    assert call(coach_api, "POST", "/coach/ask", {"foods": FOODS})[0] == 400
