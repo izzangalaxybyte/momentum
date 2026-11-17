@@ -2,6 +2,10 @@ package com.thegalaxybyte.momentum.ui.today
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Icon
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.Icons
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -81,7 +85,8 @@ fun TodayScreen(nav: NavHostController) {
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        Column {
+        Row(verticalAlignment = Alignment.Top) {
+        Column(Modifier.weight(1f)) {
             Text(fmtDay(s.day, "EEEE, d MMMM"), style = MaterialTheme.typography.headlineSmall)
             val phase = when (s.cardioState.phase) {
                 CardioPhase.WALK -> "walking phase"
@@ -94,7 +99,10 @@ fun TodayScreen(nav: NavHostController) {
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
+            IconButton(onClick = { nav.goTab("settings") }) { Icon(Icons.Default.Settings, "Settings") }
+        }
 
+        CoachReadyCard(s.day) { nav.goTab("coach") }
         CaloriesCard(s) { nav.goTab("food") }
         PlanCard(s, nav)
         WeighInCard(s) { kg -> scope.launch { c.repo.addWeight(s.day, kg) } }
@@ -106,6 +114,24 @@ fun TodayScreen(nav: NavHostController) {
                 OutlinedButton(onClick = { nav.goTab("settings") }) { Text("Open settings") }
             }
         }
+    }
+}
+
+/** Shown on Mondays (or after "Review my week now") until the review is opened and its suggestions handled. */
+@Composable
+private fun CoachReadyCard(day: Long, onOpen: () -> Unit) {
+    val c = LocalContext.current.container
+    val reviews by remember { c.dao.coachReviews() }.collectAsState(initial = emptyList())
+    val seen by c.prefs.coachSeen.collectAsState(initial = Long.MAX_VALUE)
+    val latest = reviews.firstOrNull() ?: return
+    if (latest.weekStart != Days.monday(day)) return
+    val body = remember(latest.body) { c.coach.body(latest) }
+    val pending = body.proposals.count { it.status == "pending" }
+    if (latest.createdAt <= seen && pending == 0) return
+    SectionCard("Your weekly review is ready") {
+        Text(body.summary, style = MaterialTheme.typography.bodyMedium, maxLines = 3)
+        if (pending > 0) Text("$pending suggested change${if (pending == 1) "" else "s"} to look at", style = MaterialTheme.typography.bodySmall)
+        Button(onClick = onOpen) { Text("Open coach") }
     }
 }
 

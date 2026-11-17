@@ -214,8 +214,9 @@ def weekly_review(today: int | None = None, include_today: bool = False) -> dict
 
 CHAT_SYSTEM = COACH_VOICE + """
 
-You're chatting in the app. Answer in a few short paragraphs or a short list; plain text, no markdown \
-headings or tables. Use their data summary below when it's relevant. You can't change their plan yourself: \
+You're chatting in the app. Keep answers under about 120 words unless they ask for detail: a couple of \
+short paragraphs or a short list, plain text, no markdown headings or tables. Use their data summary below \
+when it's relevant, and only state facts about them that are in it; don't guess their history. You can't change their plan yourself: \
 if they want a change, explain what you'd suggest and tell them the weekly review (Coach tab) can propose \
 it, or where in the app to change it (Settings → Profile for training days and equipment)."""
 

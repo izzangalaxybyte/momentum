@@ -66,6 +66,14 @@ interface MomentumDao {
     @Query("SELECT * FROM setting WHERE id = :id AND deleted = 0") fun settingFlow(id: String): Flow<SettingEntity?>
     @Upsert suspend fun upsertSetting(s: SettingEntity)
 
+    // coach
+    @Query("SELECT * FROM coach_review WHERE deleted = 0 ORDER BY weekStart DESC LIMIT 12") fun coachReviews(): Flow<List<CoachReviewEntity>>
+    @Query("SELECT * FROM coach_review WHERE id = :id") suspend fun getCoachReview(id: String): CoachReviewEntity?
+    @Upsert suspend fun upsertCoachReview(r: CoachReviewEntity)
+    @Query("SELECT * FROM coach_message WHERE deleted = 0 ORDER BY createdAt") fun coachMessages(): Flow<List<CoachMessageEntity>>
+    @Query("SELECT * FROM coach_message WHERE id = :id") suspend fun getCoachMessage(id: String): CoachMessageEntity?
+    @Upsert suspend fun upsertCoachMessage(m: CoachMessageEntity)
+
     // --- sync: dirty rows, lookup by id, mark pushed ---
     @Query("SELECT * FROM profile WHERE dirty = 1") suspend fun dirtyProfile(): List<ProfileEntity>
     @Query("SELECT * FROM weight WHERE dirty = 1") suspend fun dirtyWeight(): List<WeightEntity>
@@ -77,6 +85,8 @@ interface MomentumDao {
     @Query("SELECT * FROM cardio WHERE dirty = 1") suspend fun dirtyCardio(): List<CardioEntity>
     @Query("SELECT * FROM daily_activity WHERE dirty = 1") suspend fun dirtyActivity(): List<DailyActivityEntity>
     @Query("SELECT * FROM setting WHERE dirty = 1") suspend fun dirtySetting(): List<SettingEntity>
+    @Query("SELECT * FROM coach_review WHERE dirty = 1") suspend fun dirtyCoachReview(): List<CoachReviewEntity>
+    @Query("SELECT * FROM coach_message WHERE dirty = 1") suspend fun dirtyCoachMessage(): List<CoachMessageEntity>
 
     @Query("SELECT * FROM profile WHERE id = :id") suspend fun getProfile(id: String): ProfileEntity?
     @Query("SELECT * FROM weight WHERE id = :id") suspend fun getWeight(id: String): WeightEntity?
@@ -96,6 +106,8 @@ interface MomentumDao {
     @Query("UPDATE cardio SET dirty = 0 WHERE id = :id AND updatedAt = :u") suspend fun cleanCardio(id: String, u: Long)
     @Query("UPDATE daily_activity SET dirty = 0 WHERE id = :id AND updatedAt = :u") suspend fun cleanActivity(id: String, u: Long)
     @Query("UPDATE setting SET dirty = 0 WHERE id = :id AND updatedAt = :u") suspend fun cleanSetting(id: String, u: Long)
+    @Query("UPDATE coach_review SET dirty = 0 WHERE id = :id AND updatedAt = :u") suspend fun cleanCoachReview(id: String, u: Long)
+    @Query("UPDATE coach_message SET dirty = 0 WHERE id = :id AND updatedAt = :u") suspend fun cleanCoachMessage(id: String, u: Long)
 
     // export
     @Query("SELECT * FROM food_log WHERE deleted = 0") suspend fun allFoodLog(): List<FoodLogEntity>

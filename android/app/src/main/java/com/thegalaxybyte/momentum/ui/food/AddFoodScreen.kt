@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -18,6 +19,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -71,6 +73,10 @@ fun AddFoodScreen(nav: NavHostController, day: Long, meal: String) {
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
         )
+        OutlinedButton(onClick = { nav.navigate("food/ai/$day/$meal") }, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
+            Icon(Icons.Default.AutoAwesome, null)
+            Text("  Describe or snap your meal")
+        }
         TextButton(onClick = { creating = true }) { Text("+ Create a custom food (e.g. Ammi's daal)") }
         if (query.isBlank() && recent.isNotEmpty()) Text("Recent first", style = MaterialTheme.typography.labelSmall)
         LazyColumn(Modifier.fillMaxSize()) {

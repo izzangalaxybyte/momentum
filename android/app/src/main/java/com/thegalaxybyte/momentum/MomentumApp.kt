@@ -16,6 +16,8 @@ import com.thegalaxybyte.momentum.data.PlanService
 import com.thegalaxybyte.momentum.data.Prefs
 import com.thegalaxybyte.momentum.data.Repo
 import com.thegalaxybyte.momentum.data.TokenStore
+import com.thegalaxybyte.momentum.data.coach.CoachClient
+import com.thegalaxybyte.momentum.data.coach.CoachService
 import com.thegalaxybyte.momentum.data.db.MomentumDb
 import com.thegalaxybyte.momentum.data.health.HealthSource
 import com.thegalaxybyte.momentum.data.sync.SyncEngine
@@ -31,6 +33,7 @@ class AppContainer(context: Context) {
     val sync = SyncEngine(dao, prefs, tokens)
     val repo = Repo(dao, catalogs, health) { SyncWorker.scheduleSoon(context) }
     val plan = PlanService(dao, catalogs, repo)
+    val coach = CoachService(CoachClient(prefs, tokens), repo, plan)
 }
 
 class MomentumApp : Application() {

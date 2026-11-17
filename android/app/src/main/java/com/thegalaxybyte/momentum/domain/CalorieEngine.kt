@@ -71,6 +71,12 @@ object CalorieEngine {
         return (avgIntake - (last.trend - first.trend) * KCAL_PER_KG / days) to logged.size
     }
 
+    /** A coach-proposed target, kept within ±[MAX_WEEKLY_CHANGE] of the current one and above the floor. */
+    fun clampProposal(proposed: Int, current: Int, sex: Sex): Int {
+        val moved = proposed.coerceIn(current - MAX_WEEKLY_CHANGE, current + MAX_WEEKLY_CHANGE)
+        return max(floor(sex), (moved / 10.0).roundToInt() * 10)
+    }
+
     fun targets(
         s: BodyStats,
         avgSteps: Int?,

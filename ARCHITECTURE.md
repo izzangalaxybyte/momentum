@@ -37,11 +37,11 @@ PHONE (Android, offline-first)                         AWS  (eu-central-1, Frank
 │ UI: Jetpack Compose                 │          │ API Gateway (HTTP API, throttled)    │
 │ Domain: rule engines (pure Kotlin)  │  HTTPS   │ Lambda momentum-api (Python 3.13)    │
 │ Room DB (full local copy)           │◄────────►│   ├─ /sync/push, /sync/pull          │
-│ Sync engine (dirty rows + cursor)   │          │   └─ bearer-token check (hash in SSM)│
-│ Health Connect reader/writer        │          │ DynamoDB momentum-data (single table)│
-│ Exercise demos + food DB (bundled)  │          │ SSM Parameter Store                  │
-│ WorkManager (hourly import + sync)  │          │ phase 2: coach/review Lambdas,       │──► OpenRouter
-└──────────────▲──────────────────────┘          │   EventBridge weekly schedule        │    (Claude Haiku)
+│ Sync engine (dirty rows + cursor)   │          │   ├─ /coach/meal, /review, /chat     │──► OpenRouter
+│ Health Connect reader/writer        │          │   └─ bearer-token check (hash in SSM)│    (Claude Haiku 5.5)
+│ Exercise demos + food DB (bundled)  │          │ DynamoDB momentum-data (single table)│
+│ WorkManager (hourly import + sync)  │          │ SSM Parameter Store (token hash, key)│
+└──────────────▲──────────────────────┘          │ EventBridge Scheduler: Mon 06:00 PKT │
                │                                 └──────────────────────────────────────┘
    Samsung Galaxy Watch
    → Samsung Health → Health Connect
@@ -114,12 +114,12 @@ validated and clamped by the same engines before it is shown or applied.
 |---|---|
 | Onboarding | Height, weight, age, sex, goal weight, activity, training days, equipment, Health Connect permissions, backend pairing |
 | Today | Calorie ring (eaten / target / protein), today's session(s), steps, quick-add food, weigh-in prompt |
-| Food | Day log by meal, search desi food DB, recent/favourite foods, custom foods, AI add (text/photo, phase 2) |
+| Food | Day log by meal, search desi food DB, recent/favourite foods, custom foods, "Describe or snap your meal" (AI, text/photo, confirm before logging) |
 | Train | Today's session runner: exercise demo, cues, target sets × reps × weight, log each set, rate easy/good/hard, rest timer |
 | Exercise detail | Looping demo, form cues, common mistakes, muscles, "watch full video" link, history chart |
 | Progress | Weight trend, calories vs target, strength progress per exercise, weekly cardio volume, steps |
-| Coach (phase 2) | Weekly reviews (accept / reject proposed changes), chat |
-| Settings | Profile, equipment, training days, units, sync status, export backup |
+| Coach | Weekly review (wins, concerns, tip, suggested changes to accept or dismiss) and chat |
+| Settings (gear on Today) | Profile, equipment, training days, Health Connect, sync token/status, export backup |
 
 ### 4.4 Domain engines
 
@@ -180,9 +180,10 @@ All engines are pure functions over data from the repositories, deterministic an
 - Weeks 5+: 3 strength sessions (A/B alternating, never on consecutive days) + cardio + 1 full rest day.
 - Re-planned every Monday and whenever settings change; already-completed days are never rewritten.
 
-**CoachContextBuilder** (phase 2)
-- Builds a compact JSON summary of the last 1–4 weeks for the AI (weight trend, average intake and
-  protein, adherence, sessions done and ratings, cardio volume, steps, current plan). Never raw tables.
+**CoachContextBuilder** (server side, `backend/src/momentum_api/context.py`)
+- Builds a compact JSON summary of the last week (plus 7- and 28-day weight trend) for the AI: weight
+  trend, intake and protein by day, biggest calorie sources, sessions and sets with ratings, ladder
+  states, cardio and its plan state, steps, last review. Never raw tables.
 
 ### 4.5 Local data model (Room)
 
@@ -201,7 +202,8 @@ Every syncable table has: `id` (UUID string), `updatedAt` (epoch ms, client cloc
 | `CardioSession` | hcRecordId, type, start, durationSec, distanceM, avgHr, maxHr, kcal, rating |
 | `DailyActivity` | date, steps, activeKcal |
 | `Setting` | small synced values, e.g. the cardio plan state (phase, weekly minutes, interval level) |
-| `CoachMessage`, `WeeklyReview` | phase 2 |
+| `CoachReview` | id = week's Monday, weekStart, createdAt, body (review JSON incl. each proposal's status and outcome); written by the server, updated by the phone on accept/dismiss |
+| `CoachMessage` | createdAt, role (user, coach), text; both written by the server |
 
 The week plan is computed on the fly from these (never stored), and the sync cursor lives in
 device-local DataStore.
@@ -233,16 +235,16 @@ The built-in foods and the exercise catalogue are read straight from the bundled
 | Component | Purpose |
 |---|---|
 | API Gateway HTTP API | Single HTTPS entry point, throttled (10 req/s, burst 20) |
-| `momentum-api` Lambda | Routes `/health`, `/sync/push`, `/sync/pull`; checks the bearer token itself |
-| `coach` / `review` Lambdas | Chat, meal parsing, weekly review via EventBridge Scheduler (phase 2) |
+| `momentum-api` Lambda | Routes `/health`, `/sync/*` and `/coach/*`; checks the bearer token itself; 29 s timeout for model calls |
+| EventBridge Scheduler `momentum-weekly-review` | Invokes the same Lambda every Monday 06:00 Asia/Karachi to write the weekly review |
 | DynamoDB table `momentum-data` | All user data, on-demand, point-in-time recovery, TTL on tombstones, retained on stack delete |
-| SSM Parameter Store | `/momentum/api-token-hash`; phase 2: `/momentum/openrouter-key` (SecureString) |
+| SSM Parameter Store | `/momentum/api-token-hash`, `/momentum/openrouter-api-key` (SecureString, created by hand) |
 | CloudWatch | Logs with 14-day retention; request bodies are never logged |
 
 Exercise demos are bundled in the APK (about 3 MB), so there is no media bucket or CDN.
 
 - Region: **eu-central-1 (Frankfurt)**, closest EU/US region to Pakistan.
-- Lambdas: Python 3.13, arm64, AWS Lambda Powertools, pydantic models; deps via uv.
+- Lambda: Python 3.13, arm64, standard library + boto3 only (nothing to package); dev deps via uv.
 - Infra as code: AWS SAM (`infra/template.yaml`).
 - **Auto-deploy:** every push to `main` that touches `backend/` or `infra/` runs
   `.github/workflows/deploy.yml`: backend tests, then `sam build && sam deploy`, then a `/health`
@@ -259,9 +261,9 @@ All endpoints require `Authorization: Bearer <token>`.
 |---|---|---|
 | `POST /sync/push` | `{changes: [{type, id, updatedAt, deleted, data}]}` | `{applied: [...ids], stale: [...ids]}` |
 | `GET /sync/pull` | `?since=<cursor>&limit=500` | `{changes: [...], cursor, hasMore}` |
-| `POST /coach/meal` | `{text}` or `{imageBase64, mimeType}` | `{items: [{name, matchedFoodId?, quantity, unit, kcal, proteinG, carbsG, fatG, confidence}]}` |
-| `POST /coach/chat` | `{message}` | `{reply}` (history persisted as `CoachMessage`) |
-| `POST /coach/review/run` | — | triggers a review now (manual) |
+| `POST /coach/meal` | `{text?, image?: {mediaType, data}, foods: [{id, name, unit}]}` | `{items: [{foodId?, name, unit, quantity, kcal?, protein?, carbs?, fat?}], note}` (macros only for foods not in the list) |
+| `POST /coach/review` | `{today}` | `{review}`: builds and stores this week's review now (includes today so far) |
+| `POST /coach/chat` | `{id, text, today}` | `{messages: [mine, reply]}`, both stored as `CoachMessage` |
 | `GET /health` | — | liveness |
 
 Weekly reviews and coach messages are ordinary synced records, so the app gets them through `pull`.
@@ -310,25 +312,31 @@ Single user, so a long random token instead of an identity provider:
 
 ---
 
-## 7. AI coach (phase 2)
+## 7. AI coach
 
-- Provider: **OpenRouter**, model **Claude Haiku** (exact OpenRouter model id configured in SSM /
-  Lambda env, so it can be switched without an app release).
-- Called only from Lambda; the OpenRouter key never leaves AWS.
-- All AI responses that drive app behaviour are JSON, validated with pydantic against a schema;
-  one retry on invalid output, otherwise the feature fails gracefully.
+- Provider: **OpenRouter**, model **Claude Haiku 5.5** (`anthropic/claude-haiku-5.5`), set by the
+  `CoachModel` stack parameter, so it can be switched with a deploy and no app release.
+- Called only from the Lambda (`backend/src/momentum_api/llm.py`, standard library HTTP); the key is
+  read from SSM and cached for 5 minutes.
+- Answers that drive the app are JSON: requested with a strict JSON schema, then checked and cleaned in
+  Python (unknown food ids dropped, numbers clamped, unknown proposal kinds/ladders dropped). One retry
+  on invalid output; after that the app shows "The coach is unavailable right now".
 
 | Feature | Input | Output |
 |---|---|---|
-| Meal parsing | Text ("do roti, aadha bowl qeema, ek chai") or photo + the food DB names list | Items with quantities; matched to `Food` rows where possible; user confirms before saving |
-| Weekly review | `CoachContextBuilder` summary (built server-side from DynamoDB) | `{summary, wins, concerns, proposals: [{kind, target, value, reason}], tip}` |
-| Chat | Message + compact context + recent messages | Free text |
+| Meal parsing | Text ("do roti, aadha bowl qeema, ek chai") and/or a photo, plus the phone's food list (id, name, unit, including custom foods) | Items with quantities. Matched foods use the app's own macros; unmatched ones carry the model's estimate. The user edits/removes items before logging. |
+| Weekly review | `CoachContextBuilder` (`context.py`): a compact summary built from the synced DynamoDB records (weight trend, intake by day, sessions and sets with ratings, ladder states, cardio, steps, last review) | `{summary, wins, concerns, proposals: [{kind, target, value, reason}], tip}`, stored as a `CoachReview` record (id = the week's Monday) and synced to the phone |
+| Chat | Message + the same summary (including today so far) + the last 20 messages | Plain text; both messages stored as `CoachMessage` records |
 
-- **Guardrails:** proposals (calorie change, progress/deload an exercise, add a cardio day…) are
-  clamped by the phone's domain engines (calorie floors, ±150 kcal/week, ≤10% cardio growth) and
-  applied only after the user taps Accept.
-- Photos are sent through to the model and discarded; never stored or logged.
-- Privacy note: meal text/photos and weekly summaries are sent to OpenRouter and the model provider.
+- **Schedule:** Monday 06:00 Asia/Karachi (covers Mon–Sun of the finished week). "Review my week now"
+  in the app writes the same record on demand, including today so far.
+- **Guardrails:** proposal kinds are `calorie_target`, `exercise_easier/harder` (one ladder),
+  `cardio_easier/harder`. They are applied only after the user taps Accept, and only through the
+  phone's engines: calories move at most ±150 kcal from the current target and never below the floor
+  (`CalorieEngine.clampProposal`); exercises move exactly one notch, the same step the automatic
+  progression would take (`ProgressionEngine.nudge`); cardio moves one step, never more than +10% or
+  one interval level (`CardioPlanner.easier/harder`). The outcome is written back onto the review.
+- Privacy note: meal text/photos and weekly summaries are sent to OpenRouter and Anthropic.
 
 ---
 
@@ -366,7 +374,10 @@ Single user, so a long random token instead of an identity provider:
 
 - Public repo: no secrets in git. The signing key and its password live in `~/.momentum/`, the API
   token in `~/.momentum/api-token` and SSM (hash only); `.env` only holds the public API URL.
-- HTTPS only; API Gateway throttling; authorizer on every route.
+- HTTPS only; API Gateway throttling; bearer-token check on every route except `/health`.
+- The OpenRouter key never leaves AWS. Requests go only to Anthropic's own endpoints on OpenRouter
+  (`provider.only`, no fallbacks) with `data_collection: deny`. Meal photos are passed through, never
+  stored or logged.
 - Health and food data is sensitive: DynamoDB encryption at rest (default), no payload logging,
   14-day log retention, PITR backups.
 - Local export (JSON) from Settings as an extra backup.
@@ -388,6 +399,6 @@ Single user, so a long random token instead of an identity provider:
 | Item | Monthly |
 |---|---|
 | Lambda, API Gateway, DynamoDB on-demand | ~$0–1 (mostly free tier) |
-| OpenRouter, Claude Haiku (daily meal parsing + weekly review + some chat) | < $1 |
+| OpenRouter, Claude Haiku 5.5 ($0.10 / $0.50 per M tokens; a meal parse or chat reply is ~5k tokens) | < $0.50 |
 | **Total** | **~$1–2** |
 

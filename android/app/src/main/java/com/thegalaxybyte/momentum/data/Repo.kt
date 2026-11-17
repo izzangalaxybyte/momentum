@@ -1,6 +1,7 @@
 package com.thegalaxybyte.momentum.data
 
 import com.thegalaxybyte.momentum.data.db.CardioEntity
+import com.thegalaxybyte.momentum.data.db.CoachReviewEntity
 import com.thegalaxybyte.momentum.data.db.FoodEntity
 import com.thegalaxybyte.momentum.data.db.FoodLogEntity
 import com.thegalaxybyte.momentum.data.db.LadderStateEntity
@@ -63,6 +64,21 @@ class Repo(
             id = newId(), epochDay = epochDay, meal = meal, foodId = food.id, name = food.nameEn, unit = food.unit,
             quantity = quantity, kcal = food.kcal * quantity, protein = food.protein * quantity,
             carbs = food.carbs * quantity, fat = food.fat * quantity, createdAt = t, updatedAt = t,
+        )
+        dao.upsertFoodLog(e)
+        health.writeFood(e)
+        onChange()
+    }
+
+    /** A food the coach estimated that isn't in the food list (no foodId); macros are for the whole quantity. */
+    suspend fun logEstimate(
+        epochDay: Long, meal: String, name: String, unit: String, quantity: Double,
+        kcal: Double, protein: Double, carbs: Double, fat: Double,
+    ) {
+        val t = now()
+        val e = FoodLogEntity(
+            id = newId(), epochDay = epochDay, meal = meal, foodId = null, name = name, unit = unit,
+            quantity = quantity, kcal = kcal, protein = protein, carbs = carbs, fat = fat, createdAt = t, updatedAt = t,
         )
         dao.upsertFoodLog(e)
         health.writeFood(e)
@@ -133,6 +149,12 @@ class Repo(
 
     suspend fun saveLadder(s: LadderState, t: Long = now()) {
         dao.upsertLadderState(LadderStateEntity(s.ladder, s.step, s.loadKg, s.stage, s.misses, s.holdSec, updatedAt = t))
+    }
+
+    // --- coach ---
+    suspend fun saveCoachReview(r: CoachReviewEntity) {
+        dao.upsertCoachReview(r.copy(updatedAt = maxOf(now(), r.updatedAt + 1), dirty = true))
+        onChange()
     }
 
     // --- settings ---

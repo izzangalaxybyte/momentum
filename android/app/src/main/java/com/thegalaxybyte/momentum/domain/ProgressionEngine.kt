@@ -109,6 +109,25 @@ class ProgressionEngine(
         if (miss) return missed(state, ex)
         if (!success) return Outcome(state.copy(misses = 0), OutcomeKind.SAME, "${ex.name}: same target, aim for ${t.repMax} reps on every set.")
 
+        return progress(state, ex)
+    }
+
+    /**
+     * One notch harder or easier, for a coach proposal the user accepted: the same steps the
+     * automatic progression would take after a successful session or after two misses.
+     */
+    fun nudge(state: LadderState, harder: Boolean): Outcome {
+        val ex = exercise(state)
+        if (!harder) return missed(state.copy(misses = 1), ex)
+        if (ex.type == ExerciseType.TIME) {
+            if (state.holdSec >= HOLD_MAX) return advance(state, ex)
+            val hold = state.holdSec + HOLD_STEP
+            return Outcome(state.copy(holdSec = hold, misses = 0), OutcomeKind.LONGER_HOLD, "${ex.name}: hold ${hold}s next time.")
+        }
+        return progress(state, ex)
+    }
+
+    private fun progress(state: LadderState, ex: ExerciseDef): Outcome {
         if (ex.type == ExerciseType.WEIGHT_REPS) {
             val next = nextLoad(ex, state.loadKg)
             if (next != null) {

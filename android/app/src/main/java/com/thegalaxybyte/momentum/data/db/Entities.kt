@@ -178,3 +178,33 @@ data class SettingEntity(
     override val deleted: Boolean = false,
     override val dirty: Boolean = true,
 ) : Syncable
+
+/**
+ * A weekly coach review, written by the server (Monday mornings, or on request) and synced down.
+ * id = the week's Monday (epoch day). [body] is the review as JSON (see data/coach/CoachModels.kt);
+ * the phone rewrites it when a proposal is accepted or dismissed.
+ */
+@Serializable
+@Entity(tableName = "coach_review")
+data class CoachReviewEntity(
+    @PrimaryKey override val id: String,
+    val weekStart: Long,
+    val createdAt: Long,
+    val body: String,
+    override val updatedAt: Long = 0,
+    override val deleted: Boolean = false,
+    override val dirty: Boolean = false,
+) : Syncable
+
+/** One chat message, role "user" or "coach". Both sides are stored by the server and synced. */
+@Serializable
+@Entity(tableName = "coach_message", indices = [Index("createdAt")])
+data class CoachMessageEntity(
+    @PrimaryKey override val id: String,
+    val createdAt: Long,
+    val role: String,
+    val text: String,
+    override val updatedAt: Long = 0,
+    override val deleted: Boolean = false,
+    override val dirty: Boolean = false,
+) : Syncable

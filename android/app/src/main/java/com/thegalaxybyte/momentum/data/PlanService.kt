@@ -95,7 +95,7 @@ class PlanService(private val dao: MomentumDao, private val catalogs: Catalogs, 
         }.getOrNull()
     }
 
-    private suspend fun saveCardioState(s: CardioState) = repo.putSetting(
+    suspend fun saveCardioState(s: CardioState) = repo.putSetting(
         "cardio",
         json.encodeToString(CardioStateJson.serializer(), CardioStateJson(s.phase.name, s.baseWeeklyMin, s.intervalLevel, s.weekStart)),
     )

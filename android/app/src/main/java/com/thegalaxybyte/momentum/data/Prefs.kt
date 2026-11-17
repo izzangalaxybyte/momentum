@@ -29,6 +29,7 @@ class Prefs(private val context: Context) {
     private val cursorKey = stringPreferencesKey("sync_cursor")
     private val lastSyncKey = longPreferencesKey("last_sync_at")
     private val lastErrorKey = stringPreferencesKey("last_sync_error")
+    private val coachSeenKey = longPreferencesKey("coach_review_seen")
 
     val apiUrl: Flow<String> = context.settingsStore.data.map { it[apiUrlKey] ?: BuildConfig.DEFAULT_API_URL }
     suspend fun apiUrlNow(): String = apiUrl.first()
@@ -40,6 +41,10 @@ class Prefs(private val context: Context) {
     val syncStatus: Flow<SyncStatus> = context.settingsStore.data.map {
         SyncStatus(it[lastSyncKey] ?: 0L, it[lastErrorKey] ?: "")
     }
+    /** createdAt of the newest weekly review the user has opened (for the "review ready" card). */
+    val coachSeen: Flow<Long> = context.settingsStore.data.map { it[coachSeenKey] ?: 0L }
+    suspend fun setCoachSeen(createdAt: Long) = context.settingsStore.edit { it[coachSeenKey] = createdAt }
+
     suspend fun setSyncResult(at: Long, error: String) = context.settingsStore.edit {
         if (error.isEmpty()) it[lastSyncKey] = at
         it[lastErrorKey] = error

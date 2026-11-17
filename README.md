@@ -12,8 +12,9 @@ A personal fitness and weight-loss coach for Android.
   and writes your food log back so Samsung Health shows it too.
 - Looping demo, form cues and common mistakes for every exercise.
 - Offline-first; syncs to a small serverless AWS backend (Lambda + DynamoDB) for backup and restore.
-- Coming next (phase 2): AI coach (Claude Haiku via OpenRouter) for weekly reviews and meal logging
-  from text or photos.
+- AI coach (Claude Haiku 5.5 via OpenRouter): log a meal by describing it ("do roti, aadha bowl
+  qeema") or snapping a photo, a weekly review every Monday with suggested plan changes you accept or
+  dismiss (kept within the app's safety limits), and a chat.
 
 See [PLAN.md](PLAN.md) and [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -24,8 +25,8 @@ See [PLAN.md](PLAN.md) and [ARCHITECTURE.md](ARCHITECTURE.md).
 | Path | What |
 |---|---|
 | `android/` | The app (Kotlin, Jetpack Compose, Room, Health Connect) |
-| `backend/` | Sync API Lambda (Python, uv) + tests |
-| `infra/` | AWS SAM template; `iam/` sets up the GitHub deploy role |
+| `backend/` | API Lambda: sync + AI coach (Python, uv) + tests |
+| `infra/` | AWS SAM template (API, table, weekly review schedule); `iam/` sets up the GitHub deploy role |
 | `data/` | Food database, exercise catalogue and demo images (bundled into the app) |
 | `scripts/` | `build_data.py`, `new-token.sh`, `write-env.sh`, `release.sh` |
 
@@ -42,6 +43,8 @@ See [PLAN.md](PLAN.md) and [ARCHITECTURE.md](ARCHITECTURE.md).
 ./infra/iam/github-oidc.sh      # deploy role + AWS_DEPLOY_ROLE_ARN repo variable (admin AWS profile)
 ./scripts/new-token.sh          # API token → ~/.momentum/api-token, hash → SSM
 ./scripts/write-env.sh          # .env with the API URL baked into the app
+# OpenRouter key for the coach (SecureString; never in git):
+aws ssm put-parameter --region eu-central-1 --name /momentum/openrouter-api-key --type SecureString --value <key>
 ```
 
 Then in the app: Settings → Cloud sync → paste the token → Save & sync. On a new phone, use

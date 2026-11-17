@@ -4,10 +4,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Restaurant
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.ShowChart
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -33,7 +33,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.thegalaxybyte.momentum.container
 import com.thegalaxybyte.momentum.data.db.ProfileEntity
+import com.thegalaxybyte.momentum.ui.coach.CoachScreen
 import com.thegalaxybyte.momentum.ui.food.AddFoodScreen
+import com.thegalaxybyte.momentum.ui.food.MealAiScreen
 import com.thegalaxybyte.momentum.ui.food.FoodScreen
 import com.thegalaxybyte.momentum.ui.progress.ProgressScreen
 import com.thegalaxybyte.momentum.ui.settings.ProfileScreen
@@ -49,9 +51,12 @@ private val tabs = listOf(
     Tab("today", "Today", Icons.Default.Home),
     Tab("food", "Food", Icons.Default.Restaurant),
     Tab("train", "Train", Icons.Default.FitnessCenter),
+    Tab("coach", "Coach", Icons.Default.AutoAwesome),
     Tab("progress", "Progress", Icons.Default.ShowChart),
-    Tab("settings", "Settings", Icons.Default.Settings),
 )
+
+/** Top-level screens that keep the bottom bar (Settings is opened from the gear on Today). */
+private val barRoutes = tabs.map { it.route }.toSet() + "settings"
 
 private object Loading
 
@@ -80,7 +85,7 @@ private fun MainNav(@Suppress("UNUSED_PARAMETER") profile: ProfileEntity) {
     val route = entry?.destination?.route
     Scaffold(
         bottomBar = {
-            if (tabs.any { it.route == route }) {
+            if (route in barRoutes) {
                 NavigationBar {
                     tabs.forEach { t ->
                         NavigationBarItem(
@@ -103,7 +108,14 @@ private fun MainNav(@Suppress("UNUSED_PARAMETER") profile: ProfileEntity) {
             ) { e ->
                 AddFoodScreen(nav, e.arguments!!.getLong("day"), e.arguments!!.getString("meal")!!)
             }
+            composable(
+                "food/ai/{day}/{meal}",
+                arguments = listOf(navArgument("day") { type = NavType.LongType }, navArgument("meal") { type = NavType.StringType }),
+            ) { e ->
+                MealAiScreen(nav, e.arguments!!.getLong("day"), e.arguments!!.getString("meal")!!)
+            }
             composable("train") { TrainScreen(nav) }
+            composable("coach") { CoachScreen(nav) }
             composable("session/{key}") { e -> SessionScreen(nav, e.arguments!!.getString("key")!!) }
             composable("exercise/{id}") { e -> ExerciseScreen(nav, e.arguments!!.getString("id")!!) }
             composable("progress") { ProgressScreen() }

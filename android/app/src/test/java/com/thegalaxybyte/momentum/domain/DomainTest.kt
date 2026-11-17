@@ -169,4 +169,34 @@ class DomainTest {
     @Test fun strengthDaysAvoidBackToBack() {
         assertEquals(setOf(1, 3, 5), WeekPlanner.strengthDays(setOf(1, 2, 3, 5), 6))
     }
+
+    // --- coach proposals ---
+    @Test fun coachCalorieProposalIsClamped() {
+        assertEquals(1850, CalorieEngine.clampProposal(2400, 1700, Sex.MALE))
+        assertEquals(1550, CalorieEngine.clampProposal(1200, 1700, Sex.MALE))
+        assertEquals(1500, CalorieEngine.clampProposal(1300, 1550, Sex.MALE))
+        assertEquals(1640, CalorieEngine.clampProposal(1637, 1700, Sex.MALE))
+    }
+
+    @Test fun coachNudgesLadderOneNotch() {
+        val row = LadderState("row", 0, 2.0, 0, 0, 20)
+        assertEquals(3.0, engine.nudge(row, harder = true).state.loadKg, 0.0)
+        assertEquals(OutcomeKind.EASIER, engine.nudge(row.copy(loadKg = 3.0), harder = false).kind)
+        assertEquals(2.0, engine.nudge(row.copy(loadKg = 3.0), harder = false).state.loadKg, 0.0)
+        val maxed = row.copy(loadKg = 5.0, stage = 1)
+        assertEquals(2, engine.nudge(maxed, harder = true).state.stage)
+        val plank = engine.initial("core-a")
+        assertEquals(25, engine.nudge(plank, harder = true).state.holdSec)
+        assertEquals(15, engine.nudge(plank, harder = false).state.holdSec)
+    }
+
+    @Test fun coachCardioStepsAreSmall() {
+        val walk = CardioState(CardioPhase.WALK, 150, 0, 0)
+        assertEquals(165, CardioPlanner.harder(walk).baseWeeklyMin)
+        assertEquals(135, CardioPlanner.easier(walk).baseWeeklyMin)
+        assertEquals(CardioPlanner.WALK_MIN_WEEKLY, CardioPlanner.easier(walk.copy(baseWeeklyMin = 100)).baseWeeklyMin)
+        val intervals = CardioState(CardioPhase.INTERVALS, 0, 0, 0)
+        assertEquals(1, CardioPlanner.harder(intervals).intervalLevel)
+        assertEquals(CardioPhase.WALK, CardioPlanner.easier(intervals).phase)
+    }
 }

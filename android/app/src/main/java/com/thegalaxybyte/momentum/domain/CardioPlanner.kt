@@ -79,6 +79,21 @@ object CardioPlanner {
         return CardioWeekPlan(state.phase, deload, items)
     }
 
+    /** A coach proposal the user accepted: one step easier (−10% volume, or one interval level back). */
+    fun easier(s: CardioState): CardioState = when (s.phase) {
+        CardioPhase.WALK -> s.copy(baseWeeklyMin = (s.baseWeeklyMin * 0.9).roundToInt().coerceAtLeast(WALK_MIN_WEEKLY))
+        CardioPhase.INTERVALS -> if (s.intervalLevel > 0) s.copy(intervalLevel = s.intervalLevel - 1)
+        else s.copy(phase = CardioPhase.WALK, baseWeeklyMin = WALK_MAX_WEEKLY)
+        CardioPhase.RUN -> s.copy(baseWeeklyMin = (s.baseWeeklyMin * 0.9).roundToInt().coerceAtLeast(RUN_START_WEEKLY))
+    }
+
+    /** One step harder, never more than the usual weekly growth (+10%, or one interval level). */
+    fun harder(s: CardioState): CardioState = when (s.phase) {
+        CardioPhase.WALK -> s.copy(baseWeeklyMin = min(WALK_MAX_WEEKLY, (s.baseWeeklyMin * 1.1).roundToInt()))
+        CardioPhase.INTERVALS -> if (s.intervalLevel < INTERVALS.lastIndex) s.copy(intervalLevel = s.intervalLevel + 1) else s
+        CardioPhase.RUN -> s.copy(baseWeeklyMin = min(RUN_MAX_WEEKLY, (s.baseWeeklyMin * 1.1).roundToInt()))
+    }
+
     /** Move [state] from the finished week ([lastWeekIndex]) to the week starting [newMonday]. */
     fun advanceWeek(
         state: CardioState,

@@ -102,11 +102,12 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 
 ### Phase 2 — AI coach (v0.2)
 
-- [ ] OpenRouter key in SSM; model id configurable
-- [ ] `/coach/meal`: text + photo parsing → matched food items, confirm-before-save UI
-- [ ] `review` Lambda + EventBridge weekly schedule; CoachContextBuilder
-- [ ] Weekly review screen: accept/reject proposals, clamped by domain engines
-- [ ] Coach chat with persisted history
+- [x] OpenRouter key in SSM; model id configurable (`CoachModel` stack parameter)
+- [x] `/coach/meal`: text + photo parsing → matched food items, confirm-before-save UI
+- [x] Weekly review (Monday 06:00 PKT via EventBridge Scheduler, or on demand); CoachContextBuilder
+- [x] Weekly review screen: accept/dismiss proposals, clamped by domain engines
+- [x] Coach chat with persisted, synced history
+- [ ] Try meal photos with real food on the phone; tune prompts after a few weeks of real reviews
 
 ### Phase 3 — Extras (v0.3+)
 
@@ -120,6 +121,5 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 ### Open items
 
 - Exact dumbbell load steps: entered in onboarding (default 2, 3, 4, 5 kg); edit in Settings.
-- Exact OpenRouter model id for Claude Haiku (confirm when wiring phase 2).
 - Confirm Samsung Health → Health Connect sharing is enabled on the phone.
 - Doctor check-up before starting training.

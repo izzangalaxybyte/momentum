@@ -3,6 +3,8 @@ package com.thegalaxybyte.momentum.data.sync
 import com.thegalaxybyte.momentum.data.Prefs
 import com.thegalaxybyte.momentum.data.TokenStore
 import com.thegalaxybyte.momentum.data.db.CardioEntity
+import com.thegalaxybyte.momentum.data.db.CoachMessageEntity
+import com.thegalaxybyte.momentum.data.db.CoachReviewEntity
 import com.thegalaxybyte.momentum.data.db.DailyActivityEntity
 import com.thegalaxybyte.momentum.data.db.FoodEntity
 import com.thegalaxybyte.momentum.data.db.FoodLogEntity
@@ -75,6 +77,8 @@ class SyncEngine(private val dao: MomentumDao, private val prefs: Prefs, private
         Table("CardioSession", CardioEntity.serializer(), dao::dirtyCardio, dao::cardioEntry, { dao.upsertCardio(it) }, dao::cleanCardio),
         Table("DailyActivity", DailyActivityEntity.serializer(), dao::dirtyActivity, dao::activityEntry, { dao.upsertActivity(it) }, dao::cleanActivity),
         Table("Setting", SettingEntity.serializer(), dao::dirtySetting, dao::setting, { dao.upsertSetting(it) }, dao::cleanSetting),
+        Table("CoachReview", CoachReviewEntity.serializer(), dao::dirtyCoachReview, dao::getCoachReview, { dao.upsertCoachReview(it) }, dao::cleanCoachReview),
+        Table("CoachMessage", CoachMessageEntity.serializer(), dao::dirtyCoachMessage, dao::getCoachMessage, { dao.upsertCoachMessage(it) }, dao::cleanCoachMessage),
     )
     private val byType = tables.associateBy { it.type }
 
@@ -140,6 +144,8 @@ class SyncEngine(private val dao: MomentumDao, private val prefs: Prefs, private
         is CardioEntity -> row.copy(dirty = false)
         is DailyActivityEntity -> row.copy(dirty = false)
         is SettingEntity -> row.copy(dirty = false)
+        is CoachReviewEntity -> row.copy(dirty = false)
+        is CoachMessageEntity -> row.copy(dirty = false)
         else -> row
     }
 
