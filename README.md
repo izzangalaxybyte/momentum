@@ -13,7 +13,8 @@ A personal fitness and weight-loss coach for Android.
 - Looping demo, form cues and common mistakes for every exercise.
 - Offline-first; syncs to a small serverless AWS backend (Lambda + DynamoDB) for backup and restore.
 - AI coach (Claude Haiku 5.5 via OpenRouter): log a meal by describing it ("do roti, aadha bowl
-  qeema") or snapping a photo, a weekly review every Monday with suggested plan changes you accept or
+  qeema") or snapping a photo (branded items like "KFC Zinger" are looked up online and saved to your
+  foods), asking before you eat ("biryani or daal chawal tonight?"), a weekly review every Monday with suggested plan changes you accept or
   dismiss (kept within the app's safety limits), and a chat.
 
 See [PLAN.md](PLAN.md) and [ARCHITECTURE.md](ARCHITECTURE.md).

@@ -1,6 +1,9 @@
 package com.thegalaxybyte.momentum.data.coach
 
+import com.thegalaxybyte.momentum.data.FoodDef
 import com.thegalaxybyte.momentum.data.PlanService
+import com.thegalaxybyte.momentum.data.db.FoodEntity
+import com.thegalaxybyte.momentum.data.toDef
 import com.thegalaxybyte.momentum.data.Repo
 import com.thegalaxybyte.momentum.data.db.CoachReviewEntity
 import com.thegalaxybyte.momentum.domain.CalorieEngine
@@ -34,11 +37,25 @@ class CoachService(private val client: CoachClient, private val repo: Repo, priv
         return client.meal(text, photoJpegB64, repo.searchFoods("", custom))
     }
 
-    /** Log confirmed items. [quantities] may differ from what the coach suggested. */
-    suspend fun logMeal(day: Long, meal: String, items: List<Pair<MealItem, Double>>) {
+    /** "How many calories is this?" / "Which is better?", with what's left for today. */
+    suspend fun askFood(question: String, photoJpegB64: String?): AskResult {
         val custom = repo.dao.allFoods()
-        for ((item, qty) in items) {
+        val today = plan.today()
+        return client.ask(
+            question, photoJpegB64, repo.searchFoods("", custom),
+            today?.let { it.targets.target - it.eatenKcal }, today?.let { it.targets.proteinG - it.eatenProtein },
+        )
+    }
+
+    /** One confirmed item: [quantity] may differ from the coach's; [save] adds it to "my foods" first. */
+    data class Choice(val item: MealItem, val quantity: Double, val save: Boolean)
+
+    /** Log confirmed items. Saved items become custom foods (reused by name), so next time they're in the list. */
+    suspend fun logMeal(day: Long, meal: String, items: List<Choice>) {
+        for ((item, qty, save) in items) {
+            val custom = repo.dao.allFoods()
             val food = item.foodId?.let { repo.food(it, custom) }
+                ?: if (save) saveFood(item, custom) else null
             if (food != null) {
                 repo.logFood(day, meal, food, qty)
             } else {
@@ -49,6 +66,25 @@ class CoachService(private val client: CoachClient, private val repo: Repo, priv
                 )
             }
         }
+    }
+
+    /** The item as a custom food, per 1 unit; an existing custom food with the same name and unit is updated. */
+    private suspend fun saveFood(item: MealItem, custom: List<FoodEntity>): FoodDef? {
+        if (item.kcal == null || item.quantity <= 0) return null
+        val per = 1.0 / item.quantity
+        val existing = custom.firstOrNull { it.nameEn.equals(item.name.trim(), true) && it.unit.equals(item.unit.trim(), true) }
+        val saved = if (existing != null) {
+            repo.updateCustomFood(existing.copy(
+                kcal = item.kcal * per, protein = (item.protein ?: 0.0) * per,
+                carbs = (item.carbs ?: 0.0) * per, fat = (item.fat ?: 0.0) * per,
+            ))
+        } else {
+            repo.addCustomFood(
+                item.name, item.unit, 0.0, item.kcal * per, (item.protein ?: 0.0) * per,
+                (item.carbs ?: 0.0) * per, (item.fat ?: 0.0) * per,
+            )
+        }
+        return saved.toDef()
     }
 
     /** Accept (apply within the engines' limits) or dismiss one proposal, and record the outcome on the review. */

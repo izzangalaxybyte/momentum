@@ -114,7 +114,7 @@ validated and clamped by the same engines before it is shown or applied.
 |---|---|
 | Onboarding | Height, weight, age, sex, goal weight, activity, training days, equipment, Health Connect permissions, backend pairing |
 | Today | Calorie ring (eaten / target / protein), today's session(s), steps, quick-add food, weigh-in prompt |
-| Food | Day log by meal, search desi food DB, recent/favourite foods, custom foods, "Describe or snap your meal" (AI, text/photo, confirm before logging) |
+| Food | Day log by meal, search desi food DB, recent/favourite foods, custom foods, "Describe or snap your meal" (AI, text/photo, confirm before logging, save new items to my foods), "Ask before you eat" (calories / which is better, with what's left today) |
 | Train | Today's session runner: exercise demo, cues, target sets × reps × weight, log each set, rate easy/good/hard, rest timer |
 | Exercise detail | Looping demo, form cues, common mistakes, muscles, "watch full video" link, history chart |
 | Progress | Weight trend, calories vs target, strength progress per exercise, weekly cardio volume, steps |
@@ -262,6 +262,7 @@ All endpoints require `Authorization: Bearer <token>`.
 | `POST /sync/push` | `{changes: [{type, id, updatedAt, deleted, data}]}` | `{applied: [...ids], stale: [...ids]}` |
 | `GET /sync/pull` | `?since=<cursor>&limit=500` | `{changes: [...], cursor, hasMore}` |
 | `POST /coach/meal` | `{text?, image?: {mediaType, data}, foods: [{id, name, unit}]}` | `{items: [{foodId?, name, unit, quantity, kcal?, protein?, carbs?, fat?}], note}` (macros only for foods not in the list) |
+| `POST /coach/ask` | `{question, image?, foods, kcalLeft?, proteinLeft?}` | `{options: [items as above], best?, answer}`: "how many calories?" / "which is better?" before eating |
 | `POST /coach/review` | `{today}` | `{review}`: builds and stores this week's review now (includes today so far) |
 | `POST /coach/chat` | `{id, text, today}` | `{messages: [mine, reply]}`, both stored as `CoachMessage` |
 | `GET /health` | — | liveness |
@@ -325,9 +326,18 @@ Single user, so a long random token instead of an identity provider:
 | Feature | Input | Output |
 |---|---|---|
 | Meal parsing | Text ("do roti, aadha bowl qeema, ek chai") and/or a photo, plus the phone's food list (id, name, unit, including custom foods) | Items with quantities. Matched foods use the app's own macros; unmatched ones carry the model's estimate. The user edits/removes items before logging. |
+| Ask before eating | A question ("biryani or daal chawal tonight?", "calories in 3 gulab jamun?") and/or a photo, the food list with kcal/protein per unit, and what's left today | The option(s) as items, the better pick, and a 2–4 sentence answer; any option can be logged |
 | Weekly review | `CoachContextBuilder` (`context.py`): a compact summary built from the synced DynamoDB records (weight trend, intake by day, sessions and sets with ratings, ladder states, cardio, steps, last review) | `{summary, wins, concerns, proposals: [{kind, target, value, reason}], tip}`, stored as a `CoachReview` record (id = the week's Monday) and synced to the phone |
 | Chat | Message + the same summary (including today so far) + the last 20 messages | Plain text; both messages stored as `CoachMessage` records |
 
+- **Branded and restaurant food:** the first pass keeps the brand ("Dawn crispy fillet burger") instead of
+  mapping it to a generic list food, and flags it with a search query. A second pass (only when something
+  is flagged, at most 3 items) uses Anthropic's web search through OpenRouter (`plugins: web, engine
+  native`, about 1 cent per search) to replace the estimate with published figures, sanity-checked and
+  scaled to the quantity eaten; the note says where the numbers came from, or that nothing reliable was
+  found. Plain home food never triggers a search. Branded items are saved to "my foods" by default when
+  logged (per 1 unit, reusing a custom food with the same name), so next time they match the list and
+  need no search.
 - **Schedule:** Monday 06:00 Asia/Karachi (covers Mon–Sun of the finished week). "Review my week now"
   in the app writes the same record on demand, including today so far.
 - **Guardrails:** proposal kinds are `calorie_target`, `exercise_easier/harder` (one ladder),

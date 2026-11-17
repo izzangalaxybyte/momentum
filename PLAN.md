@@ -107,6 +107,8 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 - [x] Weekly review (Monday 06:00 PKT via EventBridge Scheduler, or on demand); CoachContextBuilder
 - [x] Weekly review screen: accept/dismiss proposals, clamped by domain engines
 - [x] Coach chat with persisted, synced history
+- [x] Branded/restaurant items keep their name and are looked up online (only those); saved to my foods
+- [x] "Ask before you eat": calories of a food or which of a few is better, given what's left today
 - [ ] Try meal photos with real food on the phone; tune prompts after a few weeks of real reviews
 
 ### Phase 3 — Extras (v0.3+)

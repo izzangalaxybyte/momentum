@@ -115,6 +115,13 @@ class Repo(
         return f
     }
 
+    suspend fun updateCustomFood(f: FoodEntity): FoodEntity {
+        val e = f.copy(updatedAt = now(), dirty = true)
+        dao.upsertFood(e)
+        onChange()
+        return e
+    }
+
     // --- cardio ---
     suspend fun rateCardio(c: CardioEntity, rating: Rating) {
         dao.upsertCardio(c.copy(rating = rating.name, updatedAt = now(), dirty = true))

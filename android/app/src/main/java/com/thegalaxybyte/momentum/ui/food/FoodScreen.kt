@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Add
@@ -78,6 +80,11 @@ fun FoodScreen(nav: NavHostController) {
                 "Carbs ${log.sumOf { it.carbs }.roundToInt()} g · Fat ${log.sumOf { it.fat }.roundToInt()} g",
                 style = MaterialTheme.typography.bodySmall,
             )
+        }
+
+        OutlinedButton(onClick = { nav.navigate("food/ask/$day") }, modifier = Modifier.fillMaxWidth()) {
+            Icon(Icons.Default.AutoAwesome, null)
+            Text("  Ask: how many calories? Which is better?")
         }
 
         meals.forEach { (key, label) ->

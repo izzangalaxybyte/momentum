@@ -35,6 +35,7 @@ import com.thegalaxybyte.momentum.container
 import com.thegalaxybyte.momentum.data.db.ProfileEntity
 import com.thegalaxybyte.momentum.ui.coach.CoachScreen
 import com.thegalaxybyte.momentum.ui.food.AddFoodScreen
+import com.thegalaxybyte.momentum.ui.food.AskFoodScreen
 import com.thegalaxybyte.momentum.ui.food.MealAiScreen
 import com.thegalaxybyte.momentum.ui.food.FoodScreen
 import com.thegalaxybyte.momentum.ui.progress.ProgressScreen
@@ -113,6 +114,9 @@ private fun MainNav(@Suppress("UNUSED_PARAMETER") profile: ProfileEntity) {
                 arguments = listOf(navArgument("day") { type = NavType.LongType }, navArgument("meal") { type = NavType.StringType }),
             ) { e ->
                 MealAiScreen(nav, e.arguments!!.getLong("day"), e.arguments!!.getString("meal")!!)
+            }
+            composable("food/ask/{day}", arguments = listOf(navArgument("day") { type = NavType.LongType })) { e ->
+                AskFoodScreen(nav, e.arguments!!.getLong("day"))
             }
             composable("train") { TrainScreen(nav) }
             composable("coach") { CoachScreen(nav) }

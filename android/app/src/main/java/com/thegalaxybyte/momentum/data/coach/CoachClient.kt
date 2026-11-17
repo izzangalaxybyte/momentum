@@ -56,19 +56,30 @@ data class MealItem(
     val protein: Double? = null,
     val carbs: Double? = null,
     val fat: Double? = null,
+    /** A brand or restaurant item (not mapped onto a generic list food); worth saving to "my foods". */
+    val branded: Boolean = false,
+    /** Where the numbers were found online, e.g. "carrefour.pk". */
+    val source: String? = null,
 )
 
 @Serializable
 data class MealResult(val items: List<MealItem> = emptyList(), val note: String = "")
 
+/** The answer to "how many calories / which is better?". [best] indexes [options]. */
 @Serializable
-private data class CatalogFood(val id: String, val name: String, val unit: String)
+data class AskResult(val options: List<MealItem> = emptyList(), val best: Int? = null, val answer: String = "")
+
+@Serializable
+private data class CatalogFood(val id: String, val name: String, val unit: String, val kcal: Double, val protein: Double)
 
 @Serializable
 private data class Photo(val mediaType: String, val data: String)
 
 @Serializable
 private data class MealRequest(val text: String, val image: Photo?, val foods: List<CatalogFood>)
+
+@Serializable
+private data class AskRequest(val question: String, val image: Photo?, val foods: List<CatalogFood>, val kcalLeft: Double?, val proteinLeft: Double?)
 
 @Serializable
 private data class ChatRequest(val id: String, val text: String, val today: Long)
@@ -98,9 +109,18 @@ class CoachClient(private val prefs: Prefs, private val tokens: TokenStore) {
         val body = MealRequest(
             text = text.trim(),
             image = photoJpegB64?.let { Photo("image/jpeg", it) },
-            foods = foods.map { CatalogFood(it.id, it.nameEn + if (it.nameUrdu.isNotBlank()) " / ${it.nameUrdu}" else "", it.unit) },
+            foods = catalog(foods),
         )
         return json.decodeFromString(MealResult.serializer(), post("/coach/meal", json.encodeToString(MealRequest.serializer(), body)))
+    }
+
+    suspend fun ask(question: String, photoJpegB64: String?, foods: List<FoodDef>, kcalLeft: Double?, proteinLeft: Double?): AskResult {
+        val body = AskRequest(question.trim(), photoJpegB64?.let { Photo("image/jpeg", it) }, catalog(foods), kcalLeft, proteinLeft)
+        return json.decodeFromString(AskResult.serializer(), post("/coach/ask", json.encodeToString(AskRequest.serializer(), body)))
+    }
+
+    private fun catalog(foods: List<FoodDef>) = foods.map {
+        CatalogFood(it.id, it.nameEn + if (it.nameUrdu.isNotBlank()) " / ${it.nameUrdu}" else "", it.unit, it.kcal, it.protein)
     }
 
     suspend fun review(today: Long): CoachReviewEntity {
