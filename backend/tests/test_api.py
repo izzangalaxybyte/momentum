@@ -132,3 +132,10 @@ def test_push_validation(api, bad):
 
 def test_unknown_route(api):
     assert call(api, "GET", "/nope")[0] == 404
+
+
+def test_mismatch_description_never_contains_the_token():
+    from momentum_api import auth
+    d = auth.describe_mismatch("ABCDE-FGHIJ-KLMNO-PQRST-UVWX0")
+    assert "25 characters" in d and "0, I, L, O" in d and "ABCDE" not in d
+    assert auth.describe_mismatch("abc") == "wrong token (3 characters, expected 25)"
