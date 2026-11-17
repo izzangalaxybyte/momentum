@@ -116,7 +116,7 @@ ROUTES = {
     ("POST", "/sync/push"): push,
     ("GET", "/sync/pull"): pull,
     ("POST", "/coach/meal"): _coach(coach.parse_meal),
-    ("POST", "/coach/review"): _coach(lambda p: {"review": coach.weekly_review(_today(p))}),
+    ("POST", "/coach/review"): _coach(lambda p: {"review": coach.weekly_review(_today(p), include_today=True)}),
     ("POST", "/coach/chat"): _coach(lambda p: {"messages": coach.chat(p, _today(p))}),
 }
 

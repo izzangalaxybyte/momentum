@@ -21,8 +21,9 @@ PROPOSAL_KINDS = ("calorie_target", "exercise_easier", "exercise_harder", "cardi
 
 COACH_VOICE = """You are Momentum's coach: a friendly, practical fitness and nutrition coach for one person in \
 Pakistan who is losing a lot of weight and has only just started training, at home, with light dumbbells, \
-a short bar and bodyweight exercises. They eat Pakistani/desi food. Be warm and direct, use plain English \
-(a little Roman Urdu is fine), keep it short, celebrate consistency over perfection, and never shame. \
+a short bar and bodyweight exercises. They eat Pakistani/desi food. Be warm and direct and keep it short. \
+Write in plain English (an occasional Roman Urdu word is fine, but not whole sentences unless they write \
+to you in Urdu), celebrate consistency over perfection, and never shame. \
 Never suggest crash diets, skipping meals, fasting protocols, supplements or medication; for pain, dizziness, \
 chest symptoms or anything medical, tell them to stop and see a doctor."""
 
@@ -192,10 +193,10 @@ def _check_review(ans: Any) -> dict[str, Any]:
     }
 
 
-def weekly_review(today: int | None = None) -> dict[str, Any]:
+def weekly_review(today: int | None = None, include_today: bool = False) -> dict[str, Any]:
     """Build the review for the week starting this Monday, store it (it syncs to the phone) and return it."""
     today = today if today is not None else context.today_epoch_day()
-    ctx = context.build(today)
+    ctx = context.build(today, include_today=include_today)
     review = llm.json_call(
         REVIEW_SYSTEM,
         [{"role": "user", "content": "Data summary (JSON):\n" + json.dumps(ctx, ensure_ascii=False)}],
@@ -231,7 +232,7 @@ def chat(payload: dict[str, Any], today: int | None = None) -> list[dict[str, An
     today = today if today is not None else int(payload.get("today") or context.today_epoch_day())
 
     history = sorted(store.records("CoachMessage"), key=lambda m: m.get("createdAt", 0))[-CHAT_HISTORY:]
-    ctx = context.build(today)
+    ctx = context.build(today, include_today=True)
     system = CHAT_SYSTEM + "\n\nTheir data summary (JSON):\n" + json.dumps(ctx, ensure_ascii=False)
     messages = [{"role": "assistant" if m.get("role") == "coach" else "user", "content": str(m.get("text") or "")}
                 for m in history]

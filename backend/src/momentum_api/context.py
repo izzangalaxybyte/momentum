@@ -49,13 +49,16 @@ def _trend_at(trend: dict[int, float], day: int) -> float | None:
     return trend[max(days)] if days else None
 
 
-def build(today: int, period_days: int = 7) -> dict[str, Any]:
-    """Summary of the `period_days` days before `today` (today excluded), plus longer-term trends."""
-    start = today - period_days
-    in_period = lambda r: start <= int(r.get("epochDay", -1)) < today  # noqa: E731
+def build(today: int, period_days: int = 7, include_today: bool = False) -> dict[str, Any]:
+    """Summary of the last `period_days` days, plus longer-term trends. The scheduled Monday review covers the
+    finished week (today excluded); on-demand reviews and chat include today so far."""
+    end = today + 1 if include_today else today
+    start = end - period_days
+    in_period = lambda r: start <= int(r.get("epochDay", -1)) < end  # noqa: E731
 
     profile = next(iter(store.records("Profile")), None)
-    ctx: dict[str, Any] = {"today": day_name(today), "period": f"{day_name(start)} to {day_name(today - 1)}"}
+    ctx: dict[str, Any] = {"today": day_name(today), "period": f"{day_name(start)} to {day_name(end - 1)}"
+                           + (" (today so far included)" if include_today else "")}
     if profile:
         week = max(0, (monday(today) - monday(int(profile.get("startEpochDay") or today))) // 7)
         ctx["profile"] = {

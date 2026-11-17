@@ -123,6 +123,9 @@ def test_context_summarises_the_week(coach_api):
     assert ctx["strength"]["exercises"]["knee-push-up"] == ["Fri 07 Nov 12 reps (easy)"]
     assert ctx["ladders"]["push"]["currentExercise"] == "knee-push-up"
     assert ctx["cardio"]["totalMinutes"] == 30  # the 30-day-old walk is outside the week
+    assert ctx["period"] == "Mon 03 Nov to Sun 09 Nov"
+    with_today = context.build(TODAY, include_today=True)
+    assert with_today["period"].startswith("Tue 04 Nov to Mon 10 Nov")
 
 
 def test_review_is_stored_and_synced(coach_api, monkeypatch):
