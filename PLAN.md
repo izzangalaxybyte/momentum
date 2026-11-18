@@ -33,6 +33,8 @@ Every 4th week is lighter (deload). Missed time steps the plan back automaticall
 **Strength A:** squat ladder · push ladder · row ladder · glute bridge / hinge ladder · plank ladder
 **Strength B:** split-squat ladder · push ladder · press ladder · RDL (bar/DB) · dead bug / side plank
 
+These are the defaults; Train → Edit workouts lets you rename them, change the movements, or add more workouts to the rotation.
+
 Progress when all sets hit the top of the rep range and it felt easy/good; at the max weight move to
 more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exact rules.
 
@@ -88,6 +90,7 @@ more reps → slow tempo → harder variation. See ARCHITECTURE.md §4.4 for exa
 - [x] Verify free-exercise-db licence + coverage; demo frames bundled in the app
 - [x] ProgressionEngine, CardioPlanner, WeekPlanner with unit tests
 - [x] Session runner (demo, targets, set logging, ratings, rest timer)
+- [x] Custom workouts: names, movements, order, up to 7 in rotation
 - [x] Exercise detail screen with history
 
 **1e. Sync**

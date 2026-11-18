@@ -52,7 +52,6 @@ import com.thegalaxybyte.momentum.ui.ExerciseDemo
 import com.thegalaxybyte.momentum.ui.RatingChips
 import com.thegalaxybyte.momentum.ui.SectionCard
 import com.thegalaxybyte.momentum.ui.Stepper
-import com.thegalaxybyte.momentum.ui.sessionNames
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -68,6 +67,7 @@ class ExerciseEntry(val state: LadderState, val target: Target) {
 class SessionVm(private val c: AppContainer, val key: String) : ViewModel() {
     var entries by mutableStateOf<List<ExerciseEntry>>(emptyList())
     var current by mutableIntStateOf(0)
+    var name by mutableStateOf("")
     var weekIndex = 0
     var summary by mutableStateOf<List<String>?>(null)
     val startedAt = System.currentTimeMillis()
@@ -76,6 +76,7 @@ class SessionVm(private val c: AppContainer, val key: String) : ViewModel() {
         viewModelScope.launch {
             val p = c.dao.profileNow() ?: return@launch
             weekIndex = c.plan.weekIndex(p)
+            name = c.plan.workouts().firstOrNull { it.key == key }?.name ?: "Strength workout"
             val engine = c.plan.engine(p)
             entries = c.plan.ladderStates(p, key).map { ExerciseEntry(it, engine.target(it, weekIndex)) }
         }
@@ -150,7 +151,7 @@ fun SessionScreen(nav: NavHostController, key: String) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             IconButton(onClick = { confirmLeave = true }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "leave") }
             Column {
-                Text(sessionNames[key] ?: key, style = MaterialTheme.typography.titleLarge)
+                Text(vm.name, style = MaterialTheme.typography.titleLarge)
                 Text("Exercise ${vm.current + 1} of ${vm.entries.size}", style = MaterialTheme.typography.bodySmall)
             }
         }

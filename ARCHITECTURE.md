@@ -115,7 +115,7 @@ validated and clamped by the same engines before it is shown or applied.
 | Onboarding | Height, weight, age, sex, goal weight, activity, training days, equipment, Health Connect permissions, backend pairing |
 | Today | Calorie ring (eaten / target / protein), today's session(s), steps, quick-add food, weigh-in prompt |
 | Food | Day log by meal, search desi food DB, recent/favourite foods, custom foods, "Describe or snap your meal" (AI, text/photo, confirm before logging, save new items to my foods), "Ask before you eat" (calories / which is better, with what's left today) |
-| Train | Today's session runner: exercise demo, cues, target sets × reps × weight, log each set, rate easy/good/hard, rest timer |
+| Train | Your workouts (editable) and the session runner: exercise demo, cues, target sets × reps × weight, log each set, rate easy/good/hard, rest timer |
 | Exercise detail | Looping demo, form cues, common mistakes, muscles, "watch full video" link, history chart |
 | Progress | Weight trend, calories vs target, strength progress per exercise, weekly cardio volume, steps |
 | Coach | Weekly review (wins, concerns, tip, suggested changes to accept or dismiss) and chat |
@@ -177,7 +177,11 @@ All engines are pure functions over data from the repositories, deterministic an
 **WeekPlanner**
 - Input: available days, phase, equipment. Output: `PlannedDay` rows for the coming week.
 - Weeks 1–4: 2 full-body strength sessions + 4–5 walks + core finishers.
-- Weeks 5+: 3 strength sessions (A/B alternating, never on consecutive days) + cardio + 1 full rest day.
+- Weeks 5+: 3 strength sessions (workouts taken in turn, never on consecutive days) + cardio + 1 full rest day.
+- Workouts are editable (Train → Edit workouts): name them, pick and order the movements (ladders), and add
+  up to 7 workouts that rotate in order. They're stored as JSON in the synced `workouts` setting
+  (default: Strength A / B from `exercises.json`). Progress lives on the ladder, not the workout, so a
+  movement shared by two workouts progresses from either; the coach context shows workouts by name.
 - Re-planned every Monday and whenever settings change; already-completed days are never rewritten.
 
 **CoachContextBuilder** (server side, `backend/src/momentum_api/context.py`)

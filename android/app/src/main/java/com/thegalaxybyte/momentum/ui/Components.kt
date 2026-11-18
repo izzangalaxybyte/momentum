@@ -149,4 +149,3 @@ fun fmtDay(epochDay: Long, pattern: String = "EEE d MMM"): String =
 fun fmtNum(d: Double, decimals: Int = 1): String =
     if (d % 1.0 == 0.0) d.toInt().toString() else "%.${decimals}f".format(d)
 
-val sessionNames = mapOf("strength-a" to "Strength A", "strength-b" to "Strength B")

@@ -45,6 +45,7 @@ import com.thegalaxybyte.momentum.ui.today.TodayScreen
 import com.thegalaxybyte.momentum.ui.train.ExerciseScreen
 import com.thegalaxybyte.momentum.ui.train.SessionScreen
 import com.thegalaxybyte.momentum.ui.train.TrainScreen
+import com.thegalaxybyte.momentum.ui.train.WorkoutsScreen
 
 private data class Tab(val route: String, val label: String, val icon: ImageVector)
 
@@ -121,6 +122,7 @@ private fun MainNav(@Suppress("UNUSED_PARAMETER") profile: ProfileEntity) {
             composable("train") { TrainScreen(nav) }
             composable("coach") { CoachScreen(nav) }
             composable("session/{key}") { e -> SessionScreen(nav, e.arguments!!.getString("key")!!) }
+            composable("workouts") { WorkoutsScreen(nav) }
             composable("exercise/{id}") { e -> ExerciseScreen(nav, e.arguments!!.getString("id")!!) }
             composable("progress") { ProgressScreen() }
             composable("settings") { SettingsScreen(nav) }

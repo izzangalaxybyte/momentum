@@ -53,12 +53,12 @@ import com.thegalaxybyte.momentum.ui.Stepper
 import com.thegalaxybyte.momentum.ui.fmtDay
 import com.thegalaxybyte.momentum.ui.fmtNum
 import com.thegalaxybyte.momentum.ui.goTab
-import com.thegalaxybyte.momentum.ui.sessionNames
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.launch
+import com.thegalaxybyte.momentum.domain.Workouts
 import kotlin.math.roundToInt
 
 /** Recomputes the plan whenever anything it depends on changes. */
@@ -68,6 +68,7 @@ fun todayFlow(c: AppContainer): Flow<TodayState?> {
     val triggers: List<Flow<Any?>> = listOf(
         c.dao.profile(), c.dao.weights(), c.dao.dayTotals(day), c.dao.cardio(day - 7),
         c.dao.activity(day), c.dao.sessions(), c.dao.settingFlow("cardio"),
+        c.dao.settingFlow(Workouts.SETTING),
     )
     return combine(triggers) { it.size }.mapLatest { c.plan.today() }
 }
@@ -166,14 +167,15 @@ private fun PlanCard(s: TodayState, nav: NavHostController) {
     var showLog by remember { mutableStateOf(false) }
     SectionCard("Today's plan") {
         if (plan.strength) {
-            val name = sessionNames[s.nextSessionKey] ?: s.nextSessionKey
+            val name = s.nextWorkoutName
+            val moves = s.workouts.firstOrNull { it.key == s.nextSessionKey }?.ladders.orEmpty()
             if (s.strengthDoneToday) {
                 Text("✓ $name done. Nice work!", color = Brand)
             } else {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
                         Text(name, style = MaterialTheme.typography.titleMedium)
-                        Text("~30 min · full body + core", style = MaterialTheme.typography.bodySmall)
+                        Text(moves.joinToString(" · ") { Workouts.movementName(it).substringBefore(" (") }, style = MaterialTheme.typography.bodySmall)
                     }
                     Button(onClick = { nav.navigate("session/${s.nextSessionKey}") }) { Text("Start") }
                 }

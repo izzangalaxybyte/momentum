@@ -112,6 +112,16 @@ def seed(app):
     assert call(app, "POST", "/sync/push", {"changes": rows})[0] == 200
 
 
+def test_context_names_custom_workouts(coach_api):
+    from momentum_api import context
+    seed(coach_api)
+    workouts = [{"key": "w-legs", "name": "Legs", "ladders": ["squat", "lunge"]}]
+    rows = [change("s2", 1, {"id": "s2", "epochDay": TODAY - 1, "sessionKey": "w-legs", "endedAt": 6}, type_="WorkoutSession"),
+            change("workouts", 1, {"id": "workouts", "value": json.dumps(workouts)}, type_="Setting")]
+    assert call(coach_api, "POST", "/sync/push", {"changes": rows})[0] == 200
+    assert context.build(TODAY)["strength"]["sessionsDone"] == ["Fri 07 Nov: Strength A", "Sun 09 Nov: Legs (squat, lunge)"]
+
+
 def test_context_summarises_the_week(coach_api):
     from momentum_api import context
     seed(coach_api)
@@ -119,7 +129,7 @@ def test_context_summarises_the_week(coach_api):
     assert ctx["profile"]["trainingWeek"] == 4 and ctx["profile"]["calorieTarget"] == 1700
     assert ctx["weight"]["changeLast7DaysKg"] < 0
     assert ctx["food"]["daysLogged"] == 7 and ctx["food"]["avgKcalOnLoggedDays"] == 1600
-    assert ctx["strength"]["sessionsDone"] == ["Fri 07 Nov: strength-a"]
+    assert ctx["strength"]["sessionsDone"] == ["Fri 07 Nov: Strength A"]
     assert ctx["strength"]["exercises"]["knee-push-up"] == ["Fri 07 Nov 12 reps (easy)"]
     assert ctx["ladders"]["push"]["currentExercise"] == "knee-push-up"
     assert ctx["cardio"]["totalMinutes"] == 30  # the 30-day-old walk is outside the week

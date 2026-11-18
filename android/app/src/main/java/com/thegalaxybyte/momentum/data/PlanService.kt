@@ -23,6 +23,8 @@ import com.thegalaxybyte.momentum.domain.TrendPoint
 import com.thegalaxybyte.momentum.domain.WeekPlanner
 import com.thegalaxybyte.momentum.domain.WeightPoint
 import com.thegalaxybyte.momentum.domain.WeightTrend
+import com.thegalaxybyte.momentum.domain.Workout
+import com.thegalaxybyte.momentum.domain.Workouts
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.time.LocalDate
@@ -41,10 +43,12 @@ data class TodayState(
     val cardioPlan: CardioWeekPlan,
     val cardioState: CardioState,
     val nextSessionKey: String,
+    val workouts: List<Workout>,
     val strengthDoneToday: Boolean,
     val cardioToday: List<CardioEntity>,
 ) {
     val todayPlan: DayPlan get() = week.first { it.epochDay == day }
+    val nextWorkoutName: String get() = workouts.firstOrNull { it.key == nextSessionKey }?.name ?: "Strength workout"
 }
 
 @Serializable
@@ -146,7 +150,8 @@ class PlanService(private val dao: MomentumDao, private val catalogs: Catalogs, 
         val days = p.trainingDays.split(',').mapNotNull { it.trim().toIntOrNull() }.toSet()
         val week = WeekPlanner.plan(Days.monday(day), days, weekIndex, cardioPlan)
         val last = dao.lastFinishedSession()
-        val next = if (last?.sessionKey == "strength-a") "strength-b" else "strength-a"
+        val workouts = workouts()
+        val next = Workouts.next(workouts, last?.sessionKey).key
         return TodayState(
             day = day,
             profile = p,
@@ -161,16 +166,38 @@ class PlanService(private val dao: MomentumDao, private val catalogs: Catalogs, 
             cardioPlan = cardioPlan,
             cardioState = cardioState,
             nextSessionKey = if (last?.epochDay == day && last.endedAt != null) last.sessionKey else next,
+            workouts = workouts,
             strengthDoneToday = last?.epochDay == day && last.endedAt != null,
             cardioToday = dao.cardioNow(day).filter { it.epochDay == day && it.kind != "other" },
         )
+    }
+
+    /** Your strength workouts, in rotation order (Strength A and B until you change them). */
+    suspend fun workouts(): List<Workout> = Workouts.decode(dao.setting(Workouts.SETTING)?.value, catalogs.exercises)
+
+    fun defaultWorkouts(): List<Workout> = Workouts.defaults(catalogs.exercises)
+
+    suspend fun saveWorkouts(list: List<Workout>) =
+        repo.putSetting(Workouts.SETTING, Workouts.encode(Workouts.clean(list, catalogs.exercises)))
+
+    /** The exercise you're currently on in every movement (ladder → exercise name). */
+    suspend fun currentExercises(p: ProfileEntity): Map<String, String> {
+        val engine = engine(p)
+        val stored = dao.ladderStatesNow().associateBy { it.id }
+        return catalogs.exercises.ladders.associateWith { ladder ->
+            val st = stored[ladder]?.let { LadderState(it.id, it.step, it.loadKg, it.stage, it.misses, it.holdSec) }
+                ?: engine.initial(ladder)
+            engine.exercise(st).name
+        }
     }
 
     /** Current state of each ladder used by [sessionKey], creating starting states as needed. */
     suspend fun ladderStates(p: ProfileEntity, sessionKey: String): List<LadderState> {
         val engine = engine(p)
         val stored = dao.ladderStatesNow().associateBy { it.id }
-        return catalogs.exercises.sessions[sessionKey].orEmpty().map { ladder ->
+        val ladders = workouts().firstOrNull { it.key == sessionKey }?.ladders
+            ?: catalogs.exercises.sessions[sessionKey].orEmpty()
+        return ladders.map { ladder ->
             stored[ladder]?.let { LadderState(it.id, it.step, it.loadKg, it.stage, it.misses, it.holdSec) }
                 ?: engine.initial(ladder)
         }

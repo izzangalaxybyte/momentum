@@ -3,7 +3,8 @@ package com.thegalaxybyte.momentum.ui.train
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -26,9 +27,11 @@ import com.thegalaxybyte.momentum.container
 import com.thegalaxybyte.momentum.domain.CardioPhase
 import com.thegalaxybyte.momentum.domain.Target
 import com.thegalaxybyte.momentum.ui.SectionCard
-import com.thegalaxybyte.momentum.ui.sessionNames
+import com.thegalaxybyte.momentum.domain.Workouts
+import androidx.compose.material3.TextButton
 import com.thegalaxybyte.momentum.ui.today.todayFlow
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun TrainScreen(nav: NavHostController) {
     val c = LocalContext.current.container
@@ -38,7 +41,7 @@ fun TrainScreen(nav: NavHostController) {
         val p = c.dao.profileNow() ?: return@produceState
         val engine = c.plan.engine(p)
         val wk = c.plan.weekIndex(p)
-        value = sessionNames.keys.associateWith { key -> c.plan.ladderStates(p, key).map { engine.target(it, wk) } }
+        value = today?.workouts.orEmpty().associate { w -> w.key to c.plan.ladderStates(p, w.key).map { engine.target(it, wk) } }
     }
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -47,21 +50,23 @@ fun TrainScreen(nav: NavHostController) {
         today?.let { s ->
             SectionCard("Strength") {
                 Text(
-                    "Next up: ${sessionNames[s.nextSessionKey]}. Sessions alternate A and B on your training days.",
+                    "Next up: ${s.nextWorkoutName}. " + if (s.workouts.size > 1) "Your ${s.workouts.size} workouts take turns on your training days."
+                    else "You do this workout on every strength day.",
                     style = MaterialTheme.typography.bodySmall,
                 )
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    sessionNames.forEach { (key, name) ->
-                        if (key == s.nextSessionKey) Button(onClick = { nav.navigate("session/$key") }) { Text("Start $name") }
-                        else OutlinedButton(onClick = { nav.navigate("session/$key") }) { Text(name) }
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    s.workouts.forEach { w ->
+                        if (w.key == s.nextSessionKey) Button(onClick = { nav.navigate("session/${w.key}") }) { Text("Start ${w.name}") }
+                        else OutlinedButton(onClick = { nav.navigate("session/${w.key}") }) { Text(w.name) }
                     }
                 }
+                TextButton(onClick = { nav.navigate("workouts") }) { Text("Edit workouts") }
             }
         }
 
-        sessionNames.forEach { (key, name) ->
-            SectionCard(name) {
-                targets[key].orEmpty().forEach { t ->
+        today?.workouts.orEmpty().forEach { w ->
+            SectionCard(w.name) {
+                targets[w.key].orEmpty().forEach { t ->
                     Column(Modifier.fillMaxWidth().clickable { nav.navigate("exercise/${t.exercise.id}") }.padding(vertical = 4.dp)) {
                         Text(t.exercise.name, style = MaterialTheme.typography.bodyLarge)
                         Text(targetText(t), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)

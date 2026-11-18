@@ -5,6 +5,7 @@ gets facts and numbers, not tables of rows. Days are epoch days in the phone's l
 """
 
 import datetime as dt
+import json
 import os
 from collections import Counter, defaultdict
 from typing import Any
@@ -47,6 +48,18 @@ def _trend(weights: list[dict[str, Any]]) -> dict[int, float]:
 def _trend_at(trend: dict[int, float], day: int) -> float | None:
     days = [d for d in trend if d <= day]
     return trend[max(days)] if days else None
+
+
+def _workout_names() -> dict[str, str]:
+    """sessionKey -> the name the user gave that workout (their custom workouts, else Strength A/B)."""
+    names = {"strength-a": "Strength A", "strength-b": "Strength B"}
+    setting = next((s for s in store.records("Setting") if s.get("id") == "workouts"), None)
+    try:
+        for w in json.loads(setting["value"]) if setting else []:
+            names[str(w["key"])] = f"{w['name']} ({', '.join(w.get('ladders', []))})"
+    except (ValueError, KeyError, TypeError):
+        pass
+    return names
 
 
 def build(today: int, period_days: int = 7, include_today: bool = False) -> dict[str, Any]:
@@ -109,8 +122,10 @@ def build(today: int, period_days: int = 7, include_today: bool = False) -> dict
     by_ex: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for s in sorted(sets, key=lambda s: (s["epochDay"], s.get("setIndex", 0))):
         by_ex[s["exerciseId"]].append(s)
+    names = _workout_names()
     ctx["strength"] = {
-        "sessionsDone": [f"{day_name(int(s['epochDay']))}: {s.get('sessionKey')}" for s in sessions],
+        "sessionsDone": [f"{day_name(int(s['epochDay']))}: {names.get(s.get('sessionKey'), s.get('sessionKey'))}"
+                         for s in sessions],
         "exercises": {
             ex: [f"{day_name(int(s['epochDay']))} " + (f"{s['seconds']}s" if s.get("seconds") else f"{s.get('reps')} reps")
                  + (f" @ {s['loadKg']} kg" if s.get("loadKg") else "") + (f" ({s['rating'].lower()})" if s.get("rating") else "")
